@@ -4,7 +4,10 @@
 	</div>
 	<div class="row_right">
 		<div id="sign_in">
-			<%= link_to "Sign in", sign_up_path, :class => "sign_in_button round" %>
+			<% if true %> <!-- if not signed in, show sign in -->
+				<%= link_to "Sign in", sign_in_path, :class => "sign_in_button round" %>
+			<% else %> <!-- if not signed in, show profile -->
+			<% end %>
 		</div>
 		<div id="calendar">
 		

@@ -15,4 +15,8 @@ class PagesController < ApplicationController
   def about
 	@title = 'About'
   end
+  
+  def sign_in
+	@title = 'Sign in'
+  end
 end

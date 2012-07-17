@@ -9,12 +9,14 @@ gem 'pg'
 
 group :development do
   gem 'rspec-rails'
+  gem 'annotate'
 end
 
 group :test do
   gem 'rspec'
   gem 'webrat'
   gem 'spork'
+  gem 'annotate'
 end
 
 # Gems used only for assets and not required
