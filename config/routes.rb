@@ -1,4 +1,6 @@
 Cssa::Application.routes.draw do
+  get "users/new"
+
   get "pages/contact"
 
   get "pages/about"
@@ -16,6 +18,8 @@ Cssa::Application.routes.draw do
   match '/club', :to => "pages#club"
 
   match '/home', :to => "pages#home"
+  
+  match '/sign_up', :to => "users#new"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
