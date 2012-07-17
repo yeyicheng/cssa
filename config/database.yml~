@@ -15,16 +15,17 @@
 development:
   adapter: postgresql
   encoding: unicode
+  host: localhost
   database: cssa_development
   pool: 5
   username: cssa
-  password:
+  password: admin
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
-  host: localhost
-  port: 5432
+  # host: localhost
+  # port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
@@ -42,14 +43,16 @@ test:
   adapter: postgresql
   encoding: unicode
   database: cssa_test
+  host: localhost
   pool: 5
   username: cssa
-  password:
+  password: admin
 
 production:
   adapter: postgresql
   encoding: unicode
+  host: localhost
   database: cssa_production
   pool: 5
   username: cssa
-  password:
+  password: admin
