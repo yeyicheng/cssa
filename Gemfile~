@@ -9,6 +9,7 @@ gem 'pg'
 
 group :development do
   gem 'rspec-rails'
+  gem 'annotate'
 end
 
 group :test do
@@ -16,6 +17,7 @@ group :test do
   gem 'webrat'
   gem 'spork'
   gem 'annotate'
+  gem 'factory_girl_rails'
 end
 
 # Gems used only for assets and not required

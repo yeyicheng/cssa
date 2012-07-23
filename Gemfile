@@ -6,6 +6,7 @@ gem 'rails', '3.2.5'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'gravatar_image_tag'
 
 group :development do
   gem 'rspec-rails'
@@ -17,6 +18,7 @@ group :test do
   gem 'webrat'
   gem 'spork'
   gem 'annotate'
+  gem 'factory_girl_rails'
 end
 
 # Gems used only for assets and not required
