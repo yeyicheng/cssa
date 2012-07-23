@@ -49,7 +49,6 @@ nav {
 	padding: 0 0.7em;
 	white-space: nowrap;
 	margin: 0 auto;
-	#display: inline-block;
 	text-align: center;
 }
 nav ul {
@@ -88,7 +87,7 @@ nav#foot-nav ul li a:hover {
 footer {
 	text-align: center;
 	margin: 10px auto 0 auto;
-	#width: 710px;
+	width: 710px;
 }
 footer nav {
 	float: none;
