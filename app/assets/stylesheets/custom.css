@@ -17,6 +17,11 @@ header img {
 	background: darkred;
 	width: 30%;
 }
+header a:hover {
+	background: darkred;
+	width:10px !important;
+}
+
 header .inner {
 	width: 1000px;
 	border: 0px solid lightyellow;

@@ -1,10 +1,11 @@
 ---
 logo.jpg: logo-9526056f56cf1b87b53c5833c242d620.jpg
+myfav.png: myfav-f0a4db161f2a3d35c79753d244b46da8.png
 rails.png: rails-be8732dac73d845ac5b142c8fb5f9fb0.png
 application.js: application-f8ca698e63b86d217c88772a65d2d20e.js
 pages.js: pages-885c1cefd9d73d37f643283b7759bd28.js
 users.js: users-885c1cefd9d73d37f643283b7759bd28.js
-application.css: application-19923b4a9fbf470022c8ae4fbc0787b3.css
+application.css: application-9d001143d32d310cc878fd9e6b2f27a9.css
 blueprint/ie.css: blueprint/ie-2dde47fa04146c250f1c50ebc867956c.css
 blueprint/plugins/buttons/icons/cross.png: blueprint/plugins/buttons/icons/cross-c2651300ae2e326a9727177155b48bf7.png
 blueprint/plugins/buttons/icons/key.png: blueprint/plugins/buttons/icons/key-9db9f7ef5cb5f66d1dd4a2adfbf0a87b.png
@@ -35,7 +36,7 @@ blueprint/src/ie.css: blueprint/src/ie-b0b7921bcb824cb504be5975f623e07d.css
 blueprint/src/print.css: blueprint/src/print-2646be8778b0583014938ac2b9819e5f.css
 blueprint/src/reset.css: blueprint/src/reset-d8a6316266b2f7234a39476a04ef5fb8.css
 blueprint/src/typography.css: blueprint/src/typography-d0cdbc998745de23e687ac3851ef7cfd.css
-custom.css: custom-a54f544f8bbaa9cbaa11096229a15400.css
+custom.css: custom-030c59d467bf8b8f5fad54b1b1c5b941.css
 pages.css: pages-1441173dddcc141fd279ba3fcc9b25e3.css
 users.css: users-1441173dddcc141fd279ba3fcc9b25e3.css
 jquery-ui.js: jquery-ui-5e86558a29e9896e7842cba13e007b88.js
