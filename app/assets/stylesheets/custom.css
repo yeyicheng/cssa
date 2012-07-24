@@ -168,6 +168,7 @@ a.sign_in_button {
 	/* background: #006400; */
 	background: -webkit-gradient(linear, left top, left bottom, from(#669CFF), to(#002E85));
 	background: -moz-linear-gradient(top,  #669CFF,  #002E85);
+	background: -o-linear-gradient(top,  #669CFF,  #002E85);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#669CFF', endColorstr='#002E85');
 	font-size: 100%;
 	font-weight: bold;
