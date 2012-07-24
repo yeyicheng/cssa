@@ -1,19 +1,24 @@
 .container {
-	width: 1000px;
+	width: 100%;
 	overflow: auto;
 }
 body {
 	background: #000;
+	margin: 0 auto;
 }
 header {
 	padding-top: 20px;
+	background: darkred;
+	width: 100%;
+	margin: 0 auto;
 }
 header img {
 	padding: 1em;
 	background: #fff;
 }
 section {
-	margin: 1em 0;
+	width: 1000px;
+	margin: 5px auto;
 	font-size: 120%;
 	padding: 20px;
 	background: lightyellow;
@@ -51,7 +56,7 @@ nav {
 	background-color: darkred;
 	padding: 5px 0.7em;
 	white-space: nowrap;
-	margin: 0 auto;
+	margin: 5px auto;
 	text-align: center;
 	font-size: 120%;
 }
@@ -76,12 +81,13 @@ nav ul li a:visited {
 nav ul li a:hover {
 	color: white;
 	text-decoration: none;
-	border: 1px solid #999;
-	border-right: groove;
+	/* border: 1px solid #999; */
+	/* border-right: groove; */
 	border-top: groove;
 }
 nav#site-nav ul li a {
 	padding: 0 35px;
+	padding-top: 10px;
 }
 nav#foot-nav {
 	width: 60%;
@@ -97,7 +103,7 @@ nav#foot-nav ul li a:hover {
 }
 footer {
 	text-align: center;
-	margin: 10px auto 0 auto;
+	margin: 5px auto 0 auto;
 	width: 1000px;
 }
 footer nav {
@@ -148,8 +154,6 @@ a.sign_in_button {
 	margin: 0 auto;	
 }
 a.sign_in_button {
-	margin-left: auto;
-	margin-right: auto;
 	display: block;
 	text-align: center;
 	width: 310px;
@@ -157,6 +161,7 @@ a.sign_in_button {
 	/* background: #006400; */
 	background: -webkit-gradient(linear, left top, left bottom, from(#669CFF), to(#002E85));
 	background: -moz-linear-gradient(top,  #669CFF,  #002E85);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#669CFF', endColorstr='#002E85');
 	font-size: 100%;
 	font-weight: bold;
 	padding: 5px;
