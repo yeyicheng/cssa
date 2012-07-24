@@ -35,7 +35,7 @@ Cssa::Application.routes.draw do
 
 	match '/sign_in', :to => "sessions#new"
 	
-	match '/sign_out', :to => "session#destroy"
+	match '/sign_out', :to => "sessions#destroy"
 	
 	match '/users', :to => "users#index"
 
