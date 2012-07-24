@@ -1,6 +1,6 @@
 .container {
 	width: 100%;
-	overflow: auto;
+	overflow: hidden;
 }
 body {
 	background: #000;

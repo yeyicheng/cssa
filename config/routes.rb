@@ -1,7 +1,11 @@
 Cssa::Application.routes.draw do
-	get "users/index"
-
 	resources :users
+	
+	resources :sessions, :only => [:new, :create, :destroy]
+	
+	get "sessions/new"
+
+	get "users/index"
 
 	get "pages/sign_in"
 
@@ -29,7 +33,9 @@ Cssa::Application.routes.draw do
 
 	match '/sign_up', :to => "users#new"
 
-	match '/sign_in', :to => "pages#sign_in"
+	match '/sign_in', :to => "sessions#new"
+	
+	match '/sign_out', :to => "session#destroy"
 	
 	match '/users', :to => "users#index"
 
