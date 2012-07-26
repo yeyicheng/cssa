@@ -6,7 +6,7 @@
 		<% if signed_in? %> <!-- if not signed in, show sign in -->
 			<table>
 				<td class="home_sidebar round">
-					<strong><%= current_user[:name] %></strong><%= link_to "Profile", current_user, :class => "home_links" %><br />
+					<strong><%= current_user[:name] %></strong><%= link_to "Profile", current_user, :class => "profile_links" %><br />
 					<span>Member since: </span><%= current_user[:created_at].strftime("%Y-%b-%d") %><br />
 					<span>User ID: </span><%= current_user[:id] %><br />
 					<%= link_to "Sign out", sign_out_path, :method => :delete %>				
