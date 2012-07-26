@@ -159,6 +159,16 @@ div.field, div.actions {
 .first_row .row_right #calendar {
 	display: block;	
 }
+.first_row .home_links {
+	margin-right: 20px;
+	float: right;	
+}
+.first_row .home_sidebar {
+	width: 300px;
+	padding: 1em;
+	vertical-align: top;
+	background: #ffc;	
+}
 
 /* Sign in button */
 a.sign_in_button {

@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 		else
 			@title = "Sign up"
 			render 'new'
-			
+			flash[:error] = "Please try again."
 		end
 	end
 	

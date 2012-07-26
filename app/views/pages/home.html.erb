@@ -3,14 +3,23 @@
 		
 	</div>
 	<div class="row_right">
-		<div id="sign_in">
-			<% if true %> <!-- if not signed in, show sign in -->
-				<%= link_to "Sign in", sign_in_path, :class => "sign_in_button round" %>
-			<% else %> <!-- if not signed in, show profile -->
-			<% end %>
-		</div>
+		<% if signed_in? %> <!-- if not signed in, show sign in -->
+			<table>
+				<td class="home_sidebar round">
+					<strong><%= current_user[:name] %></strong><%= link_to "Profile", current_user, :class => "home_links" %><br />
+					<span>Member since: </span><%= current_user[:created_at].strftime("%Y-%b-%d") %><br />
+					<span>User ID: </span><%= current_user[:id] %><br />
+					<%= link_to "Sign out", sign_out_path, :method => :delete %>				
+				</td>
+			</table>
+		<% else %> <!-- if not signed in, show profile -->
+			<div id="sign_in">
+				<%= link_to "Sign in", sign_in_path, :class => "sign_in_button round"%>
+			</div>
+		<% end %>
+	
 		<div id="calendar">
-			<iframe src="https://www.google.com/calendar/b/0/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=175&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=umcpcssa000%40gmail.com&amp;color=%235F6B02&amp;ctz=America%2FNew_York" style=" border-width:0 " width="320" height="200" frameborder="0" scrolling="no"></iframe>	
+			<iframe src="https://www.google.com/calendar/b/0/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=175&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=umcpcssa000%40gmail.com&amp;color=%235F6B02&amp;ctz=America%2FNew_York" style=" border-width:0 " width="325" height="200" frameborder="0" scrolling="no"></iframe>	
 		</div>
 	</div>
 </div>
