@@ -19,7 +19,6 @@ header img {
 }
 header a:hover {
 	background: darkred;
-	width:10px !important;
 }
 
 header .inner {
@@ -85,7 +84,9 @@ nav ul li a {
 	color: white;
 	padding: 0 10px;
 	font-weight: bold;
-	display:inline;
+	display:inline-block;
+	width: 100px;
+	text-align: center;
 }
 nav ul li a:visited {
 	color: white;
@@ -93,13 +94,27 @@ nav ul li a:visited {
 nav ul li a:hover {
 	color: white;
 	text-decoration: none;
-	/* border: 1px solid #999; */
-	/* border-right: groove; */
-	border-top: groove;
 }
 nav#site-nav ul li a {
-	padding: 0 35px;
-	padding-top: 10px;
+	padding: 0 20px;
+	background-color: black;
+	border-top: solid;
+	border-color: darkred;
+}
+nav#site-nav ul li a:hover {
+	border-top: groove;
+}
+
+nav#site-nav .sub-nav li {
+	display: block;
+	position: relative;
+}
+nav#site-nav .sub-nav{
+    display: none;
+    z-index: 999;
+}
+nav#site-nav li:hover ul.sub-nav {
+    display: block;
 }
 nav#foot-nav {
 	width: 60%;
@@ -107,6 +122,7 @@ nav#foot-nav {
 }
 nav#foot-nav ul li a {
 	padding: 0 25px;
+	background-color: black;
 }
 nav#foot-nav ul li a:hover {
 	color: white;
