@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.5'
-gem "heroku"
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'rails', '3.2.5'
+gem "heroku"
 gem 'pg'
 gem 'gravatar_image_tag'
+gem 'will_paginate'
 
 group :development do
   gem 'rspec-rails'
@@ -19,6 +20,7 @@ group :test do
   gem 'spork'
   gem 'annotate'
   gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 # Gems used only for assets and not required

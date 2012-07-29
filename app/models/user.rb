@@ -52,7 +52,6 @@ class User < ActiveRecord::Base
 		def secure_hash(string)
 			Digest::SHA2.hexdigest(string)
 		end
-
 end
 # == Schema Information
 #
@@ -65,5 +64,6 @@ end
 #  updated_at         :datetime        not null
 #  encrypted_password :string(255)
 #  salt               :string(255)
+#  admin              :boolean         default(FALSE)
 #
 

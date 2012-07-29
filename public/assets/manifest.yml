@@ -1,12 +1,19 @@
 ---
+1.jpg: 1-60560d12ad4ef1c9cda6b86ab3b6d79c.jpg
+2.jpg: 2-880780ff13a49c351b62b3eb3ad2a784.jpg
+3.jpg: 3-1df3e0252cfe4f05d07b2022880b2b30.jpg
+4.jpg: 4-e7221a7a03bd09ed9044e7c8fe99394d.jpg
+arrows.png: arrows-9b740bdef9d7fe6b48443d61fe0f8a3d.png
+bg.jpg: bg-d7a794c1b944f23659be613afb9df83b.jpg
 logo.jpg: logo-9526056f56cf1b87b53c5833c242d620.jpg
 myfav.png: myfav-f0a4db161f2a3d35c79753d244b46da8.png
 rails.png: rails-be8732dac73d845ac5b142c8fb5f9fb0.png
-application.js: application-f8ca698e63b86d217c88772a65d2d20e.js
+application.js: application-166040fff53d136ef5f9a5b9f046677c.js
 pages.js: pages-885c1cefd9d73d37f643283b7759bd28.js
 sessions.js: sessions-885c1cefd9d73d37f643283b7759bd28.js
+slideshow.js: slideshow-5c9832eaa76f4acce5fceeb8e561893f.js
 users.js: users-885c1cefd9d73d37f643283b7759bd28.js
-application.css: application-383e915303046134d282bae80657b52b.css
+application.css: application-d65751445e37da6886a04879453b4f1f.css
 blueprint/ie.css: blueprint/ie-2dde47fa04146c250f1c50ebc867956c.css
 blueprint/plugins/buttons/icons/cross.png: blueprint/plugins/buttons/icons/cross-c2651300ae2e326a9727177155b48bf7.png
 blueprint/plugins/buttons/icons/key.png: blueprint/plugins/buttons/icons/key-9db9f7ef5cb5f66d1dd4a2adfbf0a87b.png
@@ -37,7 +44,7 @@ blueprint/src/ie.css: blueprint/src/ie-b0b7921bcb824cb504be5975f623e07d.css
 blueprint/src/print.css: blueprint/src/print-2646be8778b0583014938ac2b9819e5f.css
 blueprint/src/reset.css: blueprint/src/reset-d8a6316266b2f7234a39476a04ef5fb8.css
 blueprint/src/typography.css: blueprint/src/typography-d0cdbc998745de23e687ac3851ef7cfd.css
-custom.css: custom-fdd351fad1a16a9f36780751d9214185.css
+custom.css: custom-e804390cf75013614dfa39572ab3b154.css
 pages.css: pages-1441173dddcc141fd279ba3fcc9b25e3.css
 sessions.css: sessions-1441173dddcc141fd279ba3fcc9b25e3.css
 users.css: users-1441173dddcc141fd279ba3fcc9b25e3.css

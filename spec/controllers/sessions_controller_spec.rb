@@ -35,7 +35,7 @@ describe SessionsController do
 		
 		describe "with valid email and password" do
 			before(:each) do
-				@user = Factory(:user)
+				@user = FactoryGirl.create(:user)
 				@attr = { :email => @user.email, :password => @user.password }
 			end
 			it "should sign the user in" do
@@ -51,7 +51,7 @@ describe SessionsController do
 	end
 	describe "DELETE 'destroy'" do
 		it "should sign a user out" do
-			test_sign_in(Factory(:user))
+			test_sign_in(FactoryGirl.create(:user))
 			delete :destroy
 			controller.should_not be_signed_in
 			response.should redirect_to(root_path)

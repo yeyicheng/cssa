@@ -38,7 +38,7 @@ describe "LayoutLinks" do
 	end
 	describe "when signed in" do
 		before(:each) do
-			@user = Factory(:user)
+			@user = FactoryGirl.create(:user)
 			visit sign_in_path
 			fill_in :email, :with => @user.email
 			fill_in :password, :with => @user.password
@@ -67,7 +67,7 @@ describe "LayoutLinks" do
 		end
 		describe "success" do
 			it "should sign a user in and out" do
-				user = Factory(:user)
+				user = FactoryGirl.create(:user)
 				visit sign_in_path
 				fill_in :email, :with => user.email
 				fill_in :password, :with => user.password
