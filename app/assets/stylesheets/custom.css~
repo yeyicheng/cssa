@@ -1,25 +1,44 @@
 .container {
-	width: 710px;
+	width: 100%;
+	overflow: hidden;
 }
 body {
-	background: #fff;
+	background: #000;
+	margin: 0 auto;
 }
 header {
 	padding-top: 20px;
+	background: darkred;
+	width: 100%;
+	margin: 0 auto;
 }
 header img {
-	padding: 1em;
-	background: #fff;
+	margin-left: -20px;
+	background: darkred;
+	width: 30%;
+}
+header a:hover {
+	background: darkred;
+}
+
+header .inner {
+	width: 1000px;
+	border: 0px solid lightyellow;
+	margin: 0 auto;
+	padding: 0;
 }
 section {
-	margin: 1em 0;
+	width: 1000px;
+	margin: 5px auto;
 	font-size: 120%;
 	padding: 20px;
 	background: lightyellow;
+	overflow: auto;
 }
 section h1 {
 	font-size: 200%;
 }
+
 /* Links */
 a {
 	color: #09c;
@@ -46,10 +65,11 @@ nav {
 }
 nav {
 	background-color: darkred;
-	padding: 0 0.7em;
+	padding: 5px 0.7em;
 	white-space: nowrap;
-	margin: 0 auto;
+	margin: 5px auto;
 	text-align: center;
+	font-size: 120%;
 }
 nav ul {
 	margin: 0 auto;
@@ -64,20 +84,68 @@ nav ul li a {
 	color: white;
 	padding: 0 10px;
 	font-weight: bold;
-	display:inline;
+	display:inline-block;
+	width: 100px;
+	text-align: center;
 }
 nav ul li a:visited {
 	color: white;
 }
 nav ul li a:hover {
 	color: white;
-	border-top: groove;
-	border-color: orange;
 	text-decoration: none;
 }
-
+nav#site-nav {
+	/* position: relative; */
+	/* clear: both;	 */
+	z-index: 999;
+}
 nav#site-nav ul li a {
+	display: block;
+	padding: 0 20px;
+	background-color: black;
+	border-top: solid;
+	border-color: darkred;
+}
+nav#site-nav ul li a:hover {
+	border-top: groove;
+}
+nav#site-nav ul ul {
+	display:none; /* Sub menus are hiden by default */
+	position:absolute;
+	right:auto; /*resets the right:50% on the parent ul */
+}
+nav#site-nav ul ul li {
+	position: relative;
+	display: block;
+}
+nav#site-nav ul ul li a,
+nav#site-nav ul li:hover ul li a,
+nav#site-nav ul li.hover ul li a { /* This line is required for IE 6 and below */
+   font-weight:normal; /* resets the bold set for the top level menu items */
+   background:#eee;
+   color:#444;
+   line-height:1.4em; /* overwrite line-height value from top menu */
+   border-bottom:1px solid #ddd; /* sub menu item horizontal lines */
+}
+nav#site-nav ul ul li a:hover,
+nav#site-nav ul li:hover ul li a:hover,
+nav#site-nav ul li.hover ul li a:hover { /* This line is required for IE 6 and below */
+   background:#36f; /* Sub menu items background colour */
+   color:#fff;
+}
+/* Make the sub menus appear on hover */
+nav#site-nav ul li:hover ul,
+#site-nav ul li.hover ul { /* This line is required for IE 6 and below */
+   display:block; /* Show the sub menus */
+}
+nav#foot-nav {
+	width: 60%;
+	background-color: #AAA;	
+}
+nav#foot-nav ul li a {
 	padding: 0 25px;
+	background-color: black;
 }
 nav#foot-nav ul li a:hover {
 	color: white;
@@ -86,8 +154,8 @@ nav#foot-nav ul li a:hover {
 }
 footer {
 	text-align: center;
-	margin: 10px auto 0 auto;
-	width: 710px;
+	margin: 5px auto 0 auto;
+	width: 1000px;
 }
 footer nav {
 	float: none;
@@ -111,4 +179,100 @@ td.sidebar {
 .profile img.gravatar {
 	border: 1px solid #999;
 	margin-bottom: -15px;
+}
+
+/* Sign up form */
+div.field, div.actions {
+	margin-bottom: 10px;
+}
+
+/* First row */
+.first_row .row_right {
+	float: right;
+	display: block;
+}
+.first_row .row_right #sign_in {
+	display: block;	
+	margin-bottom: 50px;
+}
+.first_row .row_right #calendar {
+	display: block;	
+}
+.profile_links {
+	margin-right: 20px;
+	float: right;	
+}
+.first_row .home_sidebar {
+	width: 300px;
+	padding: 1em;
+	vertical-align: top;
+	background: #ffc;	
+}
+
+/* Sign in button */
+a.sign_in_button {
+	float: right;
+	margin: 0 auto;	
+}
+a.sign_in_button {
+	display: block;
+	text-align: center;
+	width: 310px;
+	color: #fff;
+	/* background: #006400; */
+	background: -webkit-gradient(linear, left top, left bottom, from(#669CFF), to(#002E85));
+	background: -moz-linear-gradient(top,  #669CFF,  #002E85);
+	background: -o-linear-gradient(top,  #669CFF,  #002E85);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#669CFF', endColorstr='#002E85');
+	font-size: 100%;
+	font-weight: bold;
+	padding: 5px;
+	border: 1px solid #aaa;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* Error message */
+.field_with_errors {
+	margin-top: 10px;
+	padding: 2px;
+	background-color: red;
+	display: table;
+}
+.field_with_errors label {
+	color: #fff;
+}
+#error_explanation {
+	width: 400px;
+	border: 2px solid red;
+	padding: 7px;
+	padding-bottom: 12px;
+	margin-bottom: 20px;
+	background-color: #f0f0f0;
+}
+#error_explanation h2 {
+	text-align: left;
+	font-weight: bold;
+	padding: 5px 5px 5px 15px;
+	font-size: 12px;
+	margin: -7px;
+	background-color: #c00;
+	color: #fff;
+}
+#error_explanation p {
+	color: #333;
+	margin-bottom: 0;
+	padding: 5px;
+}
+#error_explanation ul li {
+	font-size: 12px;
+	list-style: square;
+}
+}
+
+/* Make the sub menus appear on hover */
+#centeredmenu ul li:hover ul,
+#centeredmenu ul li.hover ul { /* This line is required for IE 6 and below */
+   display:block; /* Show the sub menus */
 }

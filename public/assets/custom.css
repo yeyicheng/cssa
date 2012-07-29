@@ -78,7 +78,7 @@ nav ul {
 nav ul li {
 	list-style-type: none;
 	display: inline-block;
-	padding: 0.2em 0;
+	padding: 0 0;
 }
 nav ul li a {
 	color: white;
@@ -95,26 +95,46 @@ nav ul li a:hover {
 	color: white;
 	text-decoration: none;
 }
+nav#site-nav {
+	z-index: 999;
+}
 nav#site-nav ul li a {
-	padding: 0 20px;
-	background-color: black;
+	display: block;
+	padding: 10px 20px;
 	border-top: solid;
 	border-color: darkred;
 }
 nav#site-nav ul li a:hover {
 	border-top: groove;
 }
-
-nav#site-nav .sub-nav li {
-	display: block;
+nav#site-nav ul ul {
+	display:none; /* Sub menus are hiden by default */
+	position:absolute;
+}
+nav#site-nav ul ul li {
 	position: relative;
+	display: block;
+	line-height: 20px;
 }
-nav#site-nav .sub-nav{
-    display: none;
-    z-index: 999;
+nav#site-nav ul ul li a,
+nav#site-nav ul li:hover ul li a,
+nav#site-nav ul li.hover ul li a { /* This line is required for IE 6 and below */
+	font-weight: normal; /* resets the bold set for the top level menu items */
+	border: 1px solid grey;
+    background: white; 
+    color: darkred;
+    width: 180px;
 }
-nav#site-nav li:hover ul.sub-nav {
-    display: block;
+nav#site-nav ul ul li a:hover,
+nav#site-nav ul li:hover ul li a:hover,
+nav#site-nav ul li.hover ul li a:hover { /* This line is required for IE 6 and below */
+	background: #36f; /* Sub menu items background colour */
+	color: #fff;
+}
+/* Make the sub menus appear on hover */
+nav#site-nav ul li:hover ul,
+#site-nav ul li.hover ul { /* This line is required for IE 6 and below */
+   display:block; /* Show the sub menus */
 }
 nav#foot-nav {
 	width: 60%;
@@ -129,6 +149,7 @@ nav#foot-nav ul li a:hover {
 	border: none;
 	text-decoration: underline;
 }
+
 footer {
 	text-align: center;
 	margin: 5px auto 0 auto;
@@ -246,3 +267,4 @@ a.sign_in_button {
 	font-size: 12px;
 	list-style: square;
 }
+
