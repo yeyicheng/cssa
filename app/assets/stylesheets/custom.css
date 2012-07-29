@@ -14,7 +14,6 @@ header {
 }
 header img {
 	margin-left: -20px;
-	background: darkred;
 	width: 30%;
 }
 header a:hover {
@@ -142,7 +141,6 @@ nav#foot-nav {
 }
 nav#foot-nav ul li a {
 	padding: 0 25px;
-	background-color: black;
 }
 nav#foot-nav ul li a:hover {
 	color: white;
