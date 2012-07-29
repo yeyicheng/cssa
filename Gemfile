@@ -8,6 +8,7 @@ gem "heroku"
 gem 'pg'
 gem 'gravatar_image_tag'
 gem 'will_paginate'
+gem 'faker'
 
 group :development do
   gem 'rspec-rails'
@@ -20,7 +21,6 @@ group :test do
   gem 'spork'
   gem 'annotate'
   gem 'factory_girl_rails'
-  gem 'faker'
 end
 
 # Gems used only for assets and not required
