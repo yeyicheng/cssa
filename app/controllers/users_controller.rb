@@ -1,7 +1,7 @@
 
 class UsersController < ApplicationController
 	before_filter :authenticate, :only => [:edit, :update, :show, :index]
-	before_filter :correct_user, :only => [:edit, :update, :show, :index]
+	before_filter :correct_user, :only => [:edit, :update]
 	
 	def new
 		if signed_in?
@@ -49,6 +49,8 @@ class UsersController < ApplicationController
 	end
 	
 	def show
+		@user = User.find(params[:id])
+		@microposts = @user.microposts.paginate(:page => params[:page])
 		@title = @user[:name]
 	end
 	
@@ -74,11 +76,7 @@ class UsersController < ApplicationController
 		end
 	end
 	
-	private
-		def authenticate
-			deny_access unless signed_in?
-		end
-		
+	private	
 		def correct_user
 			if params[:id]
 				@user = User.find(params[:id])

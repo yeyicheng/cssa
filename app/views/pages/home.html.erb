@@ -12,17 +12,15 @@
 	<div class="row_right">
 		<% if signed_in? %> <!-- if not signed in, show sign in -->
 			<table>
-				<td class="home_sidebar round">
-					<strong><%= current_user[:name] %></strong>
-					<%= link_to "Profile", current_user, :class => "profile_links" %>
-					<% if current_user.admin? %>
-						<%= link_to "Admin", users_path, :class=>"profile_links" %>
-					<% end %>
-					<br />
+				<tr class="home_sidebar round">
+					<%= render 'shared/user_info' %>
 					<span>Member since: </span><%= current_user[:created_at].strftime("%Y-%b-%d") %><br />
 					<span>User ID: </span><%= current_user[:id] %><br />
-					<%= link_to "Sign out", sign_out_path, :method => :delete %>				
-				</td>
+				</tr>
+				<tr class="main">
+					<h3 class="micropost">What's up?</h3>
+					<%= render 'shared/micropost_form' %>
+				</tr>
 			</table>
 		<% else %> <!-- if not signed in, show profile -->
 			<div id="sign_in">

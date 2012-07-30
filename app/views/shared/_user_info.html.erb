@@ -1,0 +1,16 @@
+<div class="user_info">
+	<a href="<%= user_path(current_user) %>">
+		<span class="user_name">	
+			<%= gravatar_for current_user, :size => 30 %>
+			<%= current_user.name %>
+		</span>
+		<span class="microposts">
+			<%= pluralize(current_user.microposts.count, "micropost") %>
+		</span>
+	</a>
+	<%= link_to "Sign out", sign_out_path, :method => :delete, :class => "profile_links"  %>
+	<%= link_to "Profile", current_user, :class => "profile_links" %>
+	<% if current_user.admin? %>
+		<%= link_to "Admin", users_path, :class=>"profile_links" %>
+	<% end %>
+</div>
