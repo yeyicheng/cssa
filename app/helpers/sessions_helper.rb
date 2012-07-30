@@ -40,6 +40,11 @@ module SessionsHelper
 		deny_access unless signed_in?
 	end
 	
+	def correct_user?
+		@user = User.find(params[:id])
+		current_user == @user
+	end
+	
 	private
 		
 		def user_from_remember_token

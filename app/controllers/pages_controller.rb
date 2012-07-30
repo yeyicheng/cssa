@@ -2,8 +2,12 @@
 class PagesController < ApplicationController
 	def home
 		@title = 'Home'
-		@micropost = Micropost.new if signed_in?
-		@user = current_user if signed_in?
+		if signed_in?
+			store_location
+			@micropost = Micropost.new
+			@user = current_user
+			@feed_items = current_user.feed.paginate(:page => params[:page], :per_page => 10)
+		end
 	end
   
 	def club

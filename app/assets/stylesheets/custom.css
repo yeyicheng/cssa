@@ -184,35 +184,38 @@ div.field, div.actions {
 
 /* First row */
 .first_row {
-	display: inline;	
+}
+.row_left {
 }
 .first_row .row_right {
+	padding: 10px;
 	width: 300px;
 	float: right;
-	display: block;
+	border: 1px solid black;
 }
 .first_row .row_right #sign_in {
 	display: block;	
-	margin-bottom: 50px;
+	margin: 0 -20px 50px 0;
 }
 .first_row .row_right #calendar {
-	display: block;	
+	display: block;
 }
 .profile_links {
 	margin-right: 10px;
 	float: right;	
 }
-.first_row .home_sidebar {
+.first_row .row_right .home_sidebar {
 	width: 300px;
-	padding: 10px;
 	vertical-align: top;
 	background: #ffc;	
+}
+.first_row .row_right table .main{
+	margin-left: -20px;
 }
 
 /* Sign in button */
 a.sign_in_button {
 	float: right;
-	margin: 0 auto;	
 }
 a.sign_in_button {
 	display: block;
@@ -351,6 +354,15 @@ table.microposts tr td.micropost span.timestamp {
 	display: block;
 	font-size: 85%;
 	color: #666;
+}
+table.profile td.sidebar #micropost_content {
+	height: 30px;
+	width: 300px;
+}
+.content {
+	white-space: pre-wrap;
+	white-space: -o-pre-wrap; /* Opera 7 */
+	white-space: -moz-pre-wrap; /* Mozilla */
 }
 
 /* Error message */

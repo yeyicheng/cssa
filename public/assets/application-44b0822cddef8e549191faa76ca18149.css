@@ -1634,6 +1634,7 @@ a.sign_in_button {
 }
 
 /* User panel */
+
 .row_right div.user_info {
 	width: 300px;	
 }
@@ -1752,15 +1753,6 @@ table.microposts tr td.micropost span.timestamp {
 	display: block;
 	font-size: 85%;
 	color: #666;
-}
-table.profile td.sidebar #micropost_content {
-	height: 30px;
-	width: 300px;
-}
-.content {
-	white-space: pre-wrap;
-	white-space: -o-pre-wrap; /* Opera 7 */
-	white-space: -moz-pre-wrap; /* Mozilla */
 }
 
 /* Error message */

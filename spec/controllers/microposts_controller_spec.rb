@@ -28,7 +28,7 @@ describe MicropostsController do
 			end
 			it "should render the home page" do
 				post :create, :micropost => @attr
-				response.should render_template('users/_user')
+				response.should redirect_to(@user)
 			end
 		end	
 		describe "success" do
@@ -47,6 +47,32 @@ describe MicropostsController do
 			it "should have a flash message" do
 				post :create, :micropost => @attr
 				flash[:success].should =~ /micropost created/i
+			end
+		end
+	end
+	describe "DELETE 'destroy'" do
+		describe "for an unauthorized user" do
+			before(:each) do
+				@user = FactoryGirl.create(:user)
+				wrong_user = FactoryGirl.create(:user, :email => FactoryGirl.generate(:email))
+				test_sign_in(wrong_user)
+				@micropost = FactoryGirl.create(:micropost, :user => @user)
+			end
+			it "should deny access" do
+				delete :destroy, :id => @micropost
+				response.should redirect_to(@user)
+			end
+		end
+		describe "for an authorized user" do
+			before(:each) do
+				@user = FactoryGirl.create(:user)
+				test_sign_in(@user)
+				@micropost = FactoryGirl.create(:micropost, :user => @user)
+			end
+			it "should destroy the micropost" do
+				lambda do
+					delete :destroy, :id => @micropost
+				end.should change(Micropost, :count).by(-1)
 			end
 		end
 	end

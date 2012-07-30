@@ -24,7 +24,6 @@ class UsersController < ApplicationController
 			sign_in @user
 			flash[:success] = "Welcome to the Sample App!"
 			redirect_to @user
-			# Handle a successful save.
 		else
 			@title = "Sign up"
 			render 'new'
@@ -50,17 +49,30 @@ class UsersController < ApplicationController
 	
 	def show
 		@user = User.find(params[:id])
-		@microposts = @user.microposts.paginate(:page => params[:page])
+		@microposts = @user.microposts.paginate(:page => params[:page], :per_page => 10)
 		@title = @user[:name]
+		if !signed_in?
+			redirect_to sign_in_page
+		elsif correct_user?
+			store_location
+			@micropost = Micropost.new
+			@feed_items = current_user.feed.paginate(:page => params[:page], :per_page => 15)
+		else
+			store_location
+			@micropost = Micropost.new
+			@feed_items = @microposts
+			@microposts = current_user.microposts.paginate(:page => params[:page], :per_page => 8)
+		end
 	end
 	
 	def index
 		@title = "All users"
 		@users = User.paginate(:page => params[:page])
+		@feed_items = current_user.feed.paginate(:page => params[:page], :per_page => 20)
 	end
 
 	def destroy
-		if !current_user
+		if !signed_in?
 			redirect_to sign_in_path
 		elsif current_user.admin?
 			@user = User.find(params[:id])
