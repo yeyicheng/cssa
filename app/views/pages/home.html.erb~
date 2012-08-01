@@ -1,24 +1,58 @@
-<div class="row" id="first_row">
-	<div class="row_left">
-		
-	</div>
-	<div class="row_right">
-		<div id="sign_in">
-			<% if true %> <!-- if not signed in, show sign in -->
-				<%= link_to "Sign in", sign_in_path, :class => "sign_in_button round" %>
-			<% else %> <!-- if not signed in, show profile -->
-			<% end %>
-		</div>
-		<div id="calendar">
-		
-		</div>
-	</div>
-</div>
-<div class="row" id="second_row">
-	<div id="links">
-		
-	</div>
-	<div id="social">
-	
-	</div>
-</div>
+<table class="row first_row">
+	<td class="row_left round">
+		<table>
+			<ul id="slideshow">
+				<li><%= image_tag("1.jpg", :size=>"620x320", :alt=>"Marsa Alam") %></li>
+				<li><%= image_tag("2.jpg", :size=>"620x320", :alt=>"Marsa Alam") %></li>
+				<li><%= image_tag("3.jpg", :size=>"620x320", :alt=>"Marsa Alam") %></li>
+				<li><%= image_tag("4.jpg", :size=>"620x320", :alt=>"Marsa Alam") %></li>
+			</ul>
+			<span class="arrow previous"></span>
+			<span class="arrow next"></span>
+		</table>
+	</td>
+	<td class="row_right round">
+		<% if signed_in? %> <!-- if not signed in, show sign in -->
+			<table>
+				<div id="calendar">
+					<iframe src="https://www.google.com/calendar/b/0/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=175&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=umcpcssa000%40gmail.com&amp;color=%235F6B02&amp;ctz=America%2FNew_York" style=" border-width:0 " width="325" height="200" frameborder="0" scrolling="no"></iframe>	
+				</div>
+				<div class="sidebar round">
+					<%= render 'shared/user_info' %>
+					<span>Member since: </span>
+					<%= current_user[:created_at].strftime("%Y-%b-%d") %><br />
+				</div>
+				<div class="main round">
+					<h3 class="micropost">What's up?</h3>
+					<%= render 'shared/micropost_form' %>
+					<%= render 'shared/feed' %>
+				</div>
+			</table>
+		<% else %> <!-- if not signed in, show profile -->
+			<table>
+				<div id="sign_in">
+					<%= link_to "Sign in", sign_in_path, :class => "sign_in_button round"%>
+				</div>
+				<div id="calendar_not_signed_in">
+					<iframe src="https://www.google.com/calendar/b/0/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=175&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=umcpcssa000%40gmail.com&amp;color=%235F6B02&amp;ctz=America%2FNew_York" style=" border-width:0 " width="325" height="200" frameborder="0" scrolling="no"></iframe>	
+				</div>
+			</table>
+		<% end %>
+		<table>
+			<ul class="forum_links round">	
+				<span> Forum links </span>
+				<li><%= link_to "Questions & Answers", 'http://www.umcpcssa.org/bbs/viewforum.php?f=62', :target=>"_blank" %></li>
+				<li><%= link_to "Housing", 'http://www.umcpcssa.org/bbs/viewforum.php?f=62', :target=>"_blank" %></li>
+				<li><%= link_to "Sales", 'http://www.umcpcssa.org/bbs/viewforum.php?f=62', :target=>"_blank" %></li>
+				<li><%= link_to "Activities", 'http://www.umcpcssa.org/bbs/viewforum.php?f=62', :target=>"_blank" %></li>
+			</ul>
+			<ul class="social_links round">
+				<span> Find us on </span><br />
+				<%= image_tag("facebook.png", :size=>"50x50", :alt=>"Marsa Alam") %>
+				<%= image_tag("renren.png", :size=>"50x50", :alt=>"Marsa Alam") %>
+				<%= image_tag("twitter.png", :size=>"50x50", :alt=>"Marsa Alam") %>
+				<%= image_tag("youtube.png", :size=>"50x50", :alt=>"Marsa Alam") %>
+			</ul>
+		</table>
+	</td>
+</table>

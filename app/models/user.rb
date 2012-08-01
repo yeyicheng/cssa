@@ -1,7 +1,26 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                 :integer          not null, primary key
+#  name               :string(255)
+#  email              :string(255)
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  encrypted_password :string(255)
+#  salt               :string(255)
+#  admin              :boolean          default(FALSE)
+#
+
 
 class User < ActiveRecord::Base
 	has_many :microposts, :dependent => :destroy
-	
+	has_many :relationships, :foreign_key => 'follower_id',
+							 :dependent => :destroy
+	has_many :following, :through => :relationships, 
+						 :source => :followed
+	has_many :followeds, :through => :relationships
+							
 	attr_accessor :password
 	
 	attr_accessible :email, :name, :password, :password_confirmation
@@ -40,6 +59,18 @@ class User < ActiveRecord::Base
 		(user && user.salt == cookie_salt) ? user : nil	
 	end
 		
+	def following?(followed)
+		relationships.find_by_followed_id(followed)
+	end
+	
+	def follow!(followed)
+		relationships.create!(:followed_id => followed.id)
+	end
+	
+	def unfollow!(followed)
+		relationships.find_by_followed_id(followed).destroy
+	end
+	
 	private
 	
 		def make_salt
@@ -47,6 +78,7 @@ class User < ActiveRecord::Base
 		end
 		
 		def encrypt_password
+			return if password.nil?
 			self.salt = make_salt if new_record?
 			self.encrypted_password = encrypt(password)
 		end
@@ -59,17 +91,3 @@ class User < ActiveRecord::Base
 			Digest::SHA2.hexdigest(string)
 		end
 end
-# == Schema Information
-#
-# Table name: users
-#
-#  id                 :integer         not null, primary key
-#  name               :string(255)
-#  email              :string(255)
-#  created_at         :datetime        not null
-#  updated_at         :datetime        not null
-#  encrypted_password :string(255)
-#  salt               :string(255)
-#  admin              :boolean         default(FALSE)
-#
-
