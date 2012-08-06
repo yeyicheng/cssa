@@ -185,6 +185,27 @@ describe User do
 				@user.feed.include?(mp3).should be_false
 			end
 		end
+		
+		describe "status feed" do
+			it "should have a feed" do
+				@user.should respond_to(:feed)
+			end
+			it "should include the user's microposts" do
+				@user.feed.should include(@mp1)
+				@user.feed.should include(@mp2)
+			end
+			it "should not include a different user's microposts" do
+				mp3 = FactoryGirl.create(:micropost,
+					:user => FactoryGirl.create(:user, :email => FactoryGirl.generate(:email)))
+				@user.feed.should_not include(mp3)
+			end
+			it "should include the microposts of followed users" do
+				followed = FactoryGirl.create(:user, :email => FactoryGirl.generate(:email))
+				mp3 = FactoryGirl.create(:micropost, :user => followed)
+				@user.follow!(followed)
+				@user.feed.should include(mp3)
+			end
+		end
 	end
 	
 	describe "relationships" do

@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 			store_location
 			@micropost = Micropost.new
 			@user = current_user
-			@feed_items = current_user.feed.paginate(:page => params[:page], :per_page => 10)
+			@feed_items = current_user.feed.paginate(:page => params[:page], :per_page => 5)
 		end
 	end
   

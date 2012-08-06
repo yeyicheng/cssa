@@ -1,6 +1,6 @@
 
 class UsersController < ApplicationController
-	before_filter :authenticate, :only => [:edit, :update, :show, :index]
+	before_filter :authenticate, :except => [:show, :new, :create]
 	before_filter :correct_user, :only => [:edit, :update]
 	
 	def new
@@ -52,7 +52,7 @@ class UsersController < ApplicationController
 		@microposts = @user.microposts.paginate(:page => params[:page], :per_page => 10)
 		@title = @user[:name]
 		if !signed_in?
-			redirect_to sign_in_page
+			redirect_to sign_in_path
 		elsif correct_user?
 			store_location
 			@micropost = Micropost.new
@@ -86,6 +86,20 @@ class UsersController < ApplicationController
 		else
 			redirect_to root_path
 		end
+	end
+	
+	def following
+		@title = "Following"
+		@user = User.find(params[:id])
+		@users = @user.following.paginate(:page => params[:page], :per_page => 20)
+		render 'show_follow'
+	end
+	
+	def followers
+		@title = "Followers"
+		@user = User.find(params[:id])
+		@users = @user.followers.paginate(:page => params[:page], :per_page => 20)
+		render 'show_follow'
 	end
 	
 	private	

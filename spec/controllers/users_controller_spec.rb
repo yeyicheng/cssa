@@ -3,22 +3,24 @@ require 'spec_helper'
 describe UsersController do
 	render_views
 	describe "GET 'new'" do
-		
+		before (:each) do
+			get :new
+		end
 		it "returns http success" do
-			get 'new'
 			response.should be_success
 		end
 		
 		it "should have the right title" do
-			get 'new'
 			response.should have_selector("title", :content => "Sign up")
 		end
 	end
 
 	describe "GET 'index'" do
 		describe "for non-signed-in users" do
-			it "should deny access" do
+			before :each do
 				get :index
+			end
+			it "should deny access" do
 				response.should redirect_to(sign_in_path)
 				flash[:notice].should =~ /sign in/i
 			end
@@ -34,30 +36,26 @@ describe UsersController do
 				30.times do
 					@users << FactoryGirl.create(:user, :email => FactoryGirl.generate(:email))
 				end
+				get :index
 			end
 			it "should be successful" do
-				get :index
 				response.should be_success
 			end
 			it "should have the right title" do
-				get :index
 				response.should have_selector("title", :content => "All users")
 			end
 			it "should have an element for each user" do
-				get :index
 				@users.each do |user|
 					response.should have_selector("li", :content => user.name)
 				end
 			end
 			it "should paginate users" do
-				get :index
 				response.should have_selector("div.pagination")
 				response.should have_selector("span.disabled", :content => "Previous")
 				response.should have_selector("a", :href => "/users?page=2", :content => "2")
 				response.should have_selector("a", :href => "/users?page=2", :content => "Next")
 			end
 			it "should show delete links for admin user" do
-				get :index
 				@users.each do |user|
 					response.should have_selector("a", :content => "Delete")
 				end
@@ -66,43 +64,53 @@ describe UsersController do
 	end
 	
 	describe "GET 'show'" do
-		
 		before(:each) do
 			@user = FactoryGirl.create(:user)
-			test_sign_in @user
 		end
 		
-		it "should be success" do
-			get :show, :id => @user
-			response.should be_success
+		describe "when not signed in" do
+			it "should deny access" do
+				get :show, :id => @user
+				response.should redirect_to sign_in_path
+			end
 		end
 		
-		it "should find the right user" do
-			get :show, :id => @user
-			assigns(:user).should == @user
-		end
-		
-		it "should have the right title" do
-			get :show, :id => @user
-			response.should have_selector("title", :content => @user.name)
-		end
-		
-		it "should include the user's name" do
-			get :show, :id => @user
-			response.should have_selector("h1", :content => @user.name)
-		end
-		
-		it "should have a profile image" do
-			get :show, :id => @user
-			response.should have_selector("h1>img", :class => "gravatar")
-		end
-		
-		it "should show the user's microposts" do
-			mp1 = FactoryGirl.create(:micropost, :user => @user, :content => "Foo bar")
-			mp2 = FactoryGirl.create(:micropost, :user => @user, :content => "Baz quux")
-			get :show, :id => @user
-			response.should have_selector("span.content", :content => mp1.content)
-			response.should have_selector("span.content", :content => mp2.content)
+		describe "when signed in" do
+			before (:each) do
+				test_sign_in @user
+			end
+			it "should be success" do
+				get :show, :id => @user
+				response.should be_success
+			end
+			
+			it "should find the right user" do
+				get :show, :id => @user
+				assigns(:user).should == @user
+			end
+			
+			it "should have the right title" do
+				get :show, :id => @user
+				response.should have_selector("title", :content => @user.name)
+			end
+			
+			it "should include the user's name" do
+				get :show, :id => @user
+				response.should have_selector("h1", :content => @user.name)
+			end
+			
+			it "should have a profile image" do
+				get :show, :id => @user
+				response.should have_selector("h1>img", :class => "gravatar")
+			end
+			
+			it "should show the user's microposts" do
+				mp1 = FactoryGirl.create(:micropost, :user => @user, :content => "Foo bar")
+				mp2 = FactoryGirl.create(:micropost, :user => @user, :content => "Baz quux")
+				get :show, :id => @user
+				response.should have_selector("span.content", :content => mp1.content)
+				response.should have_selector("span.content", :content => mp2.content)
+			end
 		end
 	end
 	
@@ -134,7 +142,7 @@ describe UsersController do
 			end
 			it "should create a user" do
 				lambda do
-				post :create, :user => @attr
+					post :create, :user => @attr
 				end.should change(User, :count).by(1)
 			end
 			it "should redirect to the user show page" do
@@ -244,6 +252,37 @@ describe UsersController do
 				lambda do
 					delete :destroy, :id => @user
 				end.should_not change(User, :count)
+			end
+		end
+	end
+	
+	describe "follow pages" do
+		describe "when not signed in" do
+			it "should protect 'following'" do
+				get :following, :id => 1
+				response.should redirect_to(sign_in_path)
+			end
+			it "should protect 'followers'" do
+				get :followers, :id => 1
+				response.should redirect_to(sign_in_path)
+			end
+		end
+		describe "when signed in" do
+			before(:each) do
+				@user = FactoryGirl.create(:user)
+				test_sign_in(@user)
+				@other_user = FactoryGirl.create(:user, :email => FactoryGirl.generate(:email))
+				@user.follow!(@other_user)
+			end
+			it "should show user following" do
+				get :following, :id => @user
+				response.should have_selector("a", :href => user_path(@other_user),
+				:content => @other_user.name)
+			end
+			it "should show user followers" do
+				get :followers, :id => @other_user
+				response.should have_selector("a", :href => user_path(@user),
+				:content => @user.name)
 			end
 		end
 	end

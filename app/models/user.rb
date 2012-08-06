@@ -12,7 +12,6 @@
 #  admin              :boolean          default(FALSE)
 #
 
-
 class User < ActiveRecord::Base
 	has_many :microposts, :dependent => :destroy
 	has_many :relationships, :foreign_key => 'follower_id',
@@ -20,20 +19,22 @@ class User < ActiveRecord::Base
 	has_many :following, :through => :relationships, 
 						 :source => :followed
 	has_many :followeds, :through => :relationships
-							
+	has_many :reverse_relationships, :foreign_key => "followed_id",
+									 :class_name => "Relationship",
+									 :dependent => :destroy
+	has_many :followers, :through => :reverse_relationships, 
+						 :source => :follower
+									
 	attr_accessor :password
 	
 	attr_accessible :email, :name, :password, :password_confirmation
 
 	email_regex = /^[\w+\-._]+@[a-z\d\-._]+\.[a-z]+$/i
-
 	validates :name, :presence => true, 
 					 :length => { :maximum => 30, :minimum => 5 }
-				   
 	validates :email, :presence => true, 
 					  :format => { :with => email_regex },
 					  :uniqueness => { :case_sensitive => false }
-
 	validates :password, :confirmation => true,
 						 :length => { :within => 6..40 }
 						 
@@ -71,8 +72,11 @@ class User < ActiveRecord::Base
 		relationships.find_by_followed_id(followed).destroy
 	end
 	
-	private
+	def feed
+		Micropost.from_users_followed_by(self)
+	end
 	
+	private
 		def make_salt
 			secure_hash("#{Time.now.utc}--#{password}")
 		end
