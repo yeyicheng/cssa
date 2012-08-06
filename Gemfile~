@@ -21,6 +21,7 @@ group :test do
   gem 'annotate'
   gem 'factory_girl_rails'
   gem 'autotest'
+  gem 'faker'
 end
 
 # Gems used only for assets and not required
