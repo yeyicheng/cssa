@@ -209,7 +209,7 @@ describe User do
 	end
 	
 	describe "relationships" do
-		before(:each) do
+		before do
 			@user = User.create!(@attr)
 			@followed = FactoryGirl.create(:user)
 		end
@@ -240,6 +240,10 @@ describe User do
 			@user.follow!(@followed)
 			@user.unfollow!(@followed)
 			@user.should_not be_following(@followed)
+		end
+		it "should destroy all associated relationships" do
+			@user.destroy
+			@user.relationships.should be_empty
 		end
 	end
 end                                             

@@ -52,8 +52,13 @@ describe Relationship do
 	
 	describe "relationships" do
 		before(:each) do
-			@user = User.create!(@attr)
-			@followed = FactoryGirl.create(:user)
+			@attr = { 
+				:name => "Example User", 
+				:email => "user@example.com", 
+				:password => "foobar",
+				:password_confirmation => "foobar"
+			}
+			@user = User.create!(@attr.merge(:name => 'aa@aa.com'))
 		end
 		it "should have a relationships method" do
 			@user.should respond_to(:relationships)
