@@ -51,7 +51,7 @@ describe Relationship do
 	end
 	
 	describe "relationships" do
-		before(:each) do
+		before do
 			@attr = { 
 				:name => "Example User", 
 				:email => "user@example.com", 

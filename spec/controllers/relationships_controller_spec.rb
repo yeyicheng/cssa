@@ -12,7 +12,7 @@ describe RelationshipsController do
 		end
 	end
 	describe "POST 'create'" do
-		before(:each) do
+		before do
 			@user = test_sign_in(FactoryGirl.create(:user))
 			@followed = FactoryGirl.create(:user, :email => FactoryGirl.generate(:email))
 		end
@@ -30,7 +30,7 @@ describe RelationshipsController do
 		end
 	end
 	describe "DELETE 'destroy'" do
-		before(:each) do
+		before do
 			@user = test_sign_in(FactoryGirl.create(:user))
 			@followed = FactoryGirl.create(:user, :email =>FactoryGirl.generate(:email))
 			@user.follow!(@followed)

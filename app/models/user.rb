@@ -13,20 +13,13 @@
 #
 
 class User < ActiveRecord::Base
-	has_many :microposts, :dependent => :destroy
-	has_many :relationships, :foreign_key => 'follower_id',
-							 :dependent => :destroy
-	has_many :following, :through => :relationships, 
-						 :source => :followed
-	has_many :followeds, :through => :relationships
-	has_many :reverse_relationships, :foreign_key => "followed_id",
-									 :class_name => "Relationship",
-									 :dependent => :destroy
-	has_many :followers, :through => :reverse_relationships, 
-						 :source => :follower
-									
-	attr_accessor :password
+	has_many :microposts, dependent: :destroy
+	has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+	has_many :following, through: :relationships, source: :followed
+	has_many :reverse_relationships, foreign_key: "followed_id", class_name: "Relationship", dependent: :destroy
+	has_many :followers, through: :reverse_relationships, source: :follower
 	
+	attr_accessor :password
 	attr_accessible :email, :name, :password, :password_confirmation
 
 	email_regex = /^[\w+\-._]+@[a-z\d\-._]+\.[a-z]+$/i
@@ -65,7 +58,7 @@ class User < ActiveRecord::Base
 	end
 	
 	def follow!(followed)
-		relationships.create!(:followed_id => followed.id)
+		relationships.create!(followed_id: followed.id)
 	end
 	
 	def unfollow!(followed)

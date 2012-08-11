@@ -12,7 +12,7 @@
 require 'spec_helper'
 
 describe Relationship do
-	before(:each) do
+	before do
 		@follower = FactoryGirl.create(:user)
 		@followed = FactoryGirl.create(:user, :email => FactoryGirl.generate(:email))
 		@relationship = @follower.relationships.build(:followed_id => @followed.id)
@@ -22,7 +22,7 @@ describe Relationship do
 	end
 	
 	describe "follow methods" do
-		before(:each) do
+		before do
 			@relationship.save
 		end
 		it "should have a follower attribute" do
