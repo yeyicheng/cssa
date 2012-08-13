@@ -12,10 +12,11 @@ header {
 	width: 100%;
 	margin: 0 auto;
 }
-header img {
+header img.logo {
 	margin-left: -20px;
 	width: 30%;
 }
+
 header a:hover {
 	background: darkred;
 }

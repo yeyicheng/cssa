@@ -1,0 +1,19 @@
+<h1>Listing weathers</h1>
+
+<table>
+	<tr>
+		<%= will_paginate %>
+			<% @weathers.each do |w| %>
+				<li>
+					<span><%= w.created_at %></span>
+					<span><%= w.condition %></span>
+					<span><%= w.temp_c %></span>
+					<span><%= w.temp_f %></span>
+					<span><%= image_tag('http://www.google.com' << w.icon_url, alt: getLatestWeatherCondition, size: '50x50', class: 'weather_icon round') %></span>
+				</li>
+			<% end %>
+		<%= will_paginate %>
+	</tr>
+</table>
+
+<br />

@@ -3,11 +3,15 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'rails', '3.2.5'
+gem 'rails'
 gem "heroku"
 gem 'pg'
 gem 'gravatar_image_tag'
 gem 'will_paginate'
+gem 'faker'
+gem 'newrelic_rpm'
+gem 'simple_weather', :path => '~/Desktop/rails/simple_weather'
+gem 'rufus-scheduler'
 
 group :development do
   gem 'rspec-rails'
@@ -21,7 +25,6 @@ group :test do
   gem 'annotate'
   gem 'factory_girl_rails'
   gem 'autotest'
-  gem 'faker'
 end
 
 # Gems used only for assets and not required

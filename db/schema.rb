@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120801014339) do
+ActiveRecord::Schema.define(:version => 20120813123150) do
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
@@ -44,5 +44,15 @@ ActiveRecord::Schema.define(:version => 20120801014339) do
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+
+  create_table "weathers", :force => true do |t|
+    t.string   "condition"
+    t.decimal  "temp_c",     :precision => 4, :scale => 1
+    t.decimal  "temp_f",     :precision => 4, :scale => 1
+    t.string   "icon_url"
+    t.string   "location"
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+  end
 
 end

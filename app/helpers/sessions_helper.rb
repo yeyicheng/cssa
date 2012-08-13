@@ -40,6 +40,10 @@ module SessionsHelper
 		deny_access unless signed_in?
 	end
 	
+	def admin_auth
+		deny_access unless signed_in? && current_user.admin?
+	end
+	
 	def correct_user?
 		@user = User.find(params[:id])
 		current_user == @user

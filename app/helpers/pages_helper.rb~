@@ -1,0 +1,12 @@
+
+module PagesHelper
+	
+	def show_hourly_weather
+		@weather = Weather.new
+		
+		outputs << image_tag(getImageUrl, alt: getWeather, size: "64x64", class: 'simple_weather')
+		outputs << "#{getTemp_c} C / #{getTemp_f} F"
+		outputs << getFeelsLike
+		outputs
+	end
+end
