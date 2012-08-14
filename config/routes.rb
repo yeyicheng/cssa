@@ -1,4 +1,6 @@
 Cssa::Application.routes.draw do
+  resources :weathers
+
 	resources :users
 	resources :sessions, :only => [:new, :create, :destroy]
 	resources :microposts, :only => [:create, :destroy]

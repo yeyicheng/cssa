@@ -18,7 +18,7 @@ development:
   host: localhost
   database: cssa_development
   pool: 5
-  username: cssa
+  username: yyc
   password: admin
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -45,7 +45,7 @@ test:
   database: cssa_test
   host: localhost
   pool: 5
-  username: cssa
+  username: yyc
   password: admin
 
 production:
@@ -54,5 +54,5 @@ production:
   host: localhost
   database: cssa_production
   pool: 5
-  username: cssa
+  username: yyc
   password: admin

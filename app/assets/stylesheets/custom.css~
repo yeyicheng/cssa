@@ -27,7 +27,7 @@ header .inner {
 	padding: 0;
 }
 section {
-	width: 1000px;
+	width: 1020px;
 	margin: 5px auto;
 	font-size: 120%;
 	padding: 20px;
@@ -186,31 +186,28 @@ div.field, div.actions {
 .first_row {
 }
 .row_left {
+	border: 1px solid black;
 }
 .first_row .row_right {
 	padding: 10px;
 	width: 300px;
 	float: right;
 	border: 1px solid black;
+	background: #ffc;
 }
-.first_row .row_right #sign_in {
+.first_row #sign_in {
 	display: block;	
-	margin: 0 -20px 50px 0;
 }
-.first_row .row_right #calendar {
+.first_row #calendar {
 	display: block;
+}
+.first_row #calendar_not_signed_in {
+	display: block;
+	margin-top: 50px;
 }
 .profile_links {
 	margin-right: 10px;
 	float: right;	
-}
-.first_row .row_right .home_sidebar {
-	width: 300px;
-	vertical-align: top;
-	background: #ffc;	
-}
-.first_row .row_right table .main{
-	margin-left: -20px;
 }
 
 /* Sign in button */
@@ -236,6 +233,11 @@ a.sign_in_button {
 }
 
 /* User panel */
+.row_right div.sidebar {
+	border: 1px solid #000;
+	padding: 10px;
+	background: #fff;
+}
 .row_right div.user_info {
 	width: 300px;	
 }
@@ -255,9 +257,25 @@ a.sign_in_button {
 	width: 300px;
 	height: 30px;	
 }
+.row_right .forum_links, .row_right .social_links{
+	width: 300px;
+	margin: 20px auto;
+	padding: 2px auto;
+	border: 1px solid #000;	
+	list-style: none;
+	background: #fff;
+}
+.row_right .forum_links li, .row_right .social_links img{
+	text-decoration: underline;
+	margin: 5px 0;
+}	
+.forum_links span, .row_right .social_links span{
+	text-decoration: none;
+	font-weight: bold;
+}
 
 /* Slide Show */
-#slideshow{
+#slideshow {
     background-color:#F5F5F5;
     border:1px solid #FFFFFF;
     height:340px;

@@ -1,0 +1,3 @@
+class Weather < ActiveRecord::Base
+  attr_accessible :condition, :icon_url, :location, :temp_c, :temp_f
+end

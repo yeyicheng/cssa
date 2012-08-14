@@ -1,0 +1,31 @@
+<h1>Listing weathers</h1>
+
+<table>
+  <tr>
+    <th>Condition</th>
+    <th>Temp c</th>
+    <th>Temp f</th>
+    <th>Icon url</th>
+    <th>Location</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @weathers.each do |weather| %>
+  <tr>
+    <td><%= weather.condition %></td>
+    <td><%= weather.temp_c %></td>
+    <td><%= weather.temp_f %></td>
+    <td><%= weather.icon_url %></td>
+    <td><%= weather.location %></td>
+    <td><%= link_to 'Show', weather %></td>
+    <td><%= link_to 'Edit', edit_weather_path(weather) %></td>
+    <td><%= link_to 'Destroy', weather, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Weather', new_weather_path %>

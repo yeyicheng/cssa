@@ -9,6 +9,8 @@ gem 'pg'
 gem 'gravatar_image_tag'
 gem 'will_paginate'
 gem 'faker'
+gem 'simple_weather'
+gem 'rufus-scheduler'
 
 group :development do
   gem 'rspec-rails'

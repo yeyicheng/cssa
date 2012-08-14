@@ -1,13 +1,21 @@
 <header>
-	<%= image_tag("logo.jpg", :alt => "Chinese Student and Scholar Association of UMCP", :class => "round") %>
-	<nav class="round"  id="site-nav">
-		<ul>
-			<li><%= link_to "Home", root_path %></li>
-			<li><%= link_to "Forum", '#' %></li>
-			<li><%= link_to "New Students", '#' %></li>
-			<li><%= link_to "Clubs", club_path %></li>
-			<li><%= link_to "Art Troupe", '#' %></li>
-			<li><%= link_to "Links", '#' %></li>
-		</ul>
-	</nav>
+	<div class="inner">
+		<%= link_to image_tag("logo.jpg", :alt => "Chinese Student and Scholar Association of UMCP", :class => "round"), root_path %>
+		<nav id="site-nav">
+			<ul>
+				<li><%= link_to "Home", root_path %></li>
+				<li><%= link_to "Forum", '#' %></li>
+				<li><%= link_to "New Students", '#' %>
+					<ul>
+						<li><%= link_to "Welcome Letter", '#' %></li>
+						<li><%= link_to "Handbook", '#' %></li>
+						<li><%= link_to "Airport PickUp", '#' %></li>
+					</ul>
+				</li>
+				<li><%= link_to "Clubs", club_path %></li>
+				<li><%= link_to "Art Troupe", '#' %></li>
+				<li><%= link_to "Links", '#' %></li>
+			</ul>
+		</nav>
+	</div>
 </header>
