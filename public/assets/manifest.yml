@@ -21,7 +21,7 @@ sessions.js: sessions-885c1cefd9d73d37f643283b7759bd28.js
 slideshow.js: slideshow-5c9832eaa76f4acce5fceeb8e561893f.js
 users.js: users-885c1cefd9d73d37f643283b7759bd28.js
 weathers.js: weathers-885c1cefd9d73d37f643283b7759bd28.js
-application.css: application-14ddf2f9d1e4e7970e8ced320f605c6e.css
+application.css: application-2c011d6620f433f14915d744180aa779.css
 blueprint/ie.css: blueprint/ie-2dde47fa04146c250f1c50ebc867956c.css
 blueprint/plugins/buttons/icons/cross.png: blueprint/plugins/buttons/icons/cross-c2651300ae2e326a9727177155b48bf7.png
 blueprint/plugins/buttons/icons/key.png: blueprint/plugins/buttons/icons/key-9db9f7ef5cb5f66d1dd4a2adfbf0a87b.png
@@ -56,6 +56,7 @@ custom.css: custom-248ed000584f09653097abb5cdab09dd.css
 microposts.css: microposts-1441173dddcc141fd279ba3fcc9b25e3.css
 pages.css: pages-1441173dddcc141fd279ba3fcc9b25e3.css
 relationships.css: relationships-1441173dddcc141fd279ba3fcc9b25e3.css
+scaffold.css: scaffold-caea20cd8bf64f50f9d454d1d037ecfe.css
 sessions.css: sessions-1441173dddcc141fd279ba3fcc9b25e3.css
 users.css: users-1441173dddcc141fd279ba3fcc9b25e3.css
 weathers.css: weathers-1441173dddcc141fd279ba3fcc9b25e3.css
