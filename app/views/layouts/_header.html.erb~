@@ -1,6 +1,11 @@
 <header>
 	<div class="inner">
+<<<<<<< HEAD
 		<%= link_to image_tag("logo.jpg", :alt => "Chinese Student and Scholar Association of UMCP", :class => "round"), root_path %>
+=======
+		<%= link_to image_tag("logo.jpg", :alt => "Chinese Student and Scholar Association of UMCP", :class => "logo round"), root_path %>
+		<%= show_hourly_weather[0] %>
+>>>>>>> master
 		<nav id="site-nav">
 			<ul>
 				<li><%= link_to "Home", root_path %></li>

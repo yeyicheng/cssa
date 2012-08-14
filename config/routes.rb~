@@ -1,10 +1,14 @@
 Cssa::Application.routes.draw do
+<<<<<<< HEAD
+  resources :weathers
+
+=======
+	resources :weathers, :only => [:index]
+>>>>>>> master
 	resources :users
-	
 	resources :sessions, :only => [:new, :create, :destroy]
-	
 	resources :microposts, :only => [:create, :destroy]
-	
+	resources :relationships, :only => [:create, :destroy]
 	resources :users do
 		member do
 			get :following, :followers

@@ -3,12 +3,16 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'rails', '3.2.5'
+gem 'rails'
 gem "heroku"
 gem 'pg'
 gem 'gravatar_image_tag'
 gem 'will_paginate'
 gem 'faker'
+<<<<<<< HEAD
+=======
+gem 'newrelic_rpm'
+>>>>>>> master
 gem 'simple_weather'
 gem 'rufus-scheduler'
 

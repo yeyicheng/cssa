@@ -15,3 +15,7 @@ updateWeather
 scheduler.every("20m") do
 	updateWeather
 end
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> master

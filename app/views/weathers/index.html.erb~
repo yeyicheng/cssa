@@ -2,11 +2,18 @@
 
 <table>
   <tr>
+<<<<<<< HEAD
+=======
+    <th>Time</th>
+>>>>>>> master
     <th>Condition</th>
     <th>Temp c</th>
     <th>Temp f</th>
     <th>Icon url</th>
+<<<<<<< HEAD
     <th>Location</th>
+=======
+>>>>>>> master
     <th></th>
     <th></th>
     <th></th>
@@ -14,14 +21,24 @@
 
 <% @weathers.each do |weather| %>
   <tr>
+<<<<<<< HEAD
+=======
+    <td><%= weather.time %></td>
+>>>>>>> master
     <td><%= weather.condition %></td>
     <td><%= weather.temp_c %></td>
     <td><%= weather.temp_f %></td>
     <td><%= weather.icon_url %></td>
+<<<<<<< HEAD
     <td><%= weather.location %></td>
     <td><%= link_to 'Show', weather %></td>
     <td><%= link_to 'Edit', edit_weather_path(weather) %></td>
     <td><%= link_to 'Destroy', weather, confirm: 'Are you sure?', method: :delete %></td>
+=======
+    <td><%= link_to 'Show', weather %></td>
+    <td><%= link_to 'Edit', edit_weather_path(weather) %></td>
+    <td><%= link_to 'Destroy', weather, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+>>>>>>> master
   </tr>
 <% end %>
 </table>

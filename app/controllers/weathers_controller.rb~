@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 class WeathersController < ApplicationController
   # GET /weathers
   # GET /weathers.json
