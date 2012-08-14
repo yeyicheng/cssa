@@ -12,9 +12,9 @@ gem 'faker'
 <<<<<<< HEAD
 =======
 gem 'newrelic_rpm'
-gem 'simple_weather', :path => '~/Desktop/rails/simple_weather'
-gem 'rufus-scheduler'
 >>>>>>> master
+gem 'simple_weather'
+gem 'rufus-scheduler'
 
 group :development do
   gem 'rspec-rails'
