@@ -1,6 +1,5 @@
 Cssa::Application.routes.draw do
 	resources :weathers, :only => [:index]
-
 	resources :users
 	resources :sessions, :only => [:new, :create, :destroy]
 	resources :microposts, :only => [:create, :destroy]
@@ -10,6 +9,8 @@ Cssa::Application.routes.draw do
 			get :following, :followers
 		end
 	end
+	       
+	get "weathers/index"
 	
 	get "sessions/new"
 

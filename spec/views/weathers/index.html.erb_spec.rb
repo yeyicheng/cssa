@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+<<<<<<< HEAD
 describe "weathers/index" do
   before(:each) do
     assign(:weathers, [
@@ -51,4 +52,8 @@ describe "weathers/index" do
 =======
 >>>>>>> master
   end
+=======
+describe "weathers/index.html.erb" do
+  pending "add some examples to (or delete) #{__FILE__}"
+>>>>>>> old2
 end

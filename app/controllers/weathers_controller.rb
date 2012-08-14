@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 
 class WeathersController < ApplicationController
 	before_filter :authenticate, only: [:index]
 	
 	# GET /weathers
 	# GET /weathers.json
+=======
+  
+class WeathersController < ApplicationController
+	before_filter :authenticate
+	
+>>>>>>> old2
 	def index
 		@weathers = Weather.paginate(:page => params[:page])
 
@@ -12,6 +19,7 @@ class WeathersController < ApplicationController
 			format.json { render json: @weathers }
 		end
 	end
+<<<<<<< HEAD
   # GET /weathers/1
   # GET /weathers/1.json
   # def show
@@ -76,4 +84,6 @@ class WeathersController < ApplicationController
 			# format.json { head :no_content }
 		# end
 	# end
+=======
+>>>>>>> old2
 end

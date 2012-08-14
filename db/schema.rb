@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20120814005658) do
+=======
+ActiveRecord::Schema.define(:version => 20120814013439) do
+>>>>>>> old2
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
@@ -47,12 +51,21 @@ ActiveRecord::Schema.define(:version => 20120814005658) do
 
   create_table "weathers", :force => true do |t|
     t.string   "condition"
+<<<<<<< HEAD
     t.decimal  "temp_c",     :precision => 4, :scale => 1
     t.decimal  "temp_f",     :precision => 4, :scale => 1
     t.string   "icon_url"
     t.string   "location"
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
+=======
+    t.decimal  "temp_c"
+    t.decimal  "temp_f"
+    t.string   "icon_url"
+    t.string   "location"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+>>>>>>> old2
   end
 
 end

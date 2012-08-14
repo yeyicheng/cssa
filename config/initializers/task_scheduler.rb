@@ -8,6 +8,7 @@ def updateWeather
 	w = SimpleWeather::Weather.new
 	attr = w.updateWeather		
 	@weather = Weather.create(attr)
+	Weather.create(attr)
 end
 
 updateWeather

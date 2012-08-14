@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Listing weathers</h1>
 
 <table>
@@ -46,3 +47,7 @@
 <br />
 
 <%= link_to 'New Weather', new_weather_path %>
+=======
+<h1>Weathers#index</h1>
+<p>Find me in app/views/weathers/index.html.erb</p>
+>>>>>>> old2
