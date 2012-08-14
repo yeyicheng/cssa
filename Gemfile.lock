@@ -128,7 +128,6 @@ GEM
     rufus-scheduler (2.0.17)
       tzinfo (>= 0.3.23)
     sass (3.1.20)
-    sass (3.2.0)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -167,6 +166,7 @@ DEPENDENCIES
   heroku
   jquery-rails
   newrelic_rpm
+  nokogiri
   pg
   rails
   rspec

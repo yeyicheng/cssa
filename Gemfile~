@@ -9,10 +9,7 @@ gem 'pg'
 gem 'gravatar_image_tag'
 gem 'will_paginate'
 gem 'faker'
-<<<<<<< HEAD
-=======
 gem 'newrelic_rpm'
->>>>>>> master
 gem 'simple_weather'
 gem 'rufus-scheduler'
 

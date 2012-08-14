@@ -12,6 +12,7 @@ gem 'faker'
 gem 'newrelic_rpm'
 gem 'simple_weather'
 gem 'rufus-scheduler'
+gem 'nokogiri'
 
 group :development do
   gem 'rspec-rails'
