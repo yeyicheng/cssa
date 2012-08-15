@@ -1,7 +1,7 @@
 module WeathersHelper
 	def getLatestWeatherIcon
 		w = Weather.all.first
-		image_tag('http://www.google.com' << w.icon_url, size: '50x50', class: 'weather_icon round')
+		link_to image_tag('http://www.google.com' << w.icon_url, size: '50x50', class: 'weather_icon round'), weathers_path
 	end
 
 	def getLatestWeatherCondition

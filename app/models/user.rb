@@ -69,6 +69,18 @@ class User < ActiveRecord::Base
 		relationships.find_by_followed_id(followed).destroy
 	end
 	
+	def joined?(club)
+		org_relationships.find_by_club_id(club.id)
+	end
+	
+	def join!(club)
+		org_relationships.create!(club_id: club.id)
+	end
+	
+	def quit!(club)
+		org_relationships.find_by_club_id(club.id).destroy
+	end
+	
 	def feed
 		Micropost.from_users_followed_by(self)
 	end

@@ -24,4 +24,16 @@ class Organizations < ActiveRecord::Base
 	validates :email, presence: true, format: { with: email_regex }, uniqueness: true
 	validates :descrption, presence: true, length: { maximum: 300, minimum: 5 }
 	validates :logo_url, presence: true, format: { with: url_regex }
+
+	def has_member?(member)
+		reverse_orgrelationships.find_by_member_id(member.id)
+	end
+	
+	def accept!(member)
+		reverse_orgrelationships.create!(member_id: member.id)
+	end
+	
+	def remove!(member)
+		reverse_orgrelationships.find_by_member_id(member.id).destroy
+	end
 end

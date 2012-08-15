@@ -10,7 +10,7 @@ class CreateWeathers < ActiveRecord::Migration
 			
 			t.timestamps
 		end
-		
-		add_index :weathers, :time, unique: true
 	end
+	
+	add_index :weathers, :time, unique: true
 end

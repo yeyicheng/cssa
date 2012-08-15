@@ -7,7 +7,8 @@ scheduler = Rufus::Scheduler.start_new
 def updateWeather
 	w = SimpleWeather::Weather.new
 	attr = w.updateWeather
-	Weather.create(attr)
+	weather = Weather.new(attr)
+	weather.save
 end
  
 updateWeather
