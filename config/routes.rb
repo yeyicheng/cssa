@@ -29,6 +29,12 @@ Cssa::Application.routes.draw do
 	get "pages/club"
 
 	get "pages/home"
+	
+	get "pages/news"
+
+	get "pages/art"
+	
+	get "pages/links"
 
 	root :to => 'pages#home'
 	
@@ -39,7 +45,19 @@ Cssa::Application.routes.draw do
 	match '/club', :to => "pages#club"
 
 	match '/home', :to => "pages#home"
-
+                                        
+	match '/welcome', :to => "pages#welcome"
+	
+	match '/service', :to => "pages#service"
+	
+	match '/handbook', :to => "pages#handbook"
+	
+	match '/art', :to => "pages#art"
+	
+	match '/links', :to => "pages#links"
+	
+	match '/news', :to => "pages#news"
+	
 	match '/sign_up', :to => "users#new"
 
 	match '/sign_in', :to => "sessions#new"
@@ -48,7 +66,7 @@ Cssa::Application.routes.draw do
 	
 	match '/users', :to => "users#index"
 
-  
+	
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

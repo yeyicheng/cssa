@@ -5,6 +5,14 @@ FactoryGirl.define do
 		password	"foobar"
 		password_confirmation	"foobar"
 	end
+	
+	factory :weather do
+		condition	"fair"
+		temp_c		30.1
+		temp_f		80.2
+		icon_url	"/img.png"
+		location	"College Park"
+	end
 end
 
 FactoryGirl.define do

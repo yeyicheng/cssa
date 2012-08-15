@@ -25,4 +25,5 @@ class PagesController < ApplicationController
 	def sign_in
 		@title = 'Sign in'
 	end
+
 end

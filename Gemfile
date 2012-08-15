@@ -26,6 +26,8 @@ group :test do
   gem 'annotate'
   gem 'factory_girl_rails'
   gem 'autotest'
+  gem 'autotest-fsevent'
+  gem 'autotest-growl'
 end
 
 # Gems used only for assets and not required

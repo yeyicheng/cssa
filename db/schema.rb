@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20120814005658) do
-=======
-ActiveRecord::Schema.define(:version => 20120814013439) do
->>>>>>> old2
+ActiveRecord::Schema.define(:version => 20120814234341) do
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
@@ -25,6 +21,24 @@ ActiveRecord::Schema.define(:version => 20120814013439) do
   end
 
   add_index "microposts", ["user_id"], :name => "index_microposts_on_user_id"
+
+  create_table "org_relationships", :force => true do |t|
+    t.integer  "club_id"
+    t.integer  "member_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "organizations", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "email"
+    t.string   "logo_url"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "organizations", ["name"], :name => "index_organizations_on_name", :unique => true
 
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"
@@ -50,22 +64,16 @@ ActiveRecord::Schema.define(:version => 20120814013439) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
   create_table "weathers", :force => true do |t|
+    t.string   "time"
     t.string   "condition"
-<<<<<<< HEAD
-    t.decimal  "temp_c",     :precision => 4, :scale => 1
-    t.decimal  "temp_f",     :precision => 4, :scale => 1
-    t.string   "icon_url"
-    t.string   "location"
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
-=======
     t.decimal  "temp_c"
     t.decimal  "temp_f"
     t.string   "icon_url"
     t.string   "location"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
->>>>>>> old2
   end
+
+  add_index "weathers", ["time"], :name => "index_weathers_on_time", :unique => true
 
 end

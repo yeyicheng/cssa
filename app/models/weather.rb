@@ -3,6 +3,7 @@
 # Table name: weathers
 #
 #  id         :integer          not null, primary key
+#  time       :string(255)
 #  condition  :string(255)
 #  temp_c     :decimal(, )
 #  temp_f     :decimal(, )
@@ -14,7 +15,7 @@
 
 class Weather < ActiveRecord::Base
 	default_scope :order => 'weathers.created_at DESC'
-	attr_accessible :condition, :icon_url, :temp_c, :temp_f, :location, :created_at
+	attr_accessible :condition, :icon_url, :temp_c, :temp_f, :location, :time
 
-	validates :condition, :icon_url, :temp_c, :temp_f, :location, :presence => true
+	validates :condition, :icon_url, :temp_c, :temp_f, :location, :time, :presence => true
 end

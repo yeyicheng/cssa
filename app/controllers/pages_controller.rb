@@ -25,5 +25,28 @@ class PagesController < ApplicationController
 	def sign_in
 		@title = 'Sign in'
 	end
-
+	
+	def welcome
+		@title = 'Welcome'
+	end
+  
+	def service
+		@title = 'Services'
+	end
+  
+	def handbook
+		@title = 'Handbook'
+	end
+  
+	def news
+		@title = 'News'
+	end
+	
+	def links
+		@title = 'Links'
+	end
+	
+	def art
+		@title = 'Art'
+	end
 end

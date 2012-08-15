@@ -21,7 +21,7 @@ describe PagesController do
 		describe "when signed in" do
 			before (:each) do
 				@user = FactoryGirl.create(:user)
-				test_sign_in(@user)
+				test_sign_in @user 
 				@other_user = FactoryGirl.create(:user, :email => FactoryGirl.generate(:email))
 				@other_user.follow!(@user)
 			end

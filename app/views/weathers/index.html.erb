@@ -5,7 +5,7 @@
 		<%= will_paginate %>
 			<% @weathers.each do |w| %>
 				<li>
-					<span><%= w.created_at %></span>
+					<span><%= w.time %></span>
 					<span><%= w.condition %></span>
 					<span><%= w.temp_c %></span>
 					<span><%= w.temp_f %></span>

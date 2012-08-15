@@ -1,0 +1,3 @@
+class Organizations < ActiveRecord::Base
+  attr_accessible :description, :email, :logo_url, :name
+end
