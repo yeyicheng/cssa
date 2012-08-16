@@ -5,7 +5,8 @@ class SessionsController < ApplicationController
 	end
 	
 	def create
-		user = User.authenticate(params[:session][:email], params[:session][:password])
+		# user = User.authenticate(params[:session][:email], params[:session][:password])
+		user = User.find_or_create_from_auth_hash(auth_hash)
 		if user.nil?
 			# Create an error message and re-render the signin form.
 			flash.now[:error] = "Invalid email/password combination."
@@ -21,5 +22,11 @@ class SessionsController < ApplicationController
 	def destroy
 		sign_out
 		redirect_to root_path
+	end
+	
+	protected
+
+	def auth_hash
+		request.env['omniauth.auth']
 	end
 end

@@ -15,8 +15,10 @@ gem 'rufus-scheduler'
 gem 'nokogiri'
 gem 'mysql2'
 gem 'omniauth-facebook'
-
-require 'oauth2'
+gem 'sinatra'
+gem 'omniauth'
+gem 'devise'
+require 'devise'
 group :development do
   gem 'rspec-rails'
   gem 'annotate'

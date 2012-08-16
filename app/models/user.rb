@@ -13,6 +13,11 @@
 #
 
 class User < ActiveRecord::Base
+	devise :database_authenticatable, :oauthable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable,
+         :confirmable, :lockable
+         
+	has_many :identities, dependent: :destroy
 	has_many :microposts, dependent: :destroy
 	
 	has_many :relationships, foreign_key: "follower_id", dependent: :destroy
@@ -36,6 +41,10 @@ class User < ActiveRecord::Base
 						 :length => { :within => 6..40 }
 						 
 	before_save :encrypt_password
+	
+	def self.create_with_omniauth(info)
+		create(name: info['name'], email: info['email'])
+	end
 	
 	def feed
 		Micropost.where("user_id = ?", id)
