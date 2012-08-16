@@ -10,10 +10,6 @@ class PagesController < ApplicationController
 		end
 	end
   
-	def club
-		@title = 'Clubs'
-	end
-  
 	def contact
 		@title = 'Contact'
 	end

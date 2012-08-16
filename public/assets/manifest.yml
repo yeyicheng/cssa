@@ -6,6 +6,7 @@
 arrows.png: arrows-9b740bdef9d7fe6b48443d61fe0f8a3d.png
 bg.jpg: bg-d7a794c1b944f23659be613afb9df83b.jpg
 facebook.png: facebook-072e3b7cb2dc79156579660078572105.png
+fb_button.png: fb_button-5c5750b27cc8759f735f49a5ad2a4263.png
 logo.jpg: logo-9526056f56cf1b87b53c5833c242d620.jpg
 myfav.png: myfav-f0a4db161f2a3d35c79753d244b46da8.png
 rails.png: rails-be8732dac73d845ac5b142c8fb5f9fb0.png
@@ -14,7 +15,9 @@ twitter.png: twitter-ce8f13094c1389d60c07acb8484f70c9.png
 weibo.png: weibo-b9c187000b50b8245b9c8c3bcefd6b37.png
 youtube.png: youtube-dff7413d9121623085f61fbd2813a8cd.png
 application.js: application-166040fff53d136ef5f9a5b9f046677c.js
+forums.js: forums-885c1cefd9d73d37f643283b7759bd28.js
 microposts.js: microposts-885c1cefd9d73d37f643283b7759bd28.js
+oauth.js: oauth-885c1cefd9d73d37f643283b7759bd28.js
 organizations.js: organizations-885c1cefd9d73d37f643283b7759bd28.js
 pages.js: pages-885c1cefd9d73d37f643283b7759bd28.js
 relationships.js: relationships-885c1cefd9d73d37f643283b7759bd28.js
@@ -22,7 +25,7 @@ sessions.js: sessions-885c1cefd9d73d37f643283b7759bd28.js
 slideshow.js: slideshow-5c9832eaa76f4acce5fceeb8e561893f.js
 users.js: users-885c1cefd9d73d37f643283b7759bd28.js
 weathers.js: weathers-885c1cefd9d73d37f643283b7759bd28.js
-application.css: application-ad620e133c1243f16505d0350051cedb.css
+application.css: application-be644bc1e67eed4c1b642a89f46648e7.css
 blueprint/ie.css: blueprint/ie-2dde47fa04146c250f1c50ebc867956c.css
 blueprint/plugins/buttons/icons/cross.png: blueprint/plugins/buttons/icons/cross-c2651300ae2e326a9727177155b48bf7.png
 blueprint/plugins/buttons/icons/key.png: blueprint/plugins/buttons/icons/key-9db9f7ef5cb5f66d1dd4a2adfbf0a87b.png
@@ -54,7 +57,9 @@ blueprint/src/print.css: blueprint/src/print-2646be8778b0583014938ac2b9819e5f.cs
 blueprint/src/reset.css: blueprint/src/reset-d8a6316266b2f7234a39476a04ef5fb8.css
 blueprint/src/typography.css: blueprint/src/typography-d0cdbc998745de23e687ac3851ef7cfd.css
 custom.css: custom-2e3f322c8768ae02ec138f3e9ba6f62c.css
+forums.css: forums-1441173dddcc141fd279ba3fcc9b25e3.css
 microposts.css: microposts-1441173dddcc141fd279ba3fcc9b25e3.css
+oauth.css: oauth-1441173dddcc141fd279ba3fcc9b25e3.css
 organizations.css: organizations-1441173dddcc141fd279ba3fcc9b25e3.css
 pages.css: pages-1441173dddcc141fd279ba3fcc9b25e3.css
 relationships.css: relationships-1441173dddcc141fd279ba3fcc9b25e3.css

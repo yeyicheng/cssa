@@ -1,29 +1,29 @@
 <table class="profile" summary="Profile information">
-		<td class="main">
-			<h1>
-				<%= gravatar_for @user %>
-				<%= @user.name %>
-			</h1>
-			<%= render 'follow_form' if signed_in? %>
-			<%= @user.email %>
-			<% unless @user.microposts.empty? %>
-				<table class="microposts" summary="User microposts">
-					<%= render 'shared/feed' %>
-				</table>
-			<% end %>
-		</td>
-		<td>
-			<table>
-				<div class="sidebar round">
-					<%= render 'shared/user_info' %>
-					<span>Member since: </span>
-					<%= current_user[:created_at].strftime("%Y-%b-%d") %><br />
-				</div>
-				<div class="main round">
-					<h3 class="micropost">What's up?</h3>
-					<%= render 'shared/micropost_form' %>
-					<%= render 'shared/feed' %>
-				</div>
+	<td class="main">
+		<h1>
+			<%= gravatar_for @user %>
+			<%= @user.name %>
+		</h1>
+		<%= render 'follow_form' if signed_in? %>
+		<%= @user.email %>
+		<% unless @user.microposts.empty? %>
+			<table class="microposts" summary="User microposts">
+				<%= render 'shared/feed' %>
 			</table>
-		</td>
+		<% end %>
+	</td>
+	<td>
+		<table>
+			<div class="sidebar round">
+				<%= render 'shared/user_info' %>
+				<span>Member since: </span>
+				<%= current_user[:created_at].strftime("%Y-%b-%d") %><br />
+			</div>
+			<div class="main round">
+				<h3 class="micropost">What's up?</h3>
+				<%= render 'shared/micropost_form' %>
+				<%= render 'shared/feed' %>
+			</div>
+		</table>
+	</td>
 </table>

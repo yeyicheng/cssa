@@ -1,2 +1,19 @@
-<h1>Pages#art</h1>
-<p>Find me in app/views/pages/art.html.erb</p>
+<table class="profile" summary="Profile information">%>
+	<td class="main">
+		<%# <% @results.each do |post| %> %>
+			<%# <%= render 'art', :post => post %> 
+		<%# <% end %> %>
+	</td>
+	<td>
+		<table>
+			<% if signed_in? %>
+				<div class="sidebar round">
+					<%= render 'shared/user_info' %>
+					<span>Member since: </span>
+					<%= current_user[:created_at].strftime("%Y-%b-%d") %><br />
+					<%= render 'facebook' %>
+				</div>
+			<% end %>
+		</table>
+	</td>
+</table>

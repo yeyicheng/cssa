@@ -44,5 +44,6 @@ class PagesController < ApplicationController
 	
 	def art
 		@title = 'Art'
+		# @results = getFeed['data']
 	end
 end

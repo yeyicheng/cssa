@@ -1,4 +1,6 @@
 Cssa::Application.routes.draw do
+  get "oauth/index"
+
 	resources :organizations
 	resources :weathers, :only => [:index]
 	resources :users
@@ -75,6 +77,7 @@ Cssa::Application.routes.draw do
 
 	match '/organizations', to: 'organizations#index'
 	
+	match '/oauth2/callback', to: 'oauth#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

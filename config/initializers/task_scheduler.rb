@@ -11,7 +11,7 @@ def updateWeather
 	weather.save
 end
  
-updateWeather
+# updateWeather
  
 scheduler.every("30m") do
 	updateWeather

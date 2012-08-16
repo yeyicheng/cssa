@@ -1,0 +1,28 @@
+<table>
+	<td>
+		<%= link_to image_tag('https://graph.facebook.com/' << post['from']['id'] << '/picture'), 'http://facebook.com/' << post['from']['id'] %>
+	</td>
+	<td>
+		<%= link_to post['from']['name'], 'http://facebook.com/' << post['from']['id'] %><br \>
+		<%= post['message'] %>
+		<table>
+			<td>
+				<%= link_to image_tag(post['picture']), post['link'] %>
+			</td>
+			<td>
+				<%= link_to post['name'], post['link'] %>
+				<%= post['caption'] %>
+				<%= post['description'] %>
+			</td>
+		</table>
+		<div id="share">
+			<fb:share-button class="meta">
+				<meta name='title' content = post['name'] />
+				<meta name='description' content = post['description'] />
+				<link rel='image_src' href = post['picture'] /> 
+				<link rel='target_url' href = post['link'] />
+			</fb:share-button>
+		</div>
+	</td>
+</table>
+

@@ -15,15 +15,9 @@ Cssa::Application.routes.draw do
 
 	get "organizations/new"
 	
-	get "organizations/create"
-	
 	get "organizations/edit"
 	
-	get "organizations/update"
-	
 	get "organizations/show"
-	
-	get "organizations/destroy"
 	
 	get "weathers/index"
 	
@@ -40,8 +34,6 @@ Cssa::Application.routes.draw do
 	get "pages/contact"
 
 	get "pages/about"
-
-	get "pages/club"
 
 	get "pages/home"
 	
@@ -81,6 +73,7 @@ Cssa::Application.routes.draw do
 	
 	match '/users', :to => "users#index"
 
+	match '/organizations', to: 'organizations#index'
 	
   # The priority is based upon order of creation:
   # first created -> highest priority.
