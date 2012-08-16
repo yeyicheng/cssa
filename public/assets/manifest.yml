@@ -16,6 +16,7 @@ weibo.png: weibo-b9c187000b50b8245b9c8c3bcefd6b37.png
 youtube.png: youtube-dff7413d9121623085f61fbd2813a8cd.png
 application.js: application-166040fff53d136ef5f9a5b9f046677c.js
 forums.js: forums-885c1cefd9d73d37f643283b7759bd28.js
+identities.js: identities-885c1cefd9d73d37f643283b7759bd28.js
 microposts.js: microposts-885c1cefd9d73d37f643283b7759bd28.js
 oauth.js: oauth-885c1cefd9d73d37f643283b7759bd28.js
 organizations.js: organizations-885c1cefd9d73d37f643283b7759bd28.js
@@ -25,7 +26,7 @@ sessions.js: sessions-885c1cefd9d73d37f643283b7759bd28.js
 slideshow.js: slideshow-5c9832eaa76f4acce5fceeb8e561893f.js
 users.js: users-885c1cefd9d73d37f643283b7759bd28.js
 weathers.js: weathers-885c1cefd9d73d37f643283b7759bd28.js
-application.css: application-be644bc1e67eed4c1b642a89f46648e7.css
+application.css: application-849c5c44b21cb64e318ec99f2a802995.css
 blueprint/ie.css: blueprint/ie-2dde47fa04146c250f1c50ebc867956c.css
 blueprint/plugins/buttons/icons/cross.png: blueprint/plugins/buttons/icons/cross-c2651300ae2e326a9727177155b48bf7.png
 blueprint/plugins/buttons/icons/key.png: blueprint/plugins/buttons/icons/key-9db9f7ef5cb5f66d1dd4a2adfbf0a87b.png
@@ -58,6 +59,7 @@ blueprint/src/reset.css: blueprint/src/reset-d8a6316266b2f7234a39476a04ef5fb8.cs
 blueprint/src/typography.css: blueprint/src/typography-d0cdbc998745de23e687ac3851ef7cfd.css
 custom.css: custom-2e3f322c8768ae02ec138f3e9ba6f62c.css
 forums.css: forums-1441173dddcc141fd279ba3fcc9b25e3.css
+identities.css: identities-1441173dddcc141fd279ba3fcc9b25e3.css
 microposts.css: microposts-1441173dddcc141fd279ba3fcc9b25e3.css
 oauth.css: oauth-1441173dddcc141fd279ba3fcc9b25e3.css
 organizations.css: organizations-1441173dddcc141fd279ba3fcc9b25e3.css
