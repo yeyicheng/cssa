@@ -18,8 +18,6 @@ gem 'omniauth-facebook'
 gem 'sinatra'
 gem 'omniauth'
 gem 'devise'
-require 'devise'
-require 'omniauth'
 
 group :development do
   gem 'rspec-rails'
