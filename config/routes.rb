@@ -1,4 +1,6 @@
 Cssa::Application.routes.draw do
+	devise_for :users
+
 	get "oauth/index"
   	
 	resources :identities, :only => [:index, :create]
@@ -35,6 +37,7 @@ Cssa::Application.routes.draw do
 	match '/about', :to => "pages#about"
 	match '/club', :to => "organizations#index"
 	match '/home', :to => "pages#home"
+	match '/links', to: "pages#link"
 	match '/welcome', :to => "pages#welcome"
 	match '/service', :to => "pages#service"
 	match '/handbook', :to => "pages#handbook"
