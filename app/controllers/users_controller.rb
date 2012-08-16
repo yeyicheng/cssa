@@ -62,7 +62,9 @@ class UsersController < ApplicationController
 			store_location
 			@micropost = Micropost.new
 			@feed_items = @microposts
-			@microposts = current_user.microposts.paginate(:page => params[:page], :per_page => 8)
+			@microposts = current_user.micropost=======
+
+>>>>>>> oooble cachings.paginate(:page => params[:page], :per_page => 8)
 		end
 	end
 	

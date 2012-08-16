@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   	attr_accessible :remember_me
 	devise :database_authenticatable, :omniauthable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable, :lockable, :ldap_authenticatable
+         :confirmable, :lockable
          
 	has_many :identities, dependent: :destroy
 	has_many :microposts, dependent: :destroy
