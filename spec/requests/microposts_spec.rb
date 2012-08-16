@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe "Microposts" do
-	before(:each) do
+	before do
+		FactoryGirl.create(:weather)
 		user = FactoryGirl.create(:user)
 		visit sign_in_path
 		fill_in :email, :with => user.email

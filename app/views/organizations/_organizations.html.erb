@@ -1,0 +1,8 @@
+<li>
+	<%= image_tag organizations[:logo_url], :size => 30 %>
+	<%= link_to organizations[:name], organizations %>
+	<% if current_user.admin? %>
+		| <%= link_to "Delete", organizations, :method => :delete, :confirm => "You sure?",
+		:title => "Delete #{organizations.name}" %>
+	<% end %>
+</li>

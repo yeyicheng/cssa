@@ -2,6 +2,11 @@ require 'spec_helper'
 
 describe MicropostsController do
 	render_views
+	
+	before do
+		FactoryGirl.create(:weather)
+	end
+	
 	describe "access control" do
 		it "should deny access to 'create'" do
 			post :create

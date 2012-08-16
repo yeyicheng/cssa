@@ -3,6 +3,7 @@ class WeathersController < ApplicationController
 	before_filter :authenticate
 	
 	def index
+		@title = Weather
 		@weathers = Weather.paginate(:page => params[:page])
 
 		respond_to do |format|

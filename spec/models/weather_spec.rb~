@@ -3,6 +3,7 @@
 # Table name: weathers
 #
 #  id         :integer          not null, primary key
+#  time       :string(255)
 #  condition  :string(255)
 #  temp_c     :decimal(, )
 #  temp_f     :decimal(, )
@@ -15,5 +16,5 @@
 require 'spec_helper'
 
 describe Weather do
-  pending "add some examples to (or delete) #{__FILE__}"
+
 end

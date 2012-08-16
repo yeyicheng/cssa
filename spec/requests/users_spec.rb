@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe "Users" do
+	before do
+		FactoryGirl.create(:weather)
+	end
 	describe "Following/ followers" do
 		before do
 			@follower = FactoryGirl.create(:user)

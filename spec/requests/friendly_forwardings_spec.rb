@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe "FriendlyForwardings" do
+	before do
+		FactoryGirl.create(:weather)
+	end
 	it "should forward to the requested page after signin" do
 		user = FactoryGirl.create(:user)
 		visit edit_user_path(user)

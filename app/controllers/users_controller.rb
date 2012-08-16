@@ -1,7 +1,8 @@
 
 class UsersController < ApplicationController
-	before_filter :authenticate, :except => [:show, :new, :create]
+	before_filter :authenticate, :except => [:new, :create]
 	before_filter :correct_user, :only => [:edit, :update]
+	before_filter :admin_auth, :only => [:destroy]
 	
 	def new
 		if signed_in?
@@ -67,25 +68,19 @@ class UsersController < ApplicationController
 	
 	def index
 		@title = "All users"
-		@users = User.paginate(:page => params[:page])
+		@users = User.paginate(:page => params[:page], :per_page => 20)
 		@feed_items = current_user.feed.paginate(:page => params[:page], :per_page => 20)
 	end
 
 	def destroy
-		if !signed_in?
-			redirect_to sign_in_path
-		elsif current_user.admin?
-			@user = User.find(params[:id])
-			if @user.admin?
-				flash[:error] = "Cannot delete administrators."
-			else
-				@user.destroy
-				flash[:success] = "User #{@user[:name]} deleted."
-			end
-			redirect_to users_path
+		@user = User.find(params[:id])
+		if @user.admin?
+			flash[:error] = "Cannot delete administrators."
 		else
-			redirect_to root_path
+			@user.destroy
+			flash[:success] = "User #{@user[:name]} deleted."
 		end
+		redirect_to users_path
 	end
 	
 	def following

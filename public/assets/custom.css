@@ -158,26 +158,6 @@ footer nav {
 	float: none;
 }
 
-/* User show page */
-table.profile {
-	width: 100%;
-	margin-bottom: 0;
-}
-td.main {
-	width: 70%;
-	padding: 1em;
-}
-td.sidebar {
-	width: 30%;
-	padding: 1em;
-	vertical-align: top;
-	background: #ffc;
-}
-.profile img.gravatar {
-	border: 1px solid #999;
-	margin-bottom: -15px;
-}
-
 /* Sign up form */
 div.field, div.actions {
 	margin-bottom: 10px;
@@ -188,6 +168,9 @@ div.field, div.actions {
 }
 .row_left {
 	border: 1px solid black;
+	vertical-align: top;
+	padding: 10px;
+	width: 70%
 }
 .first_row .row_right {
 	padding: 10px;
@@ -233,28 +216,43 @@ a.sign_in_button {
 	border-radius: 5px;
 }
 
+/* Home forum feeds */
+td.row_left table.forum_feeds{
+	border: 1px solid #000;	
+}
+
+/* User show page */
+table.profile {
+	width: 100%;
+}
+td.main {
+	width: 70%;
+	padding: 1em;
+	vertical-align: top;
+}
+
 /* User panel */
-.row_right div.sidebar {
+.sidebar {
 	border: 1px solid #000;
 	padding: 10px;
 	background: #fff;
 }
-.row_right div.user_info {
+div.user_info {
 	width: 300px;	
 }
-.row_right div.user_info img {
+div.user_info img {
 	padding-right: 0.1em;
 }
-.row_right div.user_info a {
+div.user_info a {
 	text-decoration: none;
 }
-.row_right div.user_info span.user_name {
+div.user_info span.user_name {
 	display: block;
 }
-.row_right div.user_info span.microposts {
+div.user_info span.microposts {
 	font-size: 80%;
 }
-.row_right #micropost_content {
+#micropost_content {
 	width: 300px;
 	height: 30px;	
 }
@@ -374,10 +372,10 @@ table.microposts tr td.micropost span.timestamp {
 	font-size: 85%;
 	color: #666;
 }
-table.profile td.sidebar #micropost_content {
-	height: 30px;
-	width: 300px;
+table.profile .main{
+		
 }
+
 .content {
 	white-space: pre-wrap;
 	white-space: -o-pre-wrap; /* Opera 7 */

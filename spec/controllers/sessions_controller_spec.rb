@@ -2,7 +2,11 @@ require 'spec_helper'
 
 describe SessionsController do
 	render_views
-		
+	
+	before do
+		FactoryGirl.create(:weather)
+	end
+	
 	describe "GET 'new'" do
 		it "should be successful" do
 			get :new

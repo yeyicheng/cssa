@@ -18,4 +18,5 @@ class Weather < ActiveRecord::Base
 	attr_accessible :condition, :icon_url, :temp_c, :temp_f, :location, :time
 
 	validates :condition, :icon_url, :temp_c, :temp_f, :location, :time, :presence => true
+	validates :time, :uniqueness => true
 end

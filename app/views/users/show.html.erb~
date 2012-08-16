@@ -5,6 +5,7 @@
 				<%= gravatar_for @user %>
 				<%= @user.name %>
 			</h1>
+			<%= render 'follow_form' if signed_in? %>
 			<%= @user.email%>
 			<% unless @user.microposts.empty? %>
 				<table class="microposts" summary="User microposts">
@@ -12,23 +13,17 @@
 				</table>
 			<% end %>
 		</td>
-		<td class="sidebar round">
-			<strong>Name</strong> 
-			<%= @user.name %>
-			<% if correct_user? %>
-				<%= link_to "Edit", edit_user_path, :class => "profile_links" %>
-			<% end %>
-			<br />
-			<strong>URL</strong> <%= link_to user_path(@user), @user %><br />
-			<strong>Microposts</strong> <%= @user.microposts.count %>
-			<h3 class="micropost">What's up?</h3>
-			<%= render 'shared/micropost_form' %>
-			<% unless @user.microposts.empty? %>
-				<table class="microposts" summary="User microposts">
-					<%= render @microposts %>
-					<%= will_paginate @microposts%>
-				</table>
-			<% end %>
+		<td>
+			<div class="sidebar round">
+				<%= render 'shared/user_info' %>
+				<span>Member since: </span>
+				<%= current_user[:created_at].strftime("%Y-%b-%d") %><br />
+			</div>
+			<div class="main round">
+				<h3 class="micropost">What's up?</h3>
+				<%= render 'shared/micropost_form' %>
+				<%= render 'shared/feed' %>
+			</div>
 		</td>
 	</tr>
 </table>

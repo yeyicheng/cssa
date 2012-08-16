@@ -6,6 +6,7 @@ namespace :db do
 			make_users
 			make_microposts
 			make_relationships
+			make_clubs
 		end
 	end
 	def make_users
@@ -39,4 +40,16 @@ namespace :db do
 		followers = users[3..40]
 		following.each { |followed| user.follow!(followed) }
 		followers.each { |follower| follower.follow!(user) }
+	end
+	def make_clubs
+		99.times do |n|
+			name = Faker::Name.name
+			email = "example-#{n+1}@railstutorial.org"
+			logo_url = 'logo.png'
+			description = 'please add description'
+			Organizations.create!(:name => name,
+						:email => email,
+						:logo_url => logo_url,
+						:description => description)
+		end
 	end

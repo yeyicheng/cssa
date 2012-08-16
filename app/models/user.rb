@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
 	has_many :reverse_relationships, foreign_key: "followed_id", class_name: "Relationship", dependent: :destroy
 	has_many :followers, through: :reverse_relationships, source: :follower
 	
-	has_many :org_relationships, foreign_key: "member_id", dependent: :destroy
+	has_many :org_relationships, foreign_key: "member_id", dependent: :destroy, class_name: "OrgRelationships"
 	has_many :clubs, through: :org_relationships, source: :member
 	
 	attr_accessor :password

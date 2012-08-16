@@ -1,4 +1,5 @@
 Cssa::Application.routes.draw do
+	resources :organizations
 	resources :weathers, :only => [:index]
 	resources :users
 	resources :sessions, :only => [:new, :create, :destroy]
@@ -10,6 +11,20 @@ Cssa::Application.routes.draw do
 		end
 	end
 	       
+	get "organizations/index"
+
+	get "organizations/new"
+	
+	get "organizations/create"
+	
+	get "organizations/edit"
+	
+	get "organizations/update"
+	
+	get "organizations/show"
+	
+	get "organizations/destroy"
+	
 	get "weathers/index"
 	
 	get "sessions/new"
@@ -42,7 +57,7 @@ Cssa::Application.routes.draw do
 
 	match '/about', :to => "pages#about"
 
-	match '/club', :to => "pages#club"
+	match '/club', :to => "organizations#index"
 
 	match '/home', :to => "pages#home"
                                         

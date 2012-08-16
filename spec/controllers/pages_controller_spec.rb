@@ -3,6 +3,10 @@ require 'spec_helper'
 describe PagesController do
 	render_views
 
+	before do
+		FactoryGirl.create(:weather)
+	end
+	
 	describe "GET 'home'" do
 		describe "when not signed in" do
 			before do
@@ -12,7 +16,6 @@ describe PagesController do
 			it "returns http success" do
 				response.should be_success
 			end
-	
 			it "should have the right title" do
 				response.should have_selector("title", :content => "Chinese Student and Scholar Association of UMCP | Home")
 			end
@@ -23,29 +26,20 @@ describe PagesController do
 				@user = FactoryGirl.create(:user)
 				@other_user = FactoryGirl.create(:user, :email => FactoryGirl.generate(:email))
 				@other_user.follow!(@user)
+				alias_test_sign_in @user
+				get :home
 			end
 			
-			it "should have the right follower/following counts" do
-				# get :home
-				# test_sign_in(@user) 
-				# response.should have_selector("a", :href => following_user_path(@user),
-				# :content => "0 following")
-				# response.should have_selector("a", :href => followers_user_path(@user),
-				# :content => "1 follower")
+			it "should have the right follower/following counts" do 
+				response.should have_selector("a", :href => following_user_path(@user),
+				:content => "0 followings")
+				response.should have_selector("a", :href => followers_user_path(@user),
+				:content => "1 follower")
 			end
-		end
-	end
-
-	describe "GET 'club'" do
-		before do
-			get :club
-		end
-		it "returns http success" do
-			response.should be_success
-		end
-
-		it "should have the right title" do
-			response.should have_selector("title", :content => "Chinese Student and Scholar Association of UMCP | Clubs")
+			
+			it "should show the weather icon" do
+				response.should have_selector('img', :class => 'weather_icon round')
+			end
 		end
 	end
 	

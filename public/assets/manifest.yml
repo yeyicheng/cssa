@@ -15,13 +15,14 @@ weibo.png: weibo-b9c187000b50b8245b9c8c3bcefd6b37.png
 youtube.png: youtube-dff7413d9121623085f61fbd2813a8cd.png
 application.js: application-166040fff53d136ef5f9a5b9f046677c.js
 microposts.js: microposts-885c1cefd9d73d37f643283b7759bd28.js
+organizations.js: organizations-885c1cefd9d73d37f643283b7759bd28.js
 pages.js: pages-885c1cefd9d73d37f643283b7759bd28.js
 relationships.js: relationships-885c1cefd9d73d37f643283b7759bd28.js
 sessions.js: sessions-885c1cefd9d73d37f643283b7759bd28.js
 slideshow.js: slideshow-5c9832eaa76f4acce5fceeb8e561893f.js
 users.js: users-885c1cefd9d73d37f643283b7759bd28.js
 weathers.js: weathers-885c1cefd9d73d37f643283b7759bd28.js
-application.css: application-2c011d6620f433f14915d744180aa779.css
+application.css: application-ad620e133c1243f16505d0350051cedb.css
 blueprint/ie.css: blueprint/ie-2dde47fa04146c250f1c50ebc867956c.css
 blueprint/plugins/buttons/icons/cross.png: blueprint/plugins/buttons/icons/cross-c2651300ae2e326a9727177155b48bf7.png
 blueprint/plugins/buttons/icons/key.png: blueprint/plugins/buttons/icons/key-9db9f7ef5cb5f66d1dd4a2adfbf0a87b.png
@@ -52,8 +53,9 @@ blueprint/src/ie.css: blueprint/src/ie-b0b7921bcb824cb504be5975f623e07d.css
 blueprint/src/print.css: blueprint/src/print-2646be8778b0583014938ac2b9819e5f.css
 blueprint/src/reset.css: blueprint/src/reset-d8a6316266b2f7234a39476a04ef5fb8.css
 blueprint/src/typography.css: blueprint/src/typography-d0cdbc998745de23e687ac3851ef7cfd.css
-custom.css: custom-248ed000584f09653097abb5cdab09dd.css
+custom.css: custom-2e3f322c8768ae02ec138f3e9ba6f62c.css
 microposts.css: microposts-1441173dddcc141fd279ba3fcc9b25e3.css
+organizations.css: organizations-1441173dddcc141fd279ba3fcc9b25e3.css
 pages.css: pages-1441173dddcc141fd279ba3fcc9b25e3.css
 relationships.css: relationships-1441173dddcc141fd279ba3fcc9b25e3.css
 scaffold.css: scaffold-caea20cd8bf64f50f9d454d1d037ecfe.css

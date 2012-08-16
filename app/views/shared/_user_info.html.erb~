@@ -12,5 +12,6 @@
 	<%= link_to "Profile", current_user, :class => "profile_links" %>
 	<% if current_user.admin? %>
 		<%= link_to "Admin", users_path, :class=>"profile_links" %>
+		<%= render 'shared/stats' %>
 	<% end %>
 </div>
