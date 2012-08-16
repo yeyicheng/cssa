@@ -62,9 +62,9 @@ class IdentitiesController < ApplicationController
 							sign_in existinguser
 							redirect_back_or existinguser
 						else
-
+							pwd = SecureRandom.hex(10)
 							# new user, set email, a random password and take the name from the authentication service
-							user = User.new :name => name, :email => email, :password => SecureRandom.hex(10), :password_confirmation => :password
+							user = User.new :name => name, :email => email, :password => pwd, :password_confirmation => pwds
 							
 							# add this authentication service to our new user
 							user.identities.build(:provider => provider, :uid => uid)

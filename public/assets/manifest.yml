@@ -14,8 +14,9 @@ renren.png: renren-d2622976ff83fe7c203839f6481cd143.png
 twitter.png: twitter-ce8f13094c1389d60c07acb8484f70c9.png
 weibo.png: weibo-b9c187000b50b8245b9c8c3bcefd6b37.png
 youtube.png: youtube-dff7413d9121623085f61fbd2813a8cd.png
-application.js: application-166040fff53d136ef5f9a5b9f046677c.js
+application.js: application-2f351a1e3cc99f6ca1b3b12165fad0dc.js
 forums.js: forums-885c1cefd9d73d37f643283b7759bd28.js
+identities.js: identities-885c1cefd9d73d37f643283b7759bd28.js
 microposts.js: microposts-885c1cefd9d73d37f643283b7759bd28.js
 oauth.js: oauth-885c1cefd9d73d37f643283b7759bd28.js
 organizations.js: organizations-885c1cefd9d73d37f643283b7759bd28.js
@@ -25,7 +26,7 @@ sessions.js: sessions-885c1cefd9d73d37f643283b7759bd28.js
 slideshow.js: slideshow-5c9832eaa76f4acce5fceeb8e561893f.js
 users.js: users-885c1cefd9d73d37f643283b7759bd28.js
 weathers.js: weathers-885c1cefd9d73d37f643283b7759bd28.js
-application.css: application-be644bc1e67eed4c1b642a89f46648e7.css
+application.css: application-849c5c44b21cb64e318ec99f2a802995.css
 blueprint/ie.css: blueprint/ie-2dde47fa04146c250f1c50ebc867956c.css
 blueprint/plugins/buttons/icons/cross.png: blueprint/plugins/buttons/icons/cross-c2651300ae2e326a9727177155b48bf7.png
 blueprint/plugins/buttons/icons/key.png: blueprint/plugins/buttons/icons/key-9db9f7ef5cb5f66d1dd4a2adfbf0a87b.png
@@ -58,6 +59,7 @@ blueprint/src/reset.css: blueprint/src/reset-d8a6316266b2f7234a39476a04ef5fb8.cs
 blueprint/src/typography.css: blueprint/src/typography-d0cdbc998745de23e687ac3851ef7cfd.css
 custom.css: custom-2e3f322c8768ae02ec138f3e9ba6f62c.css
 forums.css: forums-1441173dddcc141fd279ba3fcc9b25e3.css
+identities.css: identities-1441173dddcc141fd279ba3fcc9b25e3.css
 microposts.css: microposts-1441173dddcc141fd279ba3fcc9b25e3.css
 oauth.css: oauth-1441173dddcc141fd279ba3fcc9b25e3.css
 organizations.css: organizations-1441173dddcc141fd279ba3fcc9b25e3.css
@@ -67,8 +69,8 @@ scaffold.css: scaffold-caea20cd8bf64f50f9d454d1d037ecfe.css
 sessions.css: sessions-1441173dddcc141fd279ba3fcc9b25e3.css
 users.css: users-1441173dddcc141fd279ba3fcc9b25e3.css
 weathers.css: weathers-1441173dddcc141fd279ba3fcc9b25e3.css
-jquery-ui.js: jquery-ui-5e86558a29e9896e7842cba13e007b88.js
-jquery-ui.min.js: jquery-ui.min-0e56c874a8ff809a50525176c91a2457.js
-jquery.js: jquery-765cc76e15d62a88cd61468aeaaaeb5d.js
-jquery.min.js: jquery.min-df98e5c4627f90ac3a698395a3916d44.js
-jquery_ujs.js: jquery_ujs-b9220ba11605b6f2bfbeef4272fd7760.js
+jquery-ui.js: jquery-ui-de7b57bc0ab30c2b9353dfbe89a4eadd.js
+jquery-ui.min.js: jquery-ui.min-62fab7113f99de8919f788dfe84039e5.js
+jquery.js: jquery-3aaa3fa0b0207a1abcd30555987cd4cc.js
+jquery.min.js: jquery.min-1a8bbbca00c83fb45d5aa9eaef1bd820.js
+jquery_ujs.js: jquery_ujs-c402b31cc9d2ee3e37efb7073ff93a3f.js

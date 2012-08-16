@@ -48,7 +48,7 @@ Cssa::Application.routes.draw do
 	match '/sign_out', :to => "sessions#destroy"
 	match '/users', :to => "users#index"
 	match '/organizations', :to=> 'organizations#index'
-	match '/auth/facebook/callback', :to => 'identities#create' 	
+	match '/auth/:identity/callback', :to => 'identities#create' 	
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
