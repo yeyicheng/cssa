@@ -18,7 +18,11 @@ gem 'omniauth-facebook'
 gem 'sinatra'
 gem 'omniauth'
 gem 'devise'
-require 'devise'
+<<<<<<< HEAD
+gem 'devise_ldap_authenticatable'
+=======
+>>>>>>> ooo
+
 group :development do
   gem 'rspec-rails'
   gem 'annotate'

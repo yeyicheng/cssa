@@ -3,7 +3,7 @@ Cssa::Application.routes.draw do
 
 	get "oauth/index"
   	
-	resources :identities, :only => [:index, :create]
+	resources :identities, :only => [:index, :create, :destroy]
 	resources :organizations
 	resources :weathers, :only => [:index]
 	resources :users
@@ -36,6 +36,7 @@ Cssa::Application.routes.draw do
 	match '/contact', :to => 'pages#contact'
 	match '/about', :to => "pages#about"
 	match '/club', :to => "organizations#index"
+	match '/links', :to => 'pages#link'
 	match '/home', :to => "pages#home"
 	match '/links', to: "pages#link"
 	match '/welcome', :to => "pages#welcome"
@@ -47,10 +48,8 @@ Cssa::Application.routes.draw do
 	match '/sign_in', :to => "sessions#new"
 	match '/sign_out', :to => "sessions#destroy"
 	match '/users', :to => "users#index"
-	match '/organizations', to: 'organizations#index'
-	# match '/auth/:provider/callback', to: 'sessions#create'
-	match '/auth/facebook/callback' => 'identities#create' 
-
+	match '/organizations', :to=> 'organizations#index'
+	match '/auth/:identity/callback', :to => 'identities#create' 	
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
