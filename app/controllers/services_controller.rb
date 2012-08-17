@@ -71,4 +71,9 @@ class ServicesController < ApplicationController
 			redirect_to sign_in_path
 		end
 	end
+	
+	def failure
+		flash[:error] = 'There was an error at the remote authentication service. You have not been signed in.'
+		redirect_to sign_in_path
+	end
 end
