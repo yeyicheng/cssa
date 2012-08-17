@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120817014648) do
+ActiveRecord::Schema.define(:version => 20120817020940) do
 
   create_table "forum_bases", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -72,14 +72,12 @@ ActiveRecord::Schema.define(:version => 20120817014648) do
   add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
 
   create_table "services", :force => true do |t|
-    t.string   "uid"
-    t.string   "provider"
     t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "services", ["user_id"], :name => "index_services_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

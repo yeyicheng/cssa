@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
          # :recoverable, :rememberable, :trackable, :validatable,
          # :confirmable, :lockable
          # 
-	has_many :identities, dependent: :destroy
+    has_many :services, dependent: :destroy
 	has_many :microposts, dependent: :destroy
 	
 	has_many :relationships, foreign_key: "follower_id", dependent: :destroy
