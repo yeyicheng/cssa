@@ -1,6 +1,6 @@
 <table>
 	<td>
-		<%= link_to tag('img', :scr => 'https://graph.facebook.com/' << post['from']['id'] << '/picture'), 'http://facebook.com/' << post['from']['id'] %>
+		<%= link_to tag('img', :src => 'https://graph.facebook.com/' << post['from']['id'] << '/picture'), 'http://facebook.com/' << post['from']['id'] %>
 	</td>
 	<td>
 		<%= link_to post['from']['name'], 'http://facebook.com/' << post['from']['id'] %><br \>
