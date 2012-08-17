@@ -14,10 +14,9 @@ gem 'simple_weather'
 gem 'rufus-scheduler'
 gem 'nokogiri'
 gem 'mysql2'
-gem 'omniauth-facebook'
 gem 'sinatra'
 gem 'omniauth'
-gem 'devise'
+gem 'omniauth-facebook'
 
 group :development do
   gem 'rspec-rails'

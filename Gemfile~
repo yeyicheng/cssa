@@ -14,14 +14,10 @@ gem 'simple_weather'
 gem 'rufus-scheduler'
 gem 'nokogiri'
 gem 'mysql2'
-gem 'omniauth-facebook'
 gem 'sinatra'
 gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'devise'
-<<<<<<< HEAD
-gem 'devise_ldap_authenticatable'
-=======
->>>>>>> ooo
 
 group :development do
   gem 'rspec-rails'

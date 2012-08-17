@@ -20,11 +20,11 @@ class User < ActiveRecord::Base
          # :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  	attr_accessible :remember_me
-	devise :database_authenticatable, :omniauthable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable, :lockable
-         
+  	# attr_accessible :remember_me
+	# devise :database_authenticatable, :omniauthable, :registerable,
+         # :recoverable, :rememberable, :trackable, :validatable,
+         # :confirmable, :lockable
+         # 
 	has_many :identities, dependent: :destroy
 	has_many :microposts, dependent: :destroy
 	
@@ -61,6 +61,10 @@ class User < ActiveRecord::Base
 	# Return true if the user's password matches the submitted password.
 	def password_matched? (submitted_password)
 		encrypted_password == encrypt(submitted_password)
+	end
+	
+	def self.find_from_auth_hash(uid, auth_hash)
+		User.find(auth_hash[uid])
 	end
 	
 	def self.authenticate(email, submitted_password)

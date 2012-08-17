@@ -5,15 +5,16 @@ class SessionsController < ApplicationController
 	end
 	
 	def create
-		# user = User.authenticate(params[:session][:email], params[:session][:password])
-		user = User.find_or_create_from_auth_hash(auth_hash)
+		user = User.authenticate(params[:session][:email], params[:session][:password])
+		auth = auth_hash
 		if user.nil?
-			# Create an error message and re-render the signin form.
 			flash.now[:error] = "Invalid email/password combination."
-			@title = "Sign in"
 			render 'new'
+		elsif !auth.nil?
+			identity = Identity.find_by_provider_and_uid(auth[:provider], auth[:uid])
+			session[:identity_id] = identity.id
 		else
-			# Sign the user in and redirect to the user's show page.
+			session[:user_id] = user.id
 			sign_in user
 			redirect_back_or user
 		end
