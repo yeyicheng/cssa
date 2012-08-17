@@ -1,13 +1,13 @@
 <table>
 	<td>
-		<%= link_to image_tag('https://graph.facebook.com/' << post['from']['id'] << '/picture'), 'http://facebook.com/' << post['from']['id'] %>
+		<%= link_to tag('img', :scr => 'https://graph.facebook.com/' << post['from']['id'] << '/picture'), 'http://facebook.com/' << post['from']['id'] %>
 	</td>
 	<td>
 		<%= link_to post['from']['name'], 'http://facebook.com/' << post['from']['id'] %><br \>
 		<%= post['message'] %>
 		<table>
 			<td>
-				<%= link_to image_tag(post['picture']), post['link'] %>
+				<%= link_to tag('img', :src => post['picture']), post['link'] %>
 			</td>
 			<td>
 				<%= link_to post['name'], post['link'] %> <br \>
