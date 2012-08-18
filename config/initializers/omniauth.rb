@@ -4,5 +4,3 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 	{:scope => 'user_groups,friends_groups', :display => 'popup', :callback_path => '/' }
 end
 
-Rails.application.config.middleware.use Rack::Session::Cookie do
-end
