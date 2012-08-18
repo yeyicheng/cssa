@@ -1,4 +1,6 @@
 <% unless @feed_items.empty? %>
-	<%= render :partial => 'shared/feed_item', :collection => @feed_items%>
-	<%= will_paginate @feed_items %>
+	<%= will_paginate @feed_items, :param_name => 'feed_page' %>	
+	<table class="sidebar round" summary="User feeds">
+		<%= render :partial => 'shared/feed_item', :collection => @feed_items%>
+	</table>
 <% end %>

@@ -29,7 +29,7 @@ describe OrganizationsController do
 				response.should be_success
 			end
 			it "should have the right title" do
-				response.should have_selector("title", :content => "All clubs")
+				response.should have_selector("title", :content => "Clubs")
 			end
 		end
 	end
@@ -56,7 +56,7 @@ describe OrganizationsController do
 				response.should be_success
 			end
 			it "should have the right title" do
-				response.should have_selector("title", :content => "New club")
+				response.should have_selector("title", :content => "Clubs | New")
 			end
 		end
 	end

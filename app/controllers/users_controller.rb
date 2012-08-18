@@ -6,8 +6,8 @@ class UsersController < ApplicationController
 	
 	def new
 		if signed_in?
-			redirect_to root_path
 			flash[:error] = "Please sign out to sign up for another account."
+			redirect_to root_path
 		else
 			@user = User.new
 			@title = "Sign up"
@@ -16,10 +16,11 @@ class UsersController < ApplicationController
 	
 	def create
 		if signed_in?
-			redirect_to root_path
 			flash[:error] = "Please sign out to sign up for another account."
+			redirect_to root_path
 			return
 		end
+		
 		@user = User.new(params[:user])
 		if @user.save
 			sign_in @user
@@ -27,14 +28,14 @@ class UsersController < ApplicationController
 			redirect_to @user
 		else
 			@title = "Sign up"
+			flash.now[:error] = "Please try again."
 			render 'new'
-			flash[:error] = "Please try again."
 		end
 	end
 	
 	def edit
 		@user = User.find(params[:id])
-		@title = "Edit user"
+		@title = @user[:name] + " | Edit"
 	end
 	
 	def update
@@ -50,24 +51,19 @@ class UsersController < ApplicationController
 	
 	def show
 		@user = User.find(params[:id])
-		@microposts = @user.microposts.paginate(:page => params[:page], :per_page => 10)
+		@microposts = @user.microposts.paginate(:page => params[:micro_page], :per_page => 10)
 		@title = @user[:name]
 		if !signed_in?
 			redirect_to sign_in_path
-		elsif correct_user?
-			store_location
-			@micropost = Micropost.new
-			@feed_items = current_user.feed.paginate(:page => params[:page], :per_page => 15)
 		else
 			store_location
 			@micropost = Micropost.new
-			@feed_items = @microposts
-			@microposts = current_user.microposts.paginate(:page => params[:page], :per_page => 8)
+			@feed_items = current_user.feed.paginate(:page => params[:feed_page], :per_page => 8)
 		end
 	end
 	
 	def index
-		@title = "All users"
+		@title = "Users"
 		@users = User.paginate(:page => params[:page], :per_page => 20)
 		@feed_items = current_user.feed.paginate(:page => params[:page], :per_page => 20)
 	end
@@ -84,25 +80,29 @@ class UsersController < ApplicationController
 	end
 	
 	def following
-		@title = "Following"
 		@user = User.find(params[:id])
+		@title = @user[:name] + " | Following"
 		@users = @user.following.paginate(:page => params[:page], :per_page => 20)
 		render 'show_follow'
 	end
 	
 	def followers
-		@title = "Followers"
 		@user = User.find(params[:id])
+		@title = @user[:name] + " | Followers"
 		@users = @user.followers.paginate(:page => params[:page], :per_page => 20)
 		render 'show_follow'
 	end
 	
 	def services
-		@title = "Services connected"
+		@user = User.find(params[:id])
+		@title = @user[:name] + " | Services"
+		@services = @user.services
 	end
 	
 	def clubs
-		@title = "Clubs joined"
+		@user = User.find(params[:id])
+		@title = @user[:name] + " | Clubs"
+		@clubs = @user.clubs
 	end
 	
 	private	

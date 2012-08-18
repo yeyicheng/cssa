@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120817020940) do
+ActiveRecord::Schema.define(:version => 20120818164038) do
 
   create_table "forum_bases", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(:version => 20120817020940) do
 
   add_index "identities", ["user_id"], :name => "index_identities_on_user_id"
 
+  create_table "member_relationships", :force => true do |t|
+    t.integer  "club_id"
+    t.integer  "member_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "member_relationships", ["club_id", "member_id"], :name => "index_member_relationships_on_club_id_and_member_id", :unique => true
+  add_index "member_relationships", ["club_id"], :name => "index_member_relationships_on_club_id"
+  add_index "member_relationships", ["member_id"], :name => "index_member_relationships_on_member_id"
+
   create_table "microposts", :force => true do |t|
     t.string   "content"
     t.integer  "user_id"
@@ -48,6 +59,10 @@ ActiveRecord::Schema.define(:version => 20120817020940) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "org_relationships", ["club_id"], :name => "index_org_relationships_on_club_id"
+  add_index "org_relationships", ["member_id", "club_id"], :name => "index_org_relationships_on_member_id_and_club_id", :unique => true
+  add_index "org_relationships", ["member_id"], :name => "index_org_relationships_on_member_id"
 
   create_table "organizations", :force => true do |t|
     t.string   "name"

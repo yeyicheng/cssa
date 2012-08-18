@@ -56,7 +56,7 @@ describe "LayoutLinks" do
 		end
 		it "should have a Clubs page at '/club'" do
 			get '/club'
-			response.should have_selector('title', :content => "All clubs")
+			response.should have_selector('title', :content => "Clubs")
 		end
 	end
 	describe "sign in/out" do

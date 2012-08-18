@@ -21,19 +21,19 @@
 #
 
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
-  # devise :database_authenticatable, :registerable,
-         # :recoverable, :rememberable, :trackable, :validatable
+	# Include default devise modules. Others available are:
+	# :token_authenticatable, :confirmable,
+	# :lockable, :timeoutable and :omniauthable
+	# devise :database_authenticatable, :registerable,
+	# :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
-  	# attr_accessible :remember_me
+    # Setup accessible (or protected) attributes for your model
+    # attr_accessible :remember_me
 	# devise :database_authenticatable, :omniauthable, :registerable,
-         # :recoverable, :rememberable, :trackable, :validatable,
-         # :confirmable, :lockable
-         # 
-    has_many :services, dependent: :destroy
+	# :recoverable, :rememberable, :trackable, :validatable,
+	# :confirmable, :lockable
+    
+	has_many :services, dependent: :destroy
 	has_many :microposts, dependent: :destroy
 	
 	has_many :relationships, foreign_key: "follower_id", dependent: :destroy
@@ -42,7 +42,9 @@ class User < ActiveRecord::Base
 	has_many :followers, through: :reverse_relationships, source: :follower
 	
 	has_many :org_relationships, foreign_key: "member_id", dependent: :destroy, class_name: "OrgRelationships"
-	has_many :clubs, through: :org_relationships, source: :member
+	has_many :applied_clubs, through: :org_relationships, source: :club
+	has_many :reverse_member_relationships, foreign_key: "member_id", dependent: :destroy, class_name: "MemberRelationship"
+	has_many :clubs, through: :reverse_member_relationships, source: :club
 	
 	attr_accessor :password
 	attr_accessible :email, :name, :password, :password_confirmation
@@ -60,10 +62,6 @@ class User < ActiveRecord::Base
 	
 	def self.create_with_omniauth(info)
 		create(name: info['name'], email: info['email'])
-	end
-	
-	def feed
-		Micropost.where("user_id = ?", id)
 	end
 	
 	# Return true if the user's password matches the submitted password.
@@ -98,19 +96,30 @@ class User < ActiveRecord::Base
 		relationships.find_by_followed_id(followed).destroy
 	end
 	
-	def joined?(club)
+	def applied? club
 		org_relationships.find_by_club_id(club.id)
 	end
 	
-	def join!(club)
-		if !joined club
+	def joined? club
+		reverse_member_relationships.find_by_club_id(club.id)
+	end
+	
+	def join! club
+		if !joined? club and !applied? club
 			org_relationships.create!(club_id: club.id)
 		end
 	end
 	
-	def quit!(club)
-		if joined? club
-			org_relationships.find_by_club_id(club.id).destroy
+	def cancel! club
+		org_rel =  applied? club
+		org_rel.destroy unless !org_rel
+	end
+	
+	def quit! club
+		mem_rel = joined? club
+		
+		if mem_rel
+			mem_rel.destroy
 		end
 	end
 	

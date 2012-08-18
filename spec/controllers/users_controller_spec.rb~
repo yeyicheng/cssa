@@ -2,6 +2,11 @@ require 'spec_helper'
 
 describe UsersController do
 	render_views
+	
+	before do
+		FactoryGirl.create(:weather)
+	end
+	
 	describe "GET 'new'" do
 		before (:each) do
 			get :new
@@ -9,7 +14,6 @@ describe UsersController do
 		it "returns http success" do
 			response.should be_success
 		end
-		
 		it "should have the right title" do
 			response.should have_selector("title", :content => "Sign up")
 		end
@@ -26,7 +30,7 @@ describe UsersController do
 			end
 		end
 		describe "for signed-in users" do
-			before(:each) do
+			before do
 				@user = FactoryGirl.create(:user)
 				@user.toggle!(:admin)
 				test_sign_in @user
@@ -83,27 +87,22 @@ describe UsersController do
 				get :show, :id => @user
 				response.should be_success
 			end
-			
 			it "should find the right user" do
 				get :show, :id => @user
 				assigns(:user).should == @user
 			end
-			
 			it "should have the right title" do
 				get :show, :id => @user
 				response.should have_selector("title", :content => @user.name)
 			end
-			
 			it "should include the user's name" do
 				get :show, :id => @user
 				response.should have_selector("h1", :content => @user.name)
 			end
-			
 			it "should have a profile image" do
 				get :show, :id => @user
 				response.should have_selector("h1>img", :class => "gravatar")
 			end
-			
 			it "should show the user's microposts" do
 				mp1 = FactoryGirl.create(:micropost, :user => @user, :content => "Foo bar")
 				mp2 = FactoryGirl.create(:micropost, :user => @user, :content => "Baz quux")
@@ -160,7 +159,7 @@ describe UsersController do
 		end
 	end
 	describe "GET 'edit'" do
-		before(:each) do
+		before do
 			@user = FactoryGirl.create(:user)
 			test_sign_in(@user)
 		end
@@ -226,7 +225,7 @@ describe UsersController do
 			end
 			it "should protect the page" do
 				delete :destroy, :id => @user
-				response.should redirect_to(root_path)
+				response.should redirect_to(sign_in_path)
 			end
 			it "should not show delete links" do
 				delete :destroy, :id => @user

@@ -1,0 +1,4 @@
+class AddIndexToOrgRelationships < ActiveRecord::Migration
+  def change
+  end
+end

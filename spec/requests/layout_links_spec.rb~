@@ -1,15 +1,15 @@
 require 'spec_helper'
 
 describe "LayoutLinks" do
-
+	
+	before do
+		FactoryGirl.create(:weather)
+	end
+	
 	describe "GET /layout_links" do
 		it "should have a Home page at '/'" do
 			get '/'
 			response.should have_selector('title', :content => "Home")
-		end
-		it "should have a Clubs page at '/club'" do
-			get '/club'
-			response.should have_selector('title', :content => "Clubs")
 		end
 		it "should have an About page at '/contact'" do
 			get '/contact'
@@ -53,6 +53,10 @@ describe "LayoutLinks" do
 			visit root_path
 			response.should have_selector("a", :href => user_path(@user),
 			:content => "Profile")
+		end
+		it "should have a Clubs page at '/club'" do
+			get '/club'
+			response.should have_selector('title', :content => "All clubs")
 		end
 	end
 	describe "sign in/out" do
