@@ -2,14 +2,22 @@
 #
 # Table name: users
 #
-#  id                 :integer          not null, primary key
-#  name               :string(255)
-#  email              :string(255)
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  encrypted_password :string(255)
-#  salt               :string(255)
-#  admin              :boolean          default(FALSE)
+#  id                     :integer          not null, primary key
+#  name                   :string(255)
+#  email                  :string(255)
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  encrypted_password     :string(255)
+#  salt                   :string(255)
+#  admin                  :boolean          default(FALSE)
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default(0)
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -95,11 +103,15 @@ class User < ActiveRecord::Base
 	end
 	
 	def join!(club)
-		org_relationships.create!(club_id: club.id)
+		if !joined club
+			org_relationships.create!(club_id: club.id)
+		end
 	end
 	
 	def quit!(club)
-		org_relationships.find_by_club_id(club.id).destroy
+		if joined? club
+			org_relationships.find_by_club_id(club.id).destroy
+		end
 	end
 	
 	def feed

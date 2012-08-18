@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
 
-	before_filter :authenticate, :except => [:create]
+	# before_filter :authenticate, :except => [:create]
 	protect_from_forgery :except => :create     # see https://github.com/intridea/omniauth/issues/203
 	
 	def index
@@ -12,33 +12,34 @@ class ServicesController < ApplicationController
 		# remove an authentication service linked to the current user
 		@service = current_user.services.find(params[:id])
 		@service.destroy
-		redirect_to services_path
+		redirect_to sign_in_path
 	end
 
 	def create
+		
 		# get the service parameter from the Rails router
-		service_route = params[:service] ? params[:service] : 'no service (invalid callback)'
+		service_route = params[:provider] || 'no service (invalid callback)'
 		
 		# get the full hash from omniauth
 		omniauth = request.env['omniauth.auth']
 		
+		debugger
+		
 		# continue only if hash and parameter exist
-		if omniauth and params[:service]
-    
+		if omniauth
 			@authhash = Hash.new
     
 			if service_route == 'facebook'
-				@authhash[:provider] = omniauth['provider']? omniauth['provider'] : '' 
-				@authhash[:uid] = omniauth['uid']? omniauth['uid'] : '' 
-				@authhash['info']['email'] = omniauth['info']['email']? omniauth['info']['email'] : ''
-				@authhash['info']['name'] = omniauth['info']['name']? omniauth['info']['name'] : ''
-				@authhash['extra']['user_hash']['id'] = omniauth['extra']['user_hash']['id']? omniauth['extra']['user_hash']['id'].to_s : ''
+				@authhash[:provider] = omniauth['provider'].to_s
+				@authhash[:uid] = omniauth['uid'].to_s
+				@authhash['info']['email'] = omniauth['info']['email'].to_s
+				@authhash['info']['name'] = omniauth['info']['name'].to_s
+				@authhash['extra']['raw_info']['id'] = omniauth['extra']['raw_info']['id'].to_s
 			else
 				# unrecognized service, output the hash that has been returned
 				render :text => omniauth.to_yaml
 				return
 			end
-  
 			# continue only if provider and uid exist
 			if @authhash[:uid] != '' and @authhash[:provider] != ''
 				auth = Service.find_by_provider_and_uid(@authhash[:provider], @authhash[:uid])
@@ -46,15 +47,17 @@ class ServicesController < ApplicationController
 					if auth
 						flash[:notice] = 'Your account at ' + @authhash[:provider].capitalize + ' is already connected with this site.'
 					else
-						current_user.services.create!(:provider => @authhash[:provider], :uid => @authhash[:uid])
-						flash[:notice] = 'Your ' + @authhash[:provider].capitalize + ' account has been connected to this site.'
+						@new_auth = current_user.services.build(:provider => @authhash[:provider], :uid => @authhash[:uid])
+						if @new_auth.save
+							flash[:success] = 'Your ' + @authhash[:provider].capitalize + ' account has been connected to this site.'
+						end
 					end
-					redirect_to sign_in_path
+					redirect_to root_path
 				else
           			if auth
           				session[:user_id] = auth.user.id
           				session[:identity_id] = auth.id
-						sign_in auth
+						sign_in auth.user
 						flash[:notice] = 'Signed in successfully via ' + @authhash[:provider].capitalize + '.'
 					else
 						# this is a new user; show signup; @authhash is available to the view and stored in the sesssion for creation of a new user

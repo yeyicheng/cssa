@@ -1,29 +1,24 @@
 <header>
 	<div class="inner">
-<<<<<<< HEAD
-<<<<<<< HEAD
-		<%= link_to image_tag("logo.jpg", :alt => "Chinese Student and Scholar Association of UMCP", :class => "round"), root_path %>
-=======
 		<%= link_to image_tag("logo.jpg", :alt => "Chinese Student and Scholar Association of UMCP", :class => "logo round"), root_path %>
-		<%= show_hourly_weather[0] %>
->>>>>>> master
-=======
-		<%= link_to image_tag("logo.jpg", :alt => "Chinese Student and Scholar Association of UMCP", :class => "round"), root_path %>
->>>>>>> old2
+		<table>
+			<%= getLatestWeatherIcon %>
+			<%= getLatestTemp %>
+		</table>
 		<nav id="site-nav">
 			<ul>
 				<li><%= link_to "Home", root_path %></li>
 				<li><%= link_to "Forum", '#' %></li>
 				<li><%= link_to "New Students", '#' %>
 					<ul>
-						<li><%= link_to "Welcome Letter", '#' %></li>
-						<li><%= link_to "Handbook", '#' %></li>
-						<li><%= link_to "Airport PickUp", '#' %></li>
+						<li><%= link_to "Welcome Letter", welcome_path %></li>
+						<li><%= link_to "Handbook", handbook_path %></li>
+						<li><%= link_to "Airport PickUp", service_path %></li>
 					</ul>
 				</li>
 				<li><%= link_to "Clubs", club_path %></li>
-				<li><%= link_to "Art Troupe", '#' %></li>
-				<li><%= link_to "Links", '#' %></li>
+				<li><%= link_to "Art Troupe", art_path %></li>
+				<li><%= link_to "Links", links_path %></li>
 			</ul>
 		</nav>
 	</div>

@@ -16,7 +16,7 @@ class Organizations < ActiveRecord::Base
 	
 	has_many :reverse_orgrelationships, foreign_key: 'club_id', dependent: :destroy, class_name: 'OrgRelationships'
 	has_many :members, through: :reverse_orgrelationships, source: :club
-	
+	has_one	 :waiting_list
 	email_regex = /^[\w+\-._]+@[a-z\d\-._]+\.[a-z]+$/i
 	url_regex = /\.(png|jpg|gif)$/
 	
@@ -30,10 +30,14 @@ class Organizations < ActiveRecord::Base
 	end
 	
 	def accept!(member)
-		reverse_orgrelationships.create!(member_id: member.id)
+		if !has_member? member
+			reverse_orgrelationships.create!(member_id: member.id)
+		end
 	end
 	
 	def remove!(member)
-		reverse_orgrelationships.find_by_member_id(member.id).destroy
+		if has_member? member
+			reverse_orgrelationships.find_by_member_id(member.id).destroy
+		end
 	end
 end

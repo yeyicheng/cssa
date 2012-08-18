@@ -4,4 +4,4 @@ require File.expand_path('../application', __FILE__)
 # Initialize the rails application
 Cssa::Application.initialize!
 
-Rails.logger = Logger.new(STDOUT)
+Rails.logger = Logger.new('app log')

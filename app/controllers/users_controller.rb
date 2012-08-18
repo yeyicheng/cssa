@@ -62,7 +62,7 @@ class UsersController < ApplicationController
 			store_location
 			@micropost = Micropost.new
 			@feed_items = @microposts
-			@microposts = current_user.micropost.paginate(:page => params[:page], :per_page => 8)
+			@microposts = current_user.microposts.paginate(:page => params[:page], :per_page => 8)
 		end
 	end
 	
@@ -95,6 +95,14 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@users = @user.followers.paginate(:page => params[:page], :per_page => 20)
 		render 'show_follow'
+	end
+	
+	def services
+		@title = "Services connected"
+	end
+	
+	def clubs
+		@title = "Clubs joined"
 	end
 	
 	private	

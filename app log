@@ -1,0 +1,666 @@
+# Logfile created on 2012-08-17 20:38:33 -0400 by logger.rb/31641
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-17 20:39:33 -0400
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/forums.js?body=1" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/microposts.js?body=1" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/organizations.js?body=1" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/oauth.js?body=1" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/services.js?body=1" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/slideshow.js?body=1" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/weathers.js?body=1" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/logo.jpg" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/3.jpg" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/2.jpg" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/1.jpg" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/4.jpg" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/renren.png" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/weibo.png" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/twitter.png" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/youtube.png" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/assets/blueprint/print.css?body=1" for 127.0.0.1 at 2012-08-17 20:39:35 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-17 20:44:20 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-17 20:45:02 -0400
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/forums.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/oauth.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/microposts.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/organizations.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/services.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/slideshow.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/weathers.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/logo.jpg" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/4.jpg" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/3.jpg" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/2.jpg" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/1.jpg" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/renren.png" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/twitter.png" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/youtube.png" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/weibo.png" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/assets/blueprint/print.css?body=1" for 127.0.0.1 at 2012-08-17 20:45:03 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-17 20:45:12 -0400
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2012-08-17 20:45:13 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-08-17 20:45:13 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:13 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:13 -0400
+
+
+Started GET "/assets/forums.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:13 -0400
+
+
+Started GET "/assets/microposts.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:13 -0400
+
+
+Started GET "/assets/oauth.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:13 -0400
+
+
+Started GET "/assets/organizations.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:13 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:13 -0400
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:13 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:13 -0400
+
+
+Started GET "/assets/services.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:14 -0400
+
+
+Started GET "/assets/slideshow.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:14 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:14 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:14 -0400
+
+
+Started GET "/assets/weathers.js?body=1" for 127.0.0.1 at 2012-08-17 20:45:14 -0400
+
+
+Started GET "/assets/logo.jpg" for 127.0.0.1 at 2012-08-17 20:45:14 -0400
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2012-08-17 20:45:14 -0400
+
+
+Started GET "/assets/blueprint/print.css?body=1" for 127.0.0.1 at 2012-08-17 20:45:14 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-17 20:45:16 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-17 20:56:27 -0400
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2012-08-17 20:56:27 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-17 20:56:27 -0400
+
+
+Started GET "/assets/forums.js?body=1" for 127.0.0.1 at 2012-08-17 20:56:27 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-08-17 20:56:27 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-17 20:56:27 -0400
+
+
+Started GET "/assets/oauth.js?body=1" for 127.0.0.1 at 2012-08-17 20:56:27 -0400
+
+
+Started GET "/assets/microposts.js?body=1" for 127.0.0.1 at 2012-08-17 20:56:28 -0400
+
+
+Started GET "/assets/organizations.js?body=1" for 127.0.0.1 at 2012-08-17 20:56:28 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-08-17 20:56:28 -0400
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2012-08-17 20:56:28 -0400
+
+
+Started GET "/assets/services.js?body=1" for 127.0.0.1 at 2012-08-17 20:56:28 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-08-17 20:56:28 -0400
+
+
+Started GET "/assets/slideshow.js?body=1" for 127.0.0.1 at 2012-08-17 20:56:28 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-17 20:56:28 -0400
+
+
+Started GET "/assets/weathers.js?body=1" for 127.0.0.1 at 2012-08-17 20:56:28 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-17 20:56:28 -0400
+
+
+Started GET "/assets/1.jpg" for 127.0.0.1 at 2012-08-17 20:56:29 -0400
+
+
+Started GET "/assets/logo.jpg" for 127.0.0.1 at 2012-08-17 20:56:29 -0400
+
+
+Started GET "/assets/2.jpg" for 127.0.0.1 at 2012-08-17 20:56:29 -0400
+
+
+Started GET "/assets/3.jpg" for 127.0.0.1 at 2012-08-17 20:56:29 -0400
+
+
+Started GET "/assets/4.jpg" for 127.0.0.1 at 2012-08-17 20:56:29 -0400
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2012-08-17 20:56:29 -0400
+
+
+Started GET "/assets/renren.png" for 127.0.0.1 at 2012-08-17 20:56:29 -0400
+
+
+Started GET "/assets/weibo.png" for 127.0.0.1 at 2012-08-17 20:56:29 -0400
+
+
+Started GET "/assets/twitter.png" for 127.0.0.1 at 2012-08-17 20:56:29 -0400
+
+
+Started GET "/assets/youtube.png" for 127.0.0.1 at 2012-08-17 20:56:29 -0400
+
+
+Started GET "/assets/blueprint/print.css?body=1" for 127.0.0.1 at 2012-08-17 20:56:29 -0400
+
+
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2012-08-17 20:56:31 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-17 21:05:31 -0400
+
+
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2012-08-17 21:06:15 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-17 21:09:51 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-17 21:10:21 -0400
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/assets/microposts.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/assets/forums.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/assets/oauth.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/assets/organizations.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/assets/services.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/assets/slideshow.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/assets/weathers.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/assets/logo.jpg" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/assets/blueprint/print.css?body=1" for 127.0.0.1 at 2012-08-17 21:10:23 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-17 21:10:38 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-17 21:10:57 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-08-17 21:10:58 -0400
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2012-08-17 21:10:58 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:58 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:58 -0400
+
+
+Started GET "/assets/forums.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:58 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:58 -0400
+
+
+Started GET "/assets/organizations.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:58 -0400
+
+
+Started GET "/assets/oauth.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:58 -0400
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:58 -0400
+
+
+Started GET "/assets/microposts.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:58 -0400
+
+
+Started GET "/assets/services.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:58 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:58 -0400
+
+
+Started GET "/assets/slideshow.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:58 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:58 -0400
+
+
+Started GET "/assets/weathers.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:58 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-17 21:10:58 -0400
+
+
+Started GET "/assets/logo.jpg" for 127.0.0.1 at 2012-08-17 21:10:58 -0400
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2012-08-17 21:10:58 -0400
+
+
+Started GET "/assets/blueprint/print.css?body=1" for 127.0.0.1 at 2012-08-17 21:10:59 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-17 21:19:59 -0400
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/assets/forums.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/assets/organizations.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/assets/oauth.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/assets/microposts.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/assets/slideshow.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/assets/services.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/assets/weathers.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/assets/logo.jpg" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/assets/blueprint/print.css?body=1" for 127.0.0.1 at 2012-08-17 21:20:01 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-17 21:20:04 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/forums.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/microposts.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/oauth.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/organizations.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/services.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/slideshow.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/weathers.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/logo.jpg" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/assets/blueprint/print.css?body=1" for 127.0.0.1 at 2012-08-17 21:20:46 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-17 21:20:49 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/forums.js?body=1" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/organizations.js?body=1" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/microposts.js?body=1" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/oauth.js?body=1" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/relationships.js?body=1" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/services.js?body=1" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/slideshow.js?body=1" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/weathers.js?body=1" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/logo.jpg" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/2.jpg" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/1.jpg" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/4.jpg" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/3.jpg" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/renren.png" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/weibo.png" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/twitter.png" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/youtube.png" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+
+
+Started GET "/assets/blueprint/print.css?body=1" for 127.0.0.1 at 2012-08-17 21:21:11 -0400
+Connected to NewRelic Service at collector-9.newrelic.com
+Connected to NewRelic Service at collector-9.newrelic.com

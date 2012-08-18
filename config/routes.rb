@@ -1,10 +1,8 @@
 Cssa::Application.routes.draw do
 	# devise_for :users
 
-	get "oauth/index"
-  	
-	resources :identities, :only => [:index, :create, :destroy]
-	resources :organizations
+	resources :services, :only => [:index, :create, :destroy]
+	resources :organizations, :only => [:create, :destroy]
 	resources :weathers, :only => [:index]
 	resources :users
 	resources :sessions, :only => [:new, :create, :destroy]
@@ -12,7 +10,7 @@ Cssa::Application.routes.draw do
 	resources :relationships, :only => [:create, :destroy]
 	resources :users do
 		member do
-			get :following, :followers
+			get :following, :followers, :services, :clubs
 		end
 	end
 	       
@@ -32,7 +30,6 @@ Cssa::Application.routes.draw do
 	get "pages/links"
 
 	root :to => 'pages#home'
-	
 	match '/contact', :to => 'pages#contact'
 	match '/about', :to => "pages#about"
 	match '/club', :to => "organizations#index"
@@ -40,7 +37,6 @@ Cssa::Application.routes.draw do
 	match '/home', :to => "pages#home"
 	match '/links', to: "pages#link"
 	match '/welcome', :to => "pages#welcome"
-	match '/service', :to => "pages#service"
 	match '/handbook', :to => "pages#handbook"
 	match '/art', :to => "pages#art"
 	match '/news', :to => "pages#news"
@@ -51,10 +47,10 @@ Cssa::Application.routes.draw do
 	match '/organizations', :to=> 'organizations#index'
 	match '/auth/:provider/callback', :to => 'services#create' 
 	match '/auth/failure', :to => 'services#failure'
-
 	
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
+	# match 'http://hollow-waterfall-1839.herokuapp.com/auth/:provider/callback', :to => 'services#create' 
+	# The priority is based upon order of creation:
+	# first created -> highest priority.
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
