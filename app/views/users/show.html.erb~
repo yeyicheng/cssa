@@ -1,29 +1,22 @@
 <table class="profile" summary="Profile information">
-	<tr>
-		<td class="main">
-			<h1>
-				<%= gravatar_for @user %>
-				<%= @user.name %>
-			</h1>
-			<%= render 'follow_form' if signed_in? %>
-			<%= @user.email%>
-			<% unless @user.microposts.empty? %>
+	<td class="main">
+		<h1>
+			<%= gravatar_for @user %>
+			<%= @user.name %>
+		</h1>
+		<%= render 'follow_form' if signed_in? %>
+		<%= @user.email %>
+		<% unless @microposts.empty? %>
+			<%= will_paginate @microposts, :param_name => 'micro_page' %>
 				<table class="microposts" summary="User microposts">
-					<%= render 'shared/feed' %>
+					<%= render @microposts %>
 				</table>
-			<% end %>
-		</td>
-		<td>
-			<div class="sidebar round">
-				<%= render 'shared/user_info' %>
-				<span>Member since: </span>
-				<%= current_user[:created_at].strftime("%Y-%b-%d") %><br />
-			</div>
-			<div class="main round">
-				<h3 class="micropost">What's up?</h3>
-				<%= render 'shared/micropost_form' %>
-				<%= render 'shared/feed' %>
-			</div>
-		</td>
-	</tr>
+			<%= will_paginate @microposts, :param_name => 'micro_page' %>
+		<% end %>
+	</td>
+	<td class="side">
+		<table>
+			<%= render 'shared/user_info_feeds' %>
+		</table>
+	</td>
 </table>

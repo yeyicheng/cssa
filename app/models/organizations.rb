@@ -2,17 +2,25 @@
 #
 # Table name: organizations
 #
-#  id          :integer          not null, primary key
-#  name        :string(255)
-#  description :text
-#  email       :string(255)
-#  logo_url    :string(255)
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id                  :integer          not null, primary key
+#  name                :string(255)
+#  description         :text
+#  email               :string(255)
+#  logo_url            :string(255)
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  avatar_file_name    :string(255)
+#  avatar_content_type :string(255)
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
+#  category_id         :integer
 #
 
 class Organizations < ActiveRecord::Base
-	attr_accessible :description, :email, :logo_url, :name
+	has_attached_file :avatar, :styles => { :large => '100x100>', :medium => "80x80>", :thumb => "50x50>" }
+	attr_accessible :description, :email, :logo_url, :name, :avatar, :category_id
+	
+	belongs_to :category
 	
 	has_many :member_relationships, foreign_key: 'club_id', dependent: :destroy, class_name: 'MemberRelationship'
 	has_many :members, through: :member_relationships, source: :member
@@ -26,7 +34,7 @@ class Organizations < ActiveRecord::Base
 	validates :email, presence: true, format: { with: email_regex }, uniqueness: true
 	validates :description, presence: true, length: { maximum: 300, minimum: 5 }
 	validates :logo_url, presence: true, format: { with: url_regex }
-
+	
 	def has_member?(member)
 		member_relationships.find_by_member_id(member.id)
 	end

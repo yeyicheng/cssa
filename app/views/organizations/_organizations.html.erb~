@@ -1,8 +1,8 @@
 <li>
-	<%= image_tag club[:logo_url], :size => 30 %>
-	<%= link_to club[:name], club %>
+	<%= image_tag organizations[:logo_url], :size => 30 %>
+	<%= link_to organizations[:name], organizations %>
 	<% if current_user.admin? %>
-		| <%= link_to "Delete", club, :method => :delete, :confirm => "You sure?",
-		:title => "Delete #{club.name}" %>
+		| <%= link_to "Delete", organizations, :method => :delete, :confirm => "You sure?",
+		:title => "Delete #{organizations.name}" %>
 	<% end %>
 </li>

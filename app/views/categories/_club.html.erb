@@ -1,0 +1,25 @@
+<%# <li> %>
+	<%# <%= avatar_for club, :thumb %> %>
+	<%# <%= link_to club[:name], clubs_categories_path %> %>
+	<%# <% if signed_in? and current_user.admin? %> %>
+	<%# | <%= link_to "Delete", club, :method => :delete, :confirm => "Are you sure?", %>
+		<%# :title => "Delete #{club.name}" %> %>
+	<%# <% end %> %>
+<%# </li> %>
+<tr>
+	<td>
+		<%= avatar_for club, :medium %>
+	</td>
+	<td>
+		<table>
+			<tr>
+				<%= link_to club[:name], organizations %>
+				<% if signed_in? and current_user.admin? %>
+				| <%= link_to "Delete", club, :method => :delete, :confirm => "Are you sure?",
+					:title => "Delete #{club.name}" %>
+				<% end %><br />
+			</tr>
+			<tr><%= club.description %></tr>
+		</table>
+	</td>
+</tr>

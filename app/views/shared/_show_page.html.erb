@@ -1,0 +1,26 @@
+<table class="profile" summary="Profile information">
+	<td class="main">
+		<h1>
+			<%= avatar_for parent, :medium %>
+			<%= parent.name %>
+		</h1>
+		<% unless children.empty? %>
+			<%= will_paginate children, :param_name => children.first.class.to_s.downcase + '_page' %>
+			<table class="users">
+				<%= render children %>
+			</table>
+			<%= will_paginate children, :param_name => children.first.class.to_s.downcase + '_page' %>
+		<% end %>
+		<% if new != '' and signed_in? and current_user.admin? %>
+		<%= link_to 'New ' + new, 'new' %> |
+		<% end %>
+		<%= link_to 'Back', back %>
+	</td>
+	<% if signed_in? %>
+		<td class="side">
+			<table>
+				<%= render :partial =>'shared/user_info_feeds', :feed_items => feed_items, :user => user, :micropost => micropost %>
+			</table>
+		</td>
+	<% end %>
+</table>

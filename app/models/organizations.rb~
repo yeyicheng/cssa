@@ -9,13 +9,16 @@
 #  logo_url    :string(255)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  category    :integer          default(0)
 #
 
 class Organizations < ActiveRecord::Base
 	attr_accessible :description, :email, :logo_url, :name
 	
-	has_many :reverse_orgrelationships, foreign_key: 'club_id', dependent: :destroy, class_name: 'OrgRelationships'
-	has_many :members, through: :reverse_orgrelationships, source: :club
+	has_many :member_relationships, foreign_key: 'club_id', dependent: :destroy, class_name: 'MemberRelationship'
+	has_many :members, through: :member_relationships, source: :member
+	has_many :reverse_org_relationships, foreign_key: 'club_id', dependent: :destroy, class_name: 'OrgRelationships'
+	has_many :applicants, through: :reverse_org_relationships, source: :member
 	
 	email_regex = /^[\w+\-._]+@[a-z\d\-._]+\.[a-z]+$/i
 	url_regex = /\.(png|jpg|gif)$/
@@ -26,14 +29,30 @@ class Organizations < ActiveRecord::Base
 	validates :logo_url, presence: true, format: { with: url_regex }
 
 	def has_member?(member)
-		reverse_orgrelationships.find_by_member_id(member.id)
+		member_relationships.find_by_member_id(member.id)
 	end
 	
-	def accept!(member)
-		reverse_orgrelationships.create!(member_id: member.id)
+	def waitlist? member
+		reverse_org_relationships.find_by_member_id(member.id)
+	end
+	
+	def accept! member
+		org_rel = waitlist? member
+		if org_rel
+			member_relationships.create!(member_id: member.id)
+			org_rel.destroy
+		end
+	end
+	
+	def reject! member
+		org_rel = waitlist? member
+		org_rel.destroy unless !org_rel
 	end
 	
 	def remove!(member)
-		reverse_orgrelationships.find_by_member_id(member.id).destroy
+		mem_rel = has_member? member
+		if mem_rel
+			mem_rel.destroy
+		end
 	end
 end

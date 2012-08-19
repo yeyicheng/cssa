@@ -1,0 +1,23 @@
+<table class="profile" summary="Profile information">
+	<td class="main">
+		<h1>
+			 Club categories 
+		</h1>
+		<% unless @categories.empty? %>
+			<%= will_paginate @categories, :param_name => 'category_page' %>
+			<table class="users">
+				<%= render @categories %>
+			</table>
+			<%= will_paginate @categories, :param_name => 'category_page' %>
+		<% end %>
+		<% if signed_in? and current_user.admin? %>
+			<%= link_to 'New category', new_category_path %> |
+		<% end %>
+		<%= link_to 'Back', root_path %>
+	</td>
+	<% if signed_in? %>
+		<td class="side">
+			<%= createUserPanel %>
+		</td>
+	<% end %>
+</table>

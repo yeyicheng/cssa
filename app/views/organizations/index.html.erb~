@@ -1,2 +1,10 @@
-<h1>Organizations#index</h1>
-<p>Find me in app/views/organizations/index.html.erb</p>
+<h1>All Clubs</h1>
+
+<%= will_paginate %>
+
+<ul class="clubs">
+	<%= render @organizations %>
+</ul>
+
+<%= will_paginate %>
+

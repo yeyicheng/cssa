@@ -7,6 +7,8 @@ namespace :db do
 			make_microposts
 			make_relationships
 			make_clubs
+			make_weather
+			make_categories
 		end
 	end
 	def make_users
@@ -15,8 +17,8 @@ namespace :db do
 		:password => "foobar",
 		:password_confirmation => "foobar")
 		admin.toggle!(:admin)
-		99.times do |n|
-			name = Faker::Name.name
+		50.times do |n|
+			name = "User.#{n+1}"
 			email = "example-#{n+1}@railstutorial.org"
 			password = "password"
 			User.create!(:name => name,
@@ -41,15 +43,35 @@ namespace :db do
 		following.each { |followed| user.follow!(followed) }
 		followers.each { |follower| follower.follow!(user) }
 	end
+	def make_categories
+		5.times do |n|
+			name = "Category-#{n+1}"
+			description = 'please add description'
+			Category.create!(:name => name,
+						:description => description,
+						)
+		end
+	end
 	def make_clubs
-		99.times do |n|
-			name = Faker::Name.name
+		20.times do |n|
+			name = "Club-#{n+1}"
 			email = "example-#{n+1}@railstutorial.org"
 			logo_url = 'logo.png'
 			description = 'please add description'
 			Organizations.create!(:name => name,
 						:email => email,
 						:logo_url => logo_url,
-						:description => description)
+						:description => description,
+						:category_id => 1
+						)
 		end
+	end
+	def make_weather
+		Weather.create(:time => '11-11-2012',
+					:condition => "fair",
+					:temp_c => 30.1,
+					:temp_f => 80.2,
+					:icon_url => "/img.png",
+					:location => "College Park"
+					)
 	end

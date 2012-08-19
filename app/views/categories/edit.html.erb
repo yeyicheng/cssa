@@ -1,0 +1,12 @@
+<h1>Editing category</h1>
+
+<%= form_for(@category) do |f| %>
+	<%= render 'form', :f => f %>
+	<div class="actions">
+		<%= f.submit "Update" %>
+	</div>
+<% end %>
+
+<%= link_to 'Show', @category %> |
+<%= link_to 'Back', categories_path %>
+

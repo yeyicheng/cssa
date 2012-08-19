@@ -128,7 +128,8 @@ nav#site-nav ul li.hover ul li a { /* This line is required for IE 6 and below *
 nav#site-nav ul ul li a:hover,
 nav#site-nav ul li:hover ul li a:hover,
 nav#site-nav ul li.hover ul li a:hover { /* This line is required for IE 6 and below */
-	background: #36f; /* Sub menu items background colour */
+	/* #36f */
+	background: lightgrey; /* Sub menu items background colour */
 	color: #fff;
 }
 /* Make the sub menus appear on hover */
@@ -168,6 +169,9 @@ div.field, div.actions {
 }
 .row_left {
 	border: 1px solid black;
+	vertical-align: top;
+	padding: 10px;
+	width: 70%
 }
 .first_row .row_right {
 	padding: 10px;
@@ -213,15 +217,22 @@ a.sign_in_button {
 	border-radius: 5px;
 }
 
+/* Home forum feeds */
+td.row_left table.forum_feeds{
+	border: 1px solid #000;	
+}
 
 /* User show page */
 table.profile {
 	width: 100%;
-	margin-bottom: 0;
 }
 td.main {
 	width: 70%;
 	padding: 1em;
+	vertical-align: top;
+}
+td.side {
+	vertical-align: top;
 }
 
 /* User panel */
@@ -241,6 +252,9 @@ div.user_info a {
 }
 div.user_info span.user_name {
 	display: block;
+}
+div.user_info span.user_name span {
+	vertical-align: 100%;
 }
 div.user_info span.microposts {
 	font-size: 80%;
@@ -365,10 +379,7 @@ table.microposts tr td.micropost span.timestamp {
 	font-size: 85%;
 	color: #666;
 }
-table.profile td.sidebar #micropost_content {
-	height: 30px;
-	width: 300px;
-}
+
 .content {
 	white-space: pre-wrap;
 	white-space: -o-pre-wrap; /* Opera 7 */

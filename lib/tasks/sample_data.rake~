@@ -6,6 +6,9 @@ namespace :db do
 			make_users
 			make_microposts
 			make_relationships
+			make_clubs
+			make_weather
+			make_categories
 		end
 	end
 	def make_users
@@ -39,4 +42,36 @@ namespace :db do
 		followers = users[3..40]
 		following.each { |followed| user.follow!(followed) }
 		followers.each { |follower| follower.follow!(user) }
+	end
+	def make_categories
+		5.times do |n|
+			name = Faker::Company.name
+			description = 'please add description'
+			Category.create!(:name => name,
+						:description => description,
+						)
+		end
+	end
+	def make_clubs
+		99.times do |n|
+			name = Faker::Name.name
+			email = "example-#{n+1}@railstutorial.org"
+			logo_url = 'logo.png'
+			description = 'please add description'
+			Organizations.create!(:name => name,
+						:email => email,
+						:logo_url => logo_url,
+						:description => description,
+						:category_id => 1
+						)
+		end
+	end
+	def make_weather
+		Weather.create(:time => '11-11-2012',
+					:condition => "fair",
+					:temp_c => 30.1,
+					:temp_f => 80.2,
+					:icon_url => "/img.png",
+					:location => "College Park"
+					)
 	end

@@ -1,0 +1,8 @@
+<li>
+	<%= avatar_for club, :thumb %>
+	<%= link_to club[:name], club %>
+	<% if current_user.admin? %>
+	| <%= link_to "Delete", club, :method => :delete, :confirm => "Are you sure?",
+		:title => "Delete #{club.name}" %>
+	<% end %>
+</li>

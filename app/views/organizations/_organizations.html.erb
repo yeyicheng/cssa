@@ -1,8 +1,17 @@
-<li>
-	<%= image_tag organizations[:logo_url], :size => 30 %>
-	<%= link_to organizations[:name], organizations %>
-	<% if current_user.admin? %>
-		| <%= link_to "Delete", organizations, :method => :delete, :confirm => "You sure?",
-		:title => "Delete #{organizations.name}" %>
-	<% end %>
-</li>
+<tr>
+	<td>
+		<%= avatar_for organizations, :medium %>
+	</td>
+	<td>
+		<table>
+			<tr>
+				<%= link_to organizations[:name], organizations %>
+				<% if signed_in? and current_user.admin? %>
+				| <%= link_to "Delete", organizations, :method => :delete, :confirm => "Are you sure?",
+					:title => "Delete #{organizations.name}" %>
+				<% end %><br />
+			</tr>
+			<tr><%= organizations.description %></tr>
+		</table>
+	</td>
+</tr>
