@@ -16,7 +16,7 @@
 #  category_id         :integer
 #
 
-class Organizations < ActiveRecord::Base
+class Organization < ActiveRecord::Base
 	has_attached_file :avatar, :styles => { :large => '100x100>', :medium => "80x80>", :thumb => "50x50>" }
 	attr_accessible :description, :email, :logo_url, :name, :avatar, :category_id
 	

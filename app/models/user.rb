@@ -62,7 +62,7 @@ class User < ActiveRecord::Base
 	# reverse_member_relationships: users => organizations
 	#	find the clubs under a user
 	#	users -> member_id --- club_id -> organizations
-	has_many :org_relationships, foreign_key: "member_id", dependent: :destroy, class_name: "OrgRelationships"
+	has_many :org_relationships, foreign_key: "member_id", dependent: :destroy, class_name: "OrgRelationship"
 	has_many :applied_clubs, through: :org_relationships, source: :club
 	has_many :reverse_member_relationships, foreign_key: "member_id", dependent: :destroy, class_name: "MemberRelationship"
 	has_many :clubs, through: :reverse_member_relationships, source: :club

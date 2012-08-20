@@ -12,7 +12,7 @@
 class MemberRelationship < ActiveRecord::Base
 	attr_accessible :member_id
 	
-	belongs_to :club, :class_name => "Organizations"
+	belongs_to :club, :class_name => "Organization"
 	belongs_to :member, class_name: "User"
 	
 	validates :club_id, :member_id, :presence => true

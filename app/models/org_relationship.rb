@@ -9,10 +9,10 @@
 #  updated_at :datetime         not null
 #
 
-class OrgRelationships < ActiveRecord::Base
+class OrgRelationship < ActiveRecord::Base
 	attr_accessible :club_id
 	
-	belongs_to :club, class_name: "Organizations"
+	belongs_to :club, class_name: "Organization"
 	belongs_to :member, class_name: "User"
 	
 	validates :club_id, :member_id, presence: true

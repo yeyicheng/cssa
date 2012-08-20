@@ -1,13 +1,14 @@
 
 module PagesHelper
-	def	createShowPage (parent, children, new, back) 
+	def	createShowPage (parent, children, new, new_path, back) 
 		@user = current_user
 		@micropost = Micropost.new
 		@feed_items = current_user.feed.paginate(:page => params[:feed_page], :per_page => 8)
 
 		render :partial => 'shared/show_page', 
 			:locals => {:feed_items => @feed_items, :user => @user, :micropost => @micropost, 
-			:parent => parent, :children => children, :new => new, :back => back
+				:parent => parent, :children => children, 
+				:new => new, :new_path => new_path, :back => back
 		}
 	end
 	

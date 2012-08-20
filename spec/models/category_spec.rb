@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: categories
+#
+#  id                  :integer          not null, primary key
+#  name                :string(255)
+#  description         :text
+#  avatar_file_name    :string(255)
+#  avatar_content_type :string(255)
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#
+
 require 'spec_helper'
 
 describe Category do

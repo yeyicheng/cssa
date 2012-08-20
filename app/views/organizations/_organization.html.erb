@@ -1,0 +1,17 @@
+<tr>
+	<td>
+		<%= avatar_for organization, :medium %>
+	</td>
+	<td>
+		<table>
+			<tr>
+				<%= link_to organization[:name], organization %>
+				<% if signed_in? and current_user.admin? %>
+				| <%= link_to "Delete", organization, :method => :delete, :confirm => "Are you sure?",
+					:title => "Delete #{organization.name}" %>
+				<% end %><br />
+			</tr>
+			<tr><%= organization.description %></tr>
+		</table>
+	</td>
+</tr>

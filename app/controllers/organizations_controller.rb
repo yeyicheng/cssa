@@ -6,7 +6,7 @@ class OrganizationsController < ApplicationController
 		@user = current_user
 
 		@title = 'Clubs | New'
-		@club = Organizations.new
+		@club = Organization.new
 	end
 	
 	def create
@@ -27,12 +27,12 @@ class OrganizationsController < ApplicationController
 		@feed_items = current_user.feed.paginate(:page => params[:feed_page], :per_page => 8)
 
 		@category = {'Default' => 0, 'Academic' => 1, 'Sports' => 2}
-		@club = Organizations.find(params[:id])
+		@club = Organization.find(params[:id])
 		@title = 'Clubs | ' + @club[:name] +' | Edit'
 	end
 	
 	def update
-		@club = Organizations.find(params[:id])
+		@club = Organization.find(params[:id])
 		if @club.update_attributes(params[:club])
 			flash[:success] = "Profile updated."
 			redirect_to @club
@@ -47,13 +47,13 @@ class OrganizationsController < ApplicationController
 		@micropost = Micropost.new
 		@feed_items = current_user.feed.paginate(:page => params[:feed_page], :per_page => 8)
 
-		@club = Organizations.find(params[:id])
+		@club = Organization.find(params[:id])
 		@members = @club.members.paginate(:page => params[:member_page], :per_page => 15)
 		@title = 'Clubs | ' + @club[:name]
 	end
 	
 	def destroy
-		Organizations.find(params[:id]).destroy
+		Organization.find(params[:id]).destroy
 		redirect_to organizations_path
 	end
   

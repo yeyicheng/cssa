@@ -4,13 +4,15 @@ class MemberRelationshipsController < ApplicationController
 	
 	def create
 		@member = User.find(params[:member_relationship][:member_id])
-		self.club.accept!(@member)
+		@club = MemberRelationship.find(params[:id]).club
+		@club.accept!(@member)
 		respond_with @member
 	end
 	
 	def destroy
-		@member = MemberRelationships.find(params[:id]).member
-		self.club.remove!(@member)
+		@member = MemberRelationship.find(params[:id]).member
+		@club = MemberRelationship.find(params[:id]).club
+		@club.remove!(@member)
 		respond_with @member
 	end
 end

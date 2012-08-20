@@ -1636,6 +1636,11 @@ td.main {
 }
 td.side {
 	vertical-align: top;
+	background-color: #ffc;
+	border: 1px solid #000;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;	
 }
 
 /* User panel */
@@ -1787,6 +1792,8 @@ table.microposts tr td.micropost span.timestamp {
 	white-space: pre-wrap;
 	white-space: -o-pre-wrap; /* Opera 7 */
 	white-space: -moz-pre-wrap; /* Mozilla */
+	word-break: break-all;
+	word-wrap: break-word;
 }
 
 /* Art troupe */
@@ -1809,6 +1816,7 @@ table.art_message tr {
 	border: thin solid grey;
 	background-color: white;
 	word-break: break-all;
+	word-wrap: break-word;
 	display: block;
 }
 table.abstract{

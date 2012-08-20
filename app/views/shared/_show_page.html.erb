@@ -3,6 +3,14 @@
 		<h1>
 			<%= avatar_for parent, :medium %>
 			<%= parent.name %>
+			<% if parent.class.to_s.downcase == 'user' %>
+				<%= render 'users/follow_form' if signed_in? %>
+				<h4><%= User.find(params[:id]).email %></h4>
+			<% end %>
+			<% if parent.class.to_s.downcase == 'organization' %>
+				<%= render 'organizations/join_quit_form' if signed_in? %>
+				<h4><%= Organization.find(params[:id]).description %></h4>
+			<% end %>
 		</h1>
 		<% unless children.empty? %>
 			<%= will_paginate children, :param_name => children.first.class.to_s.downcase + '_page' %>
@@ -12,12 +20,12 @@
 			<%= will_paginate children, :param_name => children.first.class.to_s.downcase + '_page' %>
 		<% end %>
 		<% if new != '' and signed_in? and current_user.admin? %>
-		<%= link_to 'New ' + new, 'new' %> |
+			<%= link_to 'New ' + new, new_path %> |
 		<% end %>
 		<%= link_to 'Back', back %>
 	</td>
 	<% if signed_in? %>
-		<td class="side">
+		<td class="side round">
 			<table>
 				<%= render :partial =>'shared/user_info_feeds', :feed_items => feed_items, :user => user, :micropost => micropost %>
 			</table>

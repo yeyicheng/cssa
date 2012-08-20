@@ -1,0 +1,10 @@
+<% @club = Organization.find(params[:id]) %>
+<div id="join_quit_form">
+	<% if current_user.joined? @club %>
+		<%= render 'organizations/quit' %>
+	<% elsif current_user.applied? @club %>
+		<%= render 'organizations/cancel' %>
+	<% else %>
+		<%= render 'organizations/join' %>
+	<% end %>
+</div>
