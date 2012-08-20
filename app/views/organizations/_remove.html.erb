@@ -1,0 +1,7 @@
+<% @club = Organization.find(params[:id]) %>
+<%= form_for @club.member_relationships.find_by_member_id(user),
+		html: { method: :delete },
+		remote: true do |f| %>
+	<%= f.submit "Remove member", class: "js_actions" %>
+<% end %>
+

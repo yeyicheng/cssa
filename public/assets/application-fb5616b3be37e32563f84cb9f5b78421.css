@@ -1566,6 +1566,9 @@ footer nav {
 div.field, div.actions {
 	margin-bottom: 10px;
 }
+table.users td {
+	text-align: center;
+}
 
 /* First row */
 .first_row {

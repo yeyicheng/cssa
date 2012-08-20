@@ -1,0 +1,6 @@
+<% @club = Organization.find(params[:id]) %>
+<% session[:current_club] = @club.id %>
+<%= form_for (@club.member_relationships.build(member_id: user.id)), remote: true do |f| %>
+	<div><%= f.hidden_field :member_id %></div>
+	<%= f.submit "Accept", class: "js_actions" %>
+<% end %>

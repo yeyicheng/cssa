@@ -119,11 +119,12 @@ class User < ActiveRecord::Base
 	end
 	
 	def follow!(followed)
-		relationships.create!(followed_id: followed.id)
+		relationships.create!(followed_id: followed.id) unless self == followed
 	end
 	
 	def unfollow!(followed)
-		relationships.find_by_followed_id(followed).destroy
+		rel = following? followed
+		relationships.find_by_followed_id(followed).destroy unless !rel
 	end
 	
 	### Club ###
@@ -149,9 +150,7 @@ class User < ActiveRecord::Base
 	def quit! club
 		mem_rel = joined? club
 		
-		if mem_rel
-			mem_rel.destroy
-		end
+		mem_rel.destroy unless !mem_rel
 	end
 	
 	### Micropost ###

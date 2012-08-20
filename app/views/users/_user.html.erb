@@ -1,8 +1,13 @@
-<li>
-	<%= avatar_for user, :thumb %>
-	<%= link_to user[:name], user %>
+<tr class='user_partial'>
+	<td><%= avatar_for user, :thumb %></td>
+	<td><%= link_to user[:name], user %></td>
 	<% if signed_in? and current_user.admin? %>
-		| <%= link_to "Delete", user, :method => :delete, :confirm => "You sure?",
-		:title => "Delete #{user.name}" %>
+		<td>|</td>
+		<% if defined? show_form %></td>
+			<td><%= render :partial => 'organizations/accept_remove_form', :locals => {:user => user} %></td>
+		<% else %>
+			<td><%= link_to "Delete", user, :method => :delete, :confirm => "Are you sure?",
+					:title => "Delete #{user.name}" %></td>
+		<% end %>
 	<% end %>
-</li>
+</tr>

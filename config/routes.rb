@@ -22,7 +22,7 @@ Cssa::Application.routes.draw do
 	end
 	resources :organizations do
 		member do
-			get :members
+			get :members, :waitlists
 		end
 	end
 	# get "organizations/index"

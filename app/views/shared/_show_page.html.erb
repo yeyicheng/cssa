@@ -15,7 +15,11 @@
 		<% unless children.empty? %>
 			<%= will_paginate children, :param_name => children.first.class.to_s.downcase + '_page' %>
 			<table class="users">
-				<%= render children %>
+				<% if parent.class.to_s.downcase == 'organization' %>
+					<%= render :partial => 'users/user', :locals => {:show_form => true}, :collection => children %>
+				<% else %>
+					<%= render children %>
+				<% end %>
 			</table>
 			<%= will_paginate children, :param_name => children.first.class.to_s.downcase + '_page' %>
 		<% end %>
