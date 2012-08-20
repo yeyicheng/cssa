@@ -5,7 +5,7 @@
 </div>
 <div class="field">
 	<%= f.label :category %><br />
-	<%= f.select :category, @category %>
+	<%= f.select :category, Category.all.map {|x| x[:name].to_s} %>
 </div>
 <div class="field">
 	<%= f.label :email %><br />

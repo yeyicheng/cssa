@@ -82,14 +82,14 @@ class UsersController < ApplicationController
 	def following
 		@user = User.find(params[:id])
 		@title = @user[:name] + " | Following"
-		@users = @user.following.paginate(:page => params[:page], :per_page => 20)
+		@users = @user.following.paginate(:page => params[:page], :per_page => 15)
 		render 'show_follow'
 	end
 	
 	def followers
 		@user = User.find(params[:id])
 		@title = @user[:name] + " | Followers"
-		@users = @user.followers.paginate(:page => params[:page], :per_page => 20)
+		@users = @user.followers.paginate(:page => params[:page], :per_page => 15)
 		render 'show_follow'
 	end
 	
@@ -102,7 +102,8 @@ class UsersController < ApplicationController
 	def clubs
 		@user = User.find(params[:id])
 		@title = @user[:name] + " | Clubs"
-		@clubs = @user.clubs
+		@users = @user.clubs.paginate(:page => params[:page], :per_page => 10)
+		render 'show_follow'
 	end
 	
 	private	

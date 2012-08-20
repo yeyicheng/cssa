@@ -1567,7 +1567,7 @@ div.field, div.actions {
 	margin-bottom: 10px;
 }
 table.users td {
-	text-align: center;
+	vertical-align: center;
 }
 
 /* First row */
@@ -1636,6 +1636,9 @@ td.main {
 	width: 70%;
 	padding: 1em;
 	vertical-align: top;
+}
+td.main h1{
+	vertical-align: middle;
 }
 td.side {
 	vertical-align: top;

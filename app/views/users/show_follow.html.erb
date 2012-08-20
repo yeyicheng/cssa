@@ -1,16 +1,1 @@
-<table summary="Information about following/followers">
-	<tr>
-		<td class="main">
-			<h1><%= @title %></h1>
-			<% unless @users.empty? %>
-				<ul class="users">
-					<%= render @users %>
-				</ul>
-				<%= will_paginate @users %>
-			<% end %>
-		</td>
-		<td class="sidebar round">
-			<%= render 'shared/user_info' %>
-		</td>
-	</tr>
-</table>                                 
+<%= createShowPage @user, @users, '', '', @user %>

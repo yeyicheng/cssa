@@ -1,4 +1,3 @@
-
 module PagesHelper
 	def	createShowPage (parent, children, new, new_path, back) 
 		@user = current_user

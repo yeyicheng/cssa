@@ -1,17 +1,15 @@
 <tr>
 	<td>
-		<%= avatar_for organization, :medium %>
+		<%= link_to avatar_for(organization, :medium), organization %>
 	</td>
 	<td>
 		<table>
-			<tr>
-				<%= link_to organization[:name], organization %>
-				<% if signed_in? and current_user.admin? %>
-				| <%= link_to "Delete", organization, :method => :delete, :confirm => "Are you sure?",
-					:title => "Delete #{organization.name}" %>
-				<% end %><br />
-			</tr>
-			<tr><%= organization.description %></tr>
+			<td style='border-right: 1px solid #000'><%= link_to organization[:name], organization %>
+			<td><%= organization.description %></td>
+			<% if signed_in? and current_user.admin? %>
+				<td><%= link_to "Delete", organization, :method => :delete, :confirm => "Are you sure?",
+					:title => "Delete #{organization.name}" %></td>
+			<% end %>
 		</table>
 	</td>
 </tr>

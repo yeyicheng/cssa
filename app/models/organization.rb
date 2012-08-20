@@ -17,7 +17,7 @@
 #
 
 class Organization < ActiveRecord::Base
-	has_attached_file :avatar, :styles => { :large => '100x100>', :medium => "80x80>", :thumb => "50x50>" }
+	has_attached_file :avatar, :styles => { :large => '120x120>', :medium => "100x100>", :thumb => "50x50>" }
 	attr_accessible :description, :email, :logo_url, :name, :avatar, :category_id
 	
 	belongs_to :category

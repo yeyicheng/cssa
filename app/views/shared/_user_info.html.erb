@@ -4,15 +4,12 @@
 			<%= avatar_for current_user, :thumb %>
 			<span><%= current_user.name %></span>
 		</span>
-		<span class="microposts">
-			<%= pluralize(current_user.microposts.count, "micropost") %>
-		</span>
 	</a>
 	<%= link_to "Sign out", sign_out_path, :method => :delete, :class => "profile_links"  %>
 	<%= link_to "Profile", current_user, :class => "profile_links" %>
 	<% if current_user.admin? %>
 		<%= link_to "Admin", users_path, :class => "profile_links" %>
-	<% end %>
+	<% end %><br />
 	<%= render 'shared/stats' %>
 	Member since: <%= current_user[:created_at].strftime("%Y-%b-%d") %>
 </div>

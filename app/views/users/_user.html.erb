@@ -1,5 +1,5 @@
 <tr class='user_partial'>
-	<td><%= avatar_for user, :thumb %></td>
+	<td><%= link_to avatar_for(user, :thumb), user %></td>
 	<td><%= link_to user[:name], user %></td>
 	<% if signed_in? and current_user.admin? %>
 		<td>|</td>

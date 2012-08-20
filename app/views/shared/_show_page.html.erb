@@ -1,17 +1,13 @@
 <table class="profile" summary="Profile information">
 	<td class="main">
-		<h1>
-			<%= avatar_for parent, :medium %>
-			<%= parent.name %>
-			<% if parent.class.to_s.downcase == 'user' %>
-				<%= render 'users/follow_form' if signed_in? %>
-				<h4><%= User.find(params[:id]).email %></h4>
-			<% end %>
-			<% if parent.class.to_s.downcase == 'organization' %>
-				<%= render 'organizations/join_quit_form' if signed_in? %>
-				<h4><%= Organization.find(params[:id]).description %></h4>
-			<% end %>
-		</h1>
+		<table>
+			<td><%= link_to avatar_for(parent, :medium), parent %></td>
+			<td><h1><%= parent.name %></h1></td>
+			<td><%= parent[:description] if parent.class.to_s.downcase == 'organization' %></td>
+			<td><%= parent[:email] if parent.class.to_s.downcase == 'user' %></td>
+		</table>
+			<span ><%= render 'users/follow_form' if parent.class.to_s.downcase == 'user' %></span>
+			<span ><%= render 'organizations/join_quit_form' if parent.class.to_s.downcase == 'organization' %></span>
 		<% unless children.empty? %>
 			<%= will_paginate children, :param_name => children.first.class.to_s.downcase + '_page' %>
 			<table class="users">
