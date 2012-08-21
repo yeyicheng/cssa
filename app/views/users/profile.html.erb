@@ -1,0 +1,17 @@
+<table class="profile" summary="Profile information">
+	<td class="main">
+		<table>
+			<td><%= link_to avatar_for(@user, :medium), @user %></td>
+			<td><h1><%= @user[:name] %></h1></td>
+			<td><%= mail_to @user[:email] %></td>
+			<td><%= link_to 'Edit', edit_user_path(@user) %></td>
+		</table>
+	</td>
+	<% if signed_in? %>
+		<td class="side round">
+			<table>
+				<%= render 'shared/user_info_feeds' %>
+			</table>
+		</td>
+	<% end %>
+</table>

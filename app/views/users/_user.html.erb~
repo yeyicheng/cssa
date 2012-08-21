@@ -1,8 +1,14 @@
-<li>
-	<%= gravatar_for user, :size => 30 %>
-	<%= link_to user[:name], user %>
-	<% if current_user.admin? %>
-		| <%= link_to "Delete", user, :method => :delete, :confirm => "You sure?",
-		:title => "Delete #{user.name}" %>
+<tr class='user_partial'>
+	<td><%= link_to avatar_for(user, :thumb), user %></td>
+	<td><%= link_to user[:name], user %></td>
+	<% if signed_in? and current_user.admin? %>
+		<% if defined? show_form %></td>
+			<td><%= render :partial => 'organizations/accept_remove_form', :locals => {:user => user} %></td>
+		<% elsif defined? user_club %>
+			<td><%= render :partial => 'organizations/quit', :locals => {:user => user} %></td>
+		<% else %>
+			<td><%= link_to "Delete", user, :method => :delete, :confirm => "Are you sure?",
+					:title => "Delete #{user.name}" %></td>
+		<% end %>
 	<% end %>
-</li>
+</tr>

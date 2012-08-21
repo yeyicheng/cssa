@@ -6,7 +6,7 @@
 		</span>
 	</a>
 	<%= link_to "Sign out", sign_out_path, :method => :delete, :class => "profile_links"  %>
-	<%= link_to "Profile", current_user, :class => "profile_links" %>
+	<%= link_to "Profile", profile_user_path(current_user), :class => "profile_links" %>
 	<% if current_user.admin? %>
 		<%= link_to "Admin", users_path, :class => "profile_links" %>
 	<% end %><br />

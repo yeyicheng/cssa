@@ -1,10 +1,8 @@
 Cssa::Application.routes.draw do
-  resources :categories
-
 	# devise_for :users
-
+	resources :categories
 	resources :services, :only => [:index, :create, :destroy]
-	resources :organizations
+	resources :organizations, :except => [:index] 
 	resources :org_relationships, :only => [:create, :destroy]
 	resources :member_relationships, :only => [:create, :destroy]
 	resources :weathers, :only => [:index]
@@ -17,9 +15,14 @@ Cssa::Application.routes.draw do
 			get :following, :followers, :services, :clubs
 		end
 	end
+	resources :categories do
+		member do
+			get :clubs
+		end
+	end
 	resources :organizations do
 		member do
-			get :members
+			get :members, :waitlists
 		end
 	end
 	# get "organizations/index"
@@ -42,7 +45,7 @@ Cssa::Application.routes.draw do
 	
 	match '/contact' => 'pages#contact'
 	match '/about' => "pages#about"
-	match '/clubs' => "organizations#index"
+	# match '/clubs' => "categories#index"
 	match '/links' => 'pages#link'
 	# match '/home' => "pages#home"
 	match '/welcome' => "pages#welcome"
@@ -54,7 +57,7 @@ Cssa::Application.routes.draw do
 	match '/sign_in' => "sessions#new"
 	match '/sign_out' => "sessions#destroy"
 	match '/users' => "users#index"
-	match '/organizations'=> 'organizations#index'
+	# match '/organizations'=> 'organizations#index'
 	match '/auth/:provider/callback' => 'services#create' 
 	match '/auth/failure' => 'services#failure'
 	match '/microposts' => 'pages#home'

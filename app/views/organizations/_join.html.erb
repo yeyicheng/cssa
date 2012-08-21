@@ -1,4 +1,4 @@
-<% @club = Organization.find(params[:id]) %>
+<% @club = current_club %>
 <%= form_for (current_user.org_relationships.build(club_id: @club.id)), remote: true do |f| %>
 	<div><%= f.hidden_field :club_id %></div>
 	<%= f.submit "Join club", class: "actions" %>

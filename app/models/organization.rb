@@ -18,7 +18,7 @@
 
 class Organization < ActiveRecord::Base
 	has_attached_file :avatar, :styles => { :large => '120x120>', :medium => "100x100>", :thumb => "50x50>" }
-	attr_accessible :description, :email, :logo_url, :name, :avatar, :category_id
+	attr_accessible :description, :email, :name, :avatar, :category_id
 	
 	belongs_to :category
 	
@@ -27,13 +27,9 @@ class Organization < ActiveRecord::Base
 	has_many :reverse_org_relationships, foreign_key: 'club_id', dependent: :destroy, class_name: 'OrgRelationship'
 	has_many :applicants, through: :reverse_org_relationships, source: :member
 	
-	email_regex = /^[\w+\-._]+@[a-z\d\-._]+\.[a-z]+$/i
-	url_regex = /\.(png|jpg|gif)$/
-	
 	validates :name, presence: true, length: { maximum: 30, minimum: 3 }, uniqueness: true
-	validates :email, presence: true, format: { with: email_regex }, uniqueness: true
+	validates :email, presence: true, uniqueness: true
 	validates :description, presence: true, length: { maximum: 300, minimum: 5 }
-	validates :logo_url, presence: true, format: { with: url_regex }
 	
 	def has_member?(member)
 		member_relationships.find_by_member_id(member.id)

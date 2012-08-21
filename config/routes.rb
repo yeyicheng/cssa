@@ -57,10 +57,10 @@ Cssa::Application.routes.draw do
 	match '/sign_in' => "sessions#new"
 	match '/sign_out' => "sessions#destroy"
 	match '/users' => "users#index"
-	# match '/organizations'=> 'organizations#index'
 	match '/auth/:provider/callback' => 'services#create' 
 	match '/auth/failure' => 'services#failure'
 	match '/microposts' => 'pages#home'
+	match '/users/:id/profile' => 'users#profile', :as => :profile_user
 	
 	# match 'http://hollow-waterfall-1839.herokuapp.com/auth/:provider/callback' => 'services#create' 
 	# The priority is based upon order of creation:

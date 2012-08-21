@@ -1,4 +1,4 @@
-<% @club = Organization.find(params[:id]) %>
+<% @club = current_club %>
 <%= form_for current_user.reverse_member_relationships.find_by_club_id(@club),
 		html: { method: :delete },
 		remote: true do |f| %>

@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 	def new
 		if signed_in?
 			flash[:error] = "Please sign out to sign up for another account."
-			redirect_to root_path
+			redirect_to current_user
 		else
 			@user = User.new
 			@title = "Sign up"
@@ -106,14 +106,11 @@ class UsersController < ApplicationController
 		render 'show_follow'
 	end
 	
-	private	
-		def correct_user
-			if params[:id]
-				@user = User.find(params[:id])
-				redirect_to(root_path) unless current_user?(@user)
-			else
-				redirect_to(root_path) unless current_user.admin?
-			end
-		end
+	def profile
+		@micropost = Micropost.new
+		@feed_items = current_user.feed.paginate(:page => params[:feed_page], :per_page => 8)
+		@user = User.find(params[:id])
+		@title = @user[:name] + ' | Profile'
+	end
 end
 

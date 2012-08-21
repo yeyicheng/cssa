@@ -1,4 +1,7 @@
 module SessionsHelper
+	def current_club
+		Organization.find(session[:current_club])
+	end
 	
 	def sign_in(user)
 		cookies.signed[:remember_token] = {:value => [user.id, user.salt], :expires => 1.hour.from_now}
@@ -54,6 +57,15 @@ module SessionsHelper
 	def correct_user?
 		@user = User.find(params[:id])
 		current_user? @user
+	end
+	
+	def correct_user
+		if params[:id]
+			@user = User.find(params[:id])
+			redirect_to @user, :alert => "Sorry, you don\'t have the permission to edit this user's profile." unless current_user?(@user)
+		else
+			redirect_to(root_path) unless current_user.admin?
+		end
 	end
 	
 	private

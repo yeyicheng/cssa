@@ -1,16 +1,16 @@
 class OrganizationsController < ApplicationController
-	before_filter :authenticate, :only => [:show]
-	before_filter :admin_auth, :except => [:index, :show, :members]
+	before_filter :authenticate, :only => [:show, :members]
+	before_filter :admin_auth, :only => [:new, :create, :update, :edit, :destroy, :waitlists]
 
 	def new
 		@user = current_user
-
 		@title = 'Clubs | New'
 		@club = Organization.new
 	end
 	
 	def create
-		@club = Organization.new(params[:club])
+		@user = current_user
+		@club = Organization.new(params[:organization])
 		if @club.save
 			flash[:success] = "Welcome to the Sample App!"
 			redirect_to @club
@@ -26,14 +26,14 @@ class OrganizationsController < ApplicationController
 		@micropost = Micropost.new
 		@feed_items = current_user.feed.paginate(:page => params[:feed_page], :per_page => 8)
 
-		@category = {'Default' => 0, 'Academic' => 1, 'Sports' => 2}
 		@club = Organization.find(params[:id])
-		@title = 'Clubs | ' + @club[:name] +' | Edit'
+		@title = 'Clubs | ' + @club[:name] + ' | Edit'
 	end
 	
 	def update
+		@user = current_user
 		@club = Organization.find(params[:id])
-		if @club.update_attributes(params[:club])
+		if @club.update_attributes(params[:organization])
 			flash[:success] = "Profile updated."
 			redirect_to @club
 		else
@@ -46,7 +46,7 @@ class OrganizationsController < ApplicationController
 		@user = current_user
 		@micropost = Micropost.new
 		@feed_items = current_user.feed.paginate(:page => params[:feed_page], :per_page => 8)
-
+		session[:current_club] = params[:id]
 		@club = Organization.find(params[:id])
 		@members = @club.members.paginate(:page => params[:member_page], :per_page => 15)
 		@title = 'Clubs | ' + @club[:name]
@@ -57,13 +57,15 @@ class OrganizationsController < ApplicationController
 		redirect_to organizations_path
 	end
   
-	def members        
+	def members      
+		session[:current_club] = params[:id]
 		@club = Organization.find(params[:id])
 		@title = 'Clubs | ' + @club[:name] + ' | Members'
 		@members = @club.members.paginate(:page => params[:members_page], :per_page => 20)
 	end
 	
 	def waitlists 
+		session[:current_club] = params[:id]
 		@club = Organization.find(params[:id])
 		@title = 'Clubs | ' + @club[:name] + ' | Waitlist'
 		@waitlists = @club.applicants.paginate(:page => params[:applicants_page], :per_page => 20)

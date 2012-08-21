@@ -1,0 +1,7 @@
+<% @club = Organization.find(params[:id]) %><%debugger%>
+<%= form_for current_user.reverse_member_relationships.find_by_club_id(@club),
+		html: { method: :delete },
+		remote: true do |f| %>
+		<%= f.submit "Quit club", class: "actions" %>
+<% end %>
+
