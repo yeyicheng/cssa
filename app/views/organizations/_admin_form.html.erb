@@ -1,0 +1,7 @@
+<div id='admin_form'>
+	<% if !current_club.has_admin? user %>
+		<%= render :partial => 'add_admin_form', :locals => {:user => user} %>
+	<% else %>
+		<%= render :partial => 'remove_admin_form', :locals => {:user => user} %>
+	<% end %>
+</div>

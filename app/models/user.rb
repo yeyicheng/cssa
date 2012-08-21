@@ -67,6 +67,13 @@ class User < ActiveRecord::Base
 	has_many :reverse_member_relationships, foreign_key: "member_id", dependent: :destroy, class_name: "MemberRelationship"
 	has_many :clubs, through: :reverse_member_relationships, source: :club
 	
+	### Club admin ###
+	# reverse_club_admins:
+	#	find the clubs that a user has admin authorization
+	#	users -> member_id --- club_id -> club
+	has_many :reverse_club_admins, foreign_key: 'member_id', dependent: :destroy, class_name: 'ClubAdmin'
+	has_many :admin_clubs, through: :reverse_club_admins, source: :club	
+	
 	### Avatar ###
 	has_attached_file :avatar, :styles => { :medium => "100x100>", :thumb => "50x50>" }
 	
@@ -86,7 +93,7 @@ class User < ActiveRecord::Base
 	
 	### Filters ###
 	before_save :encrypt_password
-	
+
 	### Class methods ###
 	# incomplete
 	def self.create_with_omniauth(info)
@@ -149,8 +156,12 @@ class User < ActiveRecord::Base
 	
 	def quit! club
 		mem_rel = joined? club
-		
 		mem_rel.destroy unless !mem_rel
+	end
+
+	### Club admins ###	
+	def is_admin_of?(club)
+		reverse_club_admins.find_by_club_id club.id
 	end
 	
 	### Micropost ###

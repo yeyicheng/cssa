@@ -1,6 +1,8 @@
 <% @club = Organization.find(params[:id]) %>
+<% session[:current_club] = @club.id %>
 <div id="accept_remove_form">
 	<% if @club.has_member? user %>
+		<%= render :partial => 'admin_form', :locals => {:user => user} %>
 		<%= render :partial => 'remove', :locals => {:user => user} %>
 	<% elsif @club.waitlist? user %>
 		<%= render :partial => 'accept', :locals => {:user => user} %>

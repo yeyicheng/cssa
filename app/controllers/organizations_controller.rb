@@ -61,13 +61,20 @@ class OrganizationsController < ApplicationController
 		session[:current_club] = params[:id]
 		@club = Organization.find(params[:id])
 		@title = 'Clubs | ' + @club[:name] + ' | Members'
-		@members = @club.members.paginate(:page => params[:members_page], :per_page => 20)
+		@members = @club.members.paginate(:page => params[:member_page], :per_page => 15)
 	end
 	
 	def waitlists 
 		session[:current_club] = params[:id]
 		@club = Organization.find(params[:id])
 		@title = 'Clubs | ' + @club[:name] + ' | Waitlist'
-		@waitlists = @club.applicants.paginate(:page => params[:applicants_page], :per_page => 20)
+		@waitlists = @club.applicants.paginate(:page => params[:applicant_page], :per_page => 15)
+	end
+	
+	def admins
+		session[:current_club] = params[:id]
+		@club = Organization.find(params[:id])
+		@title = 'Clubs | ' + @club[:name] + ' | Admins'
+		@admins = @club.admins.paginate(:page => params[:admin_page], :per_page => 15)
 	end
 end

@@ -1,0 +1,18 @@
+class ClubAdminsController < ApplicationController
+	before_filter :admin_auth
+	respond_to :html, :js
+	
+	def create
+		@member = User.find(params[:club_admin][:member_id])
+		@club = Organization.find(session[:current_club])
+		@club.add_admin! @member
+		respond_with @club
+	end
+	
+	def destroy
+		@member = ClubAdmin.find(params[:id]).member
+		@club = ClubAdmin.find(params[:id]).club
+		@club.remove_admin! @member
+		respond_with @club
+	end
+end

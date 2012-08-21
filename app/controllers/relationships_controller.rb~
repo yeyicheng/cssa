@@ -1,4 +1,3 @@
-
 class RelationshipsController < ApplicationController
 	before_filter :authenticate
 	respond_to :html, :js
@@ -14,5 +13,4 @@ class RelationshipsController < ApplicationController
 		current_user.unfollow!(@user)
 		respond_with @user
 	end
-	
 end

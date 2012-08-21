@@ -1,0 +1,4 @@
+<%= form_for current_club.club_admins.build(member_id: user.id), remote: true do |f| %>
+	<div><%= f.hidden_field :member_id %></div>
+	<%= f.submit "Add admin", class: "js_actions" %>
+<% end %>

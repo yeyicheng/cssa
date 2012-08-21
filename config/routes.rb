@@ -10,6 +10,7 @@ Cssa::Application.routes.draw do
 	resources :sessions, :only => [:new, :create, :destroy]
 	resources :microposts, :only => [:create, :destroy]
 	resources :relationships, :only => [:create, :destroy]
+	resources :club_admins, :only => [:create, :destroy]
 	resources :users do
 		member do
 			get :following, :followers, :services, :clubs
@@ -22,7 +23,7 @@ Cssa::Application.routes.draw do
 	end
 	resources :organizations do
 		member do
-			get :members, :waitlists
+			get :members, :waitlists, :admins
 		end
 	end
 	# get "organizations/index"

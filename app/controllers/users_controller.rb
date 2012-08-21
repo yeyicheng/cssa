@@ -82,14 +82,14 @@ class UsersController < ApplicationController
 	def following
 		@user = User.find(params[:id])
 		@title = @user[:name] + " | Following"
-		@users = @user.following.paginate(:page => params[:page], :per_page => 15)
+		@users = @user.following.where("followed_id != #{@user.id}").paginate(:page => params[:user_page], :per_page => 15)
 		render 'show_follow'
 	end
 	
 	def followers
 		@user = User.find(params[:id])
 		@title = @user[:name] + " | Followers"
-		@users = @user.followers.paginate(:page => params[:page], :per_page => 15)
+		@users = @user.followers.where("follower_id != #{current_user.id}").paginate(:page => params[:user_page], :per_page => 15)
 		render 'show_follow'
 	end
 	
