@@ -3,10 +3,10 @@ class ClubAdminsController < ApplicationController
 	respond_to :html, :js
 	
 	def create
-		@member = User.find(params[:clubAdmins][:member_id])
+		@member = User.find(params[:club_admin][:member_id])
 		@club = Organization.find(session[:current_club])
 		@club.add_admin! @member
-		repond_with @club
+		respond_with @club
 	end
 	
 	def destroy

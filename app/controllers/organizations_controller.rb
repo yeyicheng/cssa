@@ -1,6 +1,7 @@
 class OrganizationsController < ApplicationController
 	before_filter :authenticate, :only => [:show, :members]
-	before_filter :admin_auth, :only => [:new, :create, :update, :edit, :destroy, :waitlists]
+	before_filter :club_admin_auth, :only => [:new, :edit, :update, :waitlists, :admins]
+	before_filter :admin_auth, :only => [:new, :create, :destroy]
 
 	def new
 		@user = current_user
@@ -48,27 +49,28 @@ class OrganizationsController < ApplicationController
 		@feed_items = current_user.feed.paginate(:page => params[:feed_page], :per_page => 8)
 		session[:current_club] = params[:id]
 		@club = Organization.find(params[:id])
-		@members = @club.members.paginate(:page => params[:member_page], :per_page => 15)
+		@members = @club.members.paginate(:page => params[:user_page], :per_page => 15)
 		@title = 'Clubs | ' + @club[:name]
 	end
 	
 	def destroy
-		Organization.find(params[:id]).destroy
-		redirect_to organizations_path
+		org = Organization.find(params[:id])
+		org.destroy
+		redirect_to org.category
 	end
   
 	def members      
 		session[:current_club] = params[:id]
 		@club = Organization.find(params[:id])
 		@title = 'Clubs | ' + @club[:name] + ' | Members'
-		@members = @club.members.paginate(:page => params[:member_page], :per_page => 15)
+		@members = @club.members.paginate(:page => params[:user_page], :per_page => 15)
 	end
 	
 	def waitlists 
 		session[:current_club] = params[:id]
 		@club = Organization.find(params[:id])
 		@title = 'Clubs | ' + @club[:name] + ' | Waitlist'
-		@waitlists = @club.applicants.paginate(:page => params[:applicant_page], :per_page => 15)
+		@waitlists = @club.applicants.paginate(:page => params[:user_page], :per_page => 15)
 	end
 	
 	def admins

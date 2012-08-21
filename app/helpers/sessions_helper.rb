@@ -68,6 +68,10 @@ module SessionsHelper
 		end
 	end
 	
+	def club_admin_auth
+		deny_access unless current_user.admin? or current_user.is_admin_of? current_club
+	end
+	
 	private
 		
 		def user_from_remember_token

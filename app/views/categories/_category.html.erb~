@@ -1,0 +1,16 @@
+<tr>
+	<td>
+		<%= link_to avatar_for(category, :medium), category %>
+	</td>
+	<td>
+		<table>
+			<td style='border-right: 1px solid #000'>
+				<%= link_to category[:name], category %></td>
+			<td><%= category[:description] %></td>
+				<% if signed_in? and current_user.admin? %>
+					<td><%= link_to "Delete", category, :method => :delete, :confirm => "Are you sure?",
+					:title => "Delete #{category.name}" %></td>
+				<% end %>
+		</table>
+	</td>
+</tr>

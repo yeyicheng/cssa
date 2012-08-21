@@ -51,7 +51,7 @@ class UsersController < ApplicationController
 	
 	def show
 		@user = User.find(params[:id])
-		@microposts = @user.microposts.paginate(:page => params[:micro_page], :per_page => 10)
+		@microposts = @user.microposts.paginate(:page => params[:micropost_page], :per_page => 10)
 		@title = @user[:name]
 		if !signed_in?
 			redirect_to sign_in_path
@@ -82,14 +82,14 @@ class UsersController < ApplicationController
 	def following
 		@user = User.find(params[:id])
 		@title = @user[:name] + " | Following"
-		@users = @user.following.where("followed_id != #{@user.id}").paginate(:page => params[:user_page], :per_page => 15)
+		@users = @user.following.where("follower_id != followed_id").paginate(:page => params[:user_page], :per_page => 15)
 		render 'show_follow'
 	end
 	
 	def followers
 		@user = User.find(params[:id])
 		@title = @user[:name] + " | Followers"
-		@users = @user.followers.where("follower_id != #{current_user.id}").paginate(:page => params[:user_page], :per_page => 15)
+		@users = @user.followers.where("follower_id != followed_id").paginate(:page => params[:user_page], :per_page => 15)
 		render 'show_follow'
 	end
 	
@@ -102,7 +102,7 @@ class UsersController < ApplicationController
 	def clubs
 		@user = User.find(params[:id])
 		@title = @user[:name] + " | Clubs"
-		@users = @user.clubs.paginate(:page => params[:page], :per_page => 10)
+		@users = @user.clubs.paginate(:page => params[:club_page], :per_page => 10)
 		render 'show_follow'
 	end
 	

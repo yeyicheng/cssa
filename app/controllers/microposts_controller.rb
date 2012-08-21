@@ -16,8 +16,9 @@ class MicropostsController < ApplicationController
 	end
 	
 	def destroy
+		@micropost = Micropost.find(params[:id])
 		@micropost.destroy
-		redirect_back_or @micropost.user
+		redirect_to @micropost.user
 	end
 	
 	private

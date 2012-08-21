@@ -1,5 +1,5 @@
 class ClubAdminsController < ApplicationController
-	before_filter :admin_auth
+	before_filter :club_admin_auth
 	respond_to :html, :js
 	
 	def create

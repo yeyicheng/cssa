@@ -8,12 +8,12 @@
 		</a><br />
 		<a href="<%= following_user_path(@user) %>">
 			<span id="following" class="stat">
-				<%= pluralize(current_user.following.where("followed_id != #{current_user.id}").count, "following") %>
+				<%= pluralize(current_user.following.where("followed_id != follower_id").count, "following") %>
 			</span>
 		</a>
 		<a href="<%= followers_user_path(@user) %>">
 			<span id="followers" class="stat">                  
-				<%= pluralize(current_user.followers.where("follower_id != #{current_user.id}").count, "follower") %>
+				<%= pluralize(current_user.followers.where("follower_id != followed_id").count, "follower") %>
 			</span>
 		</a><br />
 		<a href="<%= clubs_user_path(@user) %>">

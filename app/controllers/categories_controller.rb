@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
 	# GET /categories/1.json
 	def show
 		@category = Category.find(params[:id])
-		@clubs = Organization.where(:category_id => params[:id]).order('name ASC').paginate(:page => params[:club_page], :per_page => 15)
+		@clubs = Organization.where(:category_id => params[:id]).order('name ASC').paginate(:page => params[:organization_page], :per_page => 15)
 		respond_to do |format|
 			format.html # show.html.erb
 			format.json { render json: @category.to_json(:include => [:clubs]) }

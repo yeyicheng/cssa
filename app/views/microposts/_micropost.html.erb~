@@ -1,6 +1,6 @@
 <tr>
 	<td class="micropost">
-		<%= gravatar_for micropost.user, :size => 50 %>
+		<%= avatar_for micropost.user, :thumb %>
 	</td>
 	<td class="micropost">
 		<span class="user">

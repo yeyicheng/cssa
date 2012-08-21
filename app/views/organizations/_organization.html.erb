@@ -7,7 +7,7 @@
 			<td style='border-right: 1px solid #000'><%= link_to organization[:name], organization %>
 			<td><%= organization.description %></td>
 			<% if signed_in? and current_user.admin? %>
-				<td><%= link_to "Delete", organization, :method => :delete, :confirm => "Are you sure?",
+				<td><%= button_to "Delete", organization, :method => :delete, :confirm => "Are you sure?",
 					:title => "Delete #{organization.name}" %></td>
 			<% end %>
 		</table>
