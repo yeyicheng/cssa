@@ -25,6 +25,10 @@ class PagesController < ApplicationController
 	def welcome
 		@title = 'Welcome'
 	end
+	
+	def welcome_ch
+		@title = 'Welcome'
+	end
   
 	def service
 		@title = 'Services'

@@ -50,6 +50,7 @@ Cssa::Application.routes.draw do
 	match '/links' => 'pages#links'
 	# match '/home' => "pages#home"
 	match '/welcome' => "pages#welcome"
+	match '/welcome/ch' => "pages#welcome_ch"
 	match '/handbook' => "pages#handbook"
 	match '/art' => "pages#art"
 	match '/news' => "pages#news"
