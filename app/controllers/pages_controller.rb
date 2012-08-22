@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 			store_location
 			@micropost = Micropost.new
 			@user = current_user
-			@feed_items = current_user.feed.paginate(:page => params[:page], :per_page => 5)
+			@feed_items = current_user.feed.paginate(:page => params[:feed_page], :per_page => 5)
 		end
 	end
   
@@ -40,6 +40,11 @@ class PagesController < ApplicationController
 	
 	def links
 		@title = 'Links'
+		if signed_in?
+			@micropost = Micropost.new
+			@user = current_user
+			@feed_items = current_user.feed.paginate(:page => params[:feed_page], :per_page => 5)
+		end
 	end
 	
 	def art

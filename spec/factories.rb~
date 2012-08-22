@@ -20,6 +20,7 @@ FactoryGirl.define do
 		description	'ddddddd'
 		email		'aa@dd.com'
 		logo_url	'dff.png'
+		category_id	2
 	end
 end
 

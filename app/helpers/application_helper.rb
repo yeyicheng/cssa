@@ -11,9 +11,9 @@ module ApplicationHelper
 	def avatar_for (user, size)
 		if user.avatar.url.end_with? 'missing.png'
 			@size = user.avatar.options[:styles][size][0..-2]
-			image_tag 'rails.png', :size => @size
+			image_tag 'rails.png', :size => @size, :alt => user[:name], class: 'avatar'
 		else	
-			image_tag user.avatar.url(size)
+			image_tag user.avatar.url(size), :alt => user[:name], class: 'avatar'
 		end
 	end
 end

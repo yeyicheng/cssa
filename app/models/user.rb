@@ -156,7 +156,10 @@ class User < ActiveRecord::Base
 	
 	def quit! club
 		mem_rel = joined? club
-		mem_rel.destroy unless !mem_rel
+		if mem_rel
+			club.remove_admin! self
+			mem_rel.destroy
+		end
 	end
 
 	### Club admins ###	

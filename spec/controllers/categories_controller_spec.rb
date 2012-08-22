@@ -19,146 +19,179 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe CategoriesController do
+	render_views
+	
+	before do
+		FactoryGirl.create(:weather)
+	end
+	
+	describe "GET index" do
+		before do
+			@categories = []
+			30.times do
+				@categories << FactoryGirl.create(:category, :name => FactoryGirl.generate(:name))
+			end
+			@user = FactoryGirl.create(:user)
+			get :index
+		end
+		describe 'not signed-in and signed in' do
+			it "should be successful" do
+				response.should be_success
+			end
+			it "should have the right title" do
+				response.should have_selector("title", :content => "Clubs | category")
+			end
+			it "should have an element for each category" do
+				@categories[0..8].each do |cat|
+					response.should have_selector("a", :href => category_path(cat), :content => cat[:name])
+				end
+			end
+			it "should paginate categories" do
+				response.should have_selector("div.pagination")
+				response.should have_selector("span.disabled", :content => "Previous")
+				response.should have_selector("a", :href => "/categories?category_page=2", :content => "2")
+				response.should have_selector("a", :href => "/categories?category_page=2", :content => "Nex")
+			end
+			it 'should not show a new category link' do
+				test_sign_in @user
+				get :index
+				response.should_not have_selector('a', :href => '/categories/new', :content => 'New category')
+			end
+		end
+		describe 'signed-in as admin' do
+			before do
+				@user.toggle! :admin
+				test_sign_in @user
+				get :index
+			end
+			it 'should show a new category link when signed in as admin' do
+				response.should have_selector("a", :href => "/categories/new", :content => "New category")
+			end
+		end
+	end
 
-  # This should return the minimal set of attributes required to create a valid
-  # Category. As you add validations to Category, be sure to
-  # update the return value of this method accordingly.
-  def valid_attributes
-    {}
-  end
+	describe "GET 'show'" do
+		before do
+			@user = FactoryGirl.create(:user)
+			@cat = FactoryGirl.create(:category)
+			@clubs = []
+			20.times.each do
+				@clubs << FactoryGirl.create(:organization, :email => FactoryGirl.generate(:email), :name => FactoryGirl.generate(:name), :category_id => @cat.id)
+			end
+			test_sign_in @user
+			get :show, :id => @cat
+		end
+		describe 'as a non-admin' do
+			it "should be success" do
+				response.should be_success
+			end
+			it "should have the right title" do
+				response.should have_selector("title", :content => 'Clubs | ' + @cat.name)
+			end
+			it "should include the category's name" do
+				response.should have_selector("h1", :content => @cat.name)
+			end
+			it "should paginate clubs" do
+				response.should have_selector("div.pagination")
+				response.should have_selector("span.disabled", :content => "Previous")
+				response.should have_selector("a", :href => "/categories/#{@cat.id}?organization_page=2", :content => "2")
+				response.should have_selector("a", :href => "/categories/#{@cat.id}?organization_page=2", :content => "Next")
+			end
+			it 'should show a back link' do
+				response.should have_selector("a", :href => "/categories", :content => "Back")
+			end
+		end
+		describe 'as admin' do
+			it 'should show new club link' do
+				@user.toggle!(:admin)
+				get :show, :id => @cat
+				response.should have_selector("a", :href => "/organizations/new", :content => "New club")
+			end
+		end
+	end                                                               
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # CategoriesController. Be sure to keep this updated too.
-  def valid_session
-    {}
-  end
+	describe "GET 'new'" do
+		before do
+			@user = FactoryGirl.create(:user)
+			@club = FactoryGirl.create(:category)
+			@user.toggle!(:admin)
+			test_sign_in @user
+			get :new
+		end
+		it "returns http success" do
+			response.should be_success
+		end
+		it "should have the right title" do
+			response.should have_selector("title", :content => "Category | New")
+		end
+		it 'should show a back link' do
+			response.should have_selector("a", :href => "/categories", :content => "Back")
+		end
+	end
+	
+	describe "GET edit" do
+		before do
+			@user = FactoryGirl.create(:user)
+			@cat = FactoryGirl.create(:category)
+			@user.toggle!(:admin)
+			test_sign_in @user
+			get :edit, :id => @cat
+		end
+		it "returns http success" do
+			response.should be_success
+		end
+		it "should have the right title" do
+			response.should have_selector("title", :content => "Category | " + @cat[:name] + " | Edit")
+		end
+		it 'should show a back link' do
+			response.should have_selector("a", :href => "/categories", :content => "Back")
+		end
+	end
 
-  describe "GET index" do
-    it "assigns all categories as @categories" do
-      category = Category.create! valid_attributes
-      get :index, {}, valid_session
-      assigns(:categories).should eq([category])
-    end
-  end
+	describe "POST create" do
+		describe "with valid params" do
+			before do
+				@user = FactoryGirl.create(:user)
+				@user.toggle! :admin
+				test_sign_in @user
+			end
 
-  describe "GET show" do
-    it "assigns the requested category as @category" do
-      category = Category.create! valid_attributes
-      get :show, {:id => category.to_param}, valid_session
-      assigns(:category).should eq(category)
-    end
-  end
+			it "creates a new Category" do
+				expect {
+					post :create, {:category => {:name => 'Category-sample', :description => 'lalalaalalalalala'}}
+				}.to change(Category, :count).by(1)
+			end
+			
+			it "redirects to the created category" do
+				post :create, {:category => {:name => 'Category-sample', :description => 'lalalaalalalalala'}}
+				response.should redirect_to(Category.last)
+			end
+		end
+	
+		describe "with invalid params" do
+			before do
+				@user = FactoryGirl.create(:user)
+				@user.toggle! :admin
+				test_sign_in @user
+			end
 
-  describe "GET new" do
-    it "assigns a new category as @category" do
-      get :new, {}, valid_session
-      assigns(:category).should be_a_new(Category)
-    end
-  end
-
-  describe "GET edit" do
-    it "assigns the requested category as @category" do
-      category = Category.create! valid_attributes
-      get :edit, {:id => category.to_param}, valid_session
-      assigns(:category).should eq(category)
-    end
-  end
-
-  describe "POST create" do
-    describe "with valid params" do
-      it "creates a new Category" do
-        expect {
-          post :create, {:category => valid_attributes}, valid_session
-        }.to change(Category, :count).by(1)
-      end
-
-      it "assigns a newly created category as @category" do
-        post :create, {:category => valid_attributes}, valid_session
-        assigns(:category).should be_a(Category)
-        assigns(:category).should be_persisted
-      end
-
-      it "redirects to the created category" do
-        post :create, {:category => valid_attributes}, valid_session
-        response.should redirect_to(Category.last)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved category as @category" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Category.any_instance.stub(:save).and_return(false)
-        post :create, {:category => {}}, valid_session
-        assigns(:category).should be_a_new(Category)
-      end
-
-      it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Category.any_instance.stub(:save).and_return(false)
-        post :create, {:category => {}}, valid_session
-        response.should render_template("new")
-      end
-    end
-  end
-
-  describe "PUT update" do
-    describe "with valid params" do
-      it "updates the requested category" do
-        category = Category.create! valid_attributes
-        # Assuming there are no other categories in the database, this
-        # specifies that the Category created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        Category.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, {:id => category.to_param, :category => {'these' => 'params'}}, valid_session
-      end
-
-      it "assigns the requested category as @category" do
-        category = Category.create! valid_attributes
-        put :update, {:id => category.to_param, :category => valid_attributes}, valid_session
-        assigns(:category).should eq(category)
-      end
-
-      it "redirects to the category" do
-        category = Category.create! valid_attributes
-        put :update, {:id => category.to_param, :category => valid_attributes}, valid_session
-        response.should redirect_to(category)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns the category as @category" do
-        category = Category.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Category.any_instance.stub(:save).and_return(false)
-        put :update, {:id => category.to_param, :category => {}}, valid_session
-        assigns(:category).should eq(category)
-      end
-
-      it "re-renders the 'edit' template" do
-        category = Category.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Category.any_instance.stub(:save).and_return(false)
-        put :update, {:id => category.to_param, :category => {}}, valid_session
-        response.should render_template("edit")
-      end
-    end
-  end
-
-  describe "DELETE destroy" do
-    it "destroys the requested category" do
-      category = Category.create! valid_attributes
-      expect {
-        delete :destroy, {:id => category.to_param}, valid_session
-      }.to change(Category, :count).by(-1)
-    end
-
-    it "redirects to the categories list" do
-      category = Category.create! valid_attributes
-      delete :destroy, {:id => category.to_param}, valid_session
-      response.should redirect_to(categories_url)
-    end
-  end
-
+			it "re-renders the 'new' template" do
+				post :create, {:category => {}}
+				response.should render_template("new")
+			end
+		end
+	end
+	
+	describe "PUT update" do
+		describe "with valid params" do
+			
+		end
+	
+		describe "with invalid params" do
+			
+		end
+	end
+	
+	describe "DELETE destroy" do
+	end
 end

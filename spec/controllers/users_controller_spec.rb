@@ -8,7 +8,7 @@ describe UsersController do
 	end
 	
 	describe "GET 'new'" do
-		before (:each) do
+		before do
 			get :new
 		end
 		it "returns http success" do
@@ -49,8 +49,8 @@ describe UsersController do
 				response.should have_selector("title", :content => "Users")
 			end
 			it "should have an element for each user" do
-				@users.each do |user|
-					response.should have_selector("li", :content => user.name)
+				@users[0..10].each do |user|
+					response.should have_selector("a", :href => user_path(user), :content => user.name)
 				end
 			end
 			it "should paginate users" do
@@ -68,7 +68,7 @@ describe UsersController do
 	end
 	
 	describe "GET 'show'" do
-		before(:each) do
+		before do
 			@user = FactoryGirl.create(:user)
 		end
 		
@@ -80,7 +80,7 @@ describe UsersController do
 		end
 		
 		describe "when signed in" do
-			before (:each) do
+			before do
 				test_sign_in @user
 			end
 			it "should be success" do
@@ -101,7 +101,7 @@ describe UsersController do
 			end
 			it "should have a profile image" do
 				get :show, :id => @user
-				response.should have_selector("h1>img", :class => "gravatar")
+				response.should have_selector("img", :class => "avatar")
 			end
 			it "should show the user's microposts" do
 				mp1 = FactoryGirl.create(:micropost, :user => @user, :content => "Foo bar")
@@ -115,7 +115,7 @@ describe UsersController do
 	
 	describe "POST 'create'" do
 		describe "failure" do
-			before(:each) do
+			before do
 				@attr = { :name => "", :email => "", :password => "",
 				:password_confirmation => "" }
 			end
@@ -171,15 +171,9 @@ describe UsersController do
 			get :edit, :id => @user
 			response.should have_selector("title", :content => @user[:name] + " | Edit")
 		end
-		it "should have a link to change the Gravatar" do
-			get :edit, :id => @user
-			gravatar_url = "http://gravatar.com/emails"
-			response.should have_selector("a", :href => gravatar_url,
-			:content => "change")
-		end
 	end
 	describe "authentication of edit/update pages" do
-		before(:each) do
+		before do
 			@user = FactoryGirl.create(:user)
 		end
 		describe "for non-signed-in users" do
@@ -194,38 +188,39 @@ describe UsersController do
 		end
 
 		describe "for signed-in users" do
-			before(:each) do
+			before do
 				wrong_user = FactoryGirl.create(:user, :email => "user@example.net")
 				test_sign_in(wrong_user)
 			end
 			it "should require matching users for 'edit'" do
 				get :edit, :id => @user
-				response.should redirect_to(root_path)
+				response.should redirect_to @user
 			end
 			it "should require matching users for 'update'" do
 				put :update, :id => @user, :user => {}
-				response.should redirect_to(root_path)
+				response.should redirect_to @user
 			end
 		end
 	end
 	
 	describe "DELETE 'destroy'" do
-		before(:each) do
+		before do
 			@user = FactoryGirl.create(:user)
+			@other = FactoryGirl.create(:user, :email => 'aaa@ddfsdf.com')
 		end
 		describe "as a non-signed-in user" do
 			it "should deny access" do
-				delete :destroy, :id => @user
+				delete :destroy, :id => @other
 				response.should redirect_to(sign_in_path)
 			end
 		end
 		describe "as a non-admin user" do
-			before(:each) do
+			before do
 				test_sign_in(@user)
 			end
 			it "should protect the page" do
 				delete :destroy, :id => @user
-				response.should redirect_to(sign_in_path)
+				response.should redirect_to(root_path)
 			end
 			it "should not show delete links" do
 				delete :destroy, :id => @user

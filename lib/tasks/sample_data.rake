@@ -44,7 +44,7 @@ namespace :db do
 		followers.each { |follower| follower.follow!(user) }
 	end
 	def make_categories
-		5.times do |n|
+		25.times do |n|
 			name = "Category-#{n+1}"
 			description = 'please add description'
 			Category.create!(:name => name,
@@ -58,9 +58,8 @@ namespace :db do
 			email = "example-#{n+1}@railstutorial.org"
 			logo_url = 'logo.png'
 			description = 'please add description'
-			Organizations.create!(:name => name,
+			Organization.create!(:name => name,
 						:email => email,
-						:logo_url => logo_url,
 						:description => description,
 						:category_id => 1
 						)

@@ -47,7 +47,7 @@ Cssa::Application.routes.draw do
 	match '/contact' => 'pages#contact'
 	match '/about' => "pages#about"
 	# match '/clubs' => "categories#index"
-	match '/links' => 'pages#link'
+	match '/links' => 'pages#links'
 	# match '/home' => "pages#home"
 	match '/welcome' => "pages#welcome"
 	match '/handbook' => "pages#handbook"

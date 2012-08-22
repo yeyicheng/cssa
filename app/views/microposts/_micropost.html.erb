@@ -14,7 +14,7 @@
 	<% if current_user?(micropost.user) %>
 		<td class="micropost">
 			<%= button_to "Delete", micropost, :method => :delete, :method => :delete,
-											:confirm => "Are you sure?",
+											:onclick => "return confirm('Are you sure?')",
 											:title => micropost.content %>
 		</td>
 	<% end %>

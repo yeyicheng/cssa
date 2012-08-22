@@ -15,22 +15,25 @@ FactoryGirl.define do
 		location	"College Park"
 	end
 	
-	factory :organizations do
-		name		'AAA'
-		description	'ddddddd'
+	factory :organization do
+		name		'Example Club'
+		description	'ddjjj ddddd'
 		email		'aa@dd.com'
-		logo_url	'dff.png'
-		category_id	2
 	end
-end
-
-FactoryGirl.define do
+	
+	factory :category do
+		name		'Excample Category'
+		description	'add some description'
+	end
+	
 	sequence :email do |n|
 		"person-#{n}@example.com"
 	end
-end
-
-FactoryGirl.define do 
+	
+	sequence :name do |n|
+		"Name-#{n}"
+	end
+	
 	factory :micropost do
 		content "sigh"
 		association :user

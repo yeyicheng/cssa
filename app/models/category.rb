@@ -18,4 +18,7 @@ class Category < ActiveRecord::Base
 	has_attached_file :avatar, :styles => { medium: "100x100>", thumb: "50x50>" }
 	
 	has_many :clubs, class_name: "Organization"
+	
+	validates :name, presence: true, length: {minimum: 3, maximum: 30}
+	validates :description, presence: true, length: {minimum: 10, maximum: 300}
 end

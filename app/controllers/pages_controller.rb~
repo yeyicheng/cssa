@@ -44,5 +44,6 @@ class PagesController < ApplicationController
 	
 	def art
 		@title = 'Art'
+		@results = getFBGroupFeed['data']
 	end
 end

@@ -1,10 +1,20 @@
-<h1>All Users</h1>
-
-<%= will_paginate %>
-
-<ul class="users">
-	<%= render @users %>
-</ul>
-
-<%= will_paginate %>
-
+<table class="profile" summary="Profile information">
+	<td class="main">
+		<h1>
+			 All users
+		</h1>
+		<% unless @users.empty? %>
+			<%= will_paginate @users %>
+			<table class="users">
+				<%= render @users %>
+			</table>
+			<%= will_paginate @users %>
+		<% end %>
+		<%= link_to 'Back', root_path %>
+	</td>
+	<% if signed_in? %>
+		<td class="side">
+			<%= createUserPanel %>
+		</td>
+	<% end %>
+</table>

@@ -5,43 +5,21 @@ describe OrganizationsController do
 	
 	before do
 		FactoryGirl.create(:weather)
-		@org = FactoryGirl.create(:organizations)
 	end	
 	
-	describe "GET 'index'" do
-		describe "for non-signed-in users" do
-			before :each do
-				@user = FactoryGirl.create(:user)
-				get :index
-			end
-			it "should deny access" do
-				response.should redirect_to(sign_in_path)
-			end
-		end
-		describe "for signed-in users" do
-			before do
-				@user = FactoryGirl.create(:user)
-				test_sign_in @user
-				get :index
-			end
-			
-			it "returns http success" do
-				response.should be_success
-			end
-			it "should have the right title" do
-				response.should have_selector("title", :content => "Clubs")
-			end
-		end
-	end
-
 	describe "GET 'new'" do
-		describe "for non-signed-in users" do
+		describe "for non-signed-in and non-admin users" do
 			before do
 				@user = FactoryGirl.create(:user)
 				get :new
 			end
-			it "should deny access" do
-				response.should redirect_to(sign_in_path)
+			it "should deny access for non-signed-in" do
+				response.should redirect_to(root_path)
+			end
+			it 'should deny access for non-admin' do
+				test_sign_in @user
+				get :new
+				response.should redirect_to(root_path)
 			end
 		end
 		
@@ -57,6 +35,9 @@ describe OrganizationsController do
 			end
 			it "should have the right title" do
 				response.should have_selector("title", :content => "Clubs | New")
+			end
+			it "should have a back link" do
+				response.should have_selector("a", :href => categories_path, :content => "Back")
 			end
 		end
 	end
@@ -85,21 +66,25 @@ describe OrganizationsController do
 	describe "GET 'show'" do
 		before do
 			@user = FactoryGirl.create(:user)
+			@cat = FactoryGirl.create(:category)
+			@club = FactoryGirl.create(:organization, :category_id => @cat.id)
 		end
-		describe "when not signed in" do
-			it "should deny access" do
-				get :show, :id => @org
+		describe 'when not signed in' do
+			it 'should not be success' do
+				get :show, :id => @club
 				response.should redirect_to sign_in_path
 			end
 		end
-		
 		describe "when signed in" do
 			before do
 				test_sign_in @user
+				get :show, :id => @club
 			end
 			it "should be success" do
-				get :show, :id => @org
 				response.should be_success
+			end
+			it 'should have a back link' do
+				response.should have_selector('a', :href => category_path(@club.category_id), :content => 'Back')
 			end
 		end
 	end
@@ -107,20 +92,20 @@ describe OrganizationsController do
 	describe "DELETE 'destroy'" do
 		before do
 			@user = FactoryGirl.create(:user)
+			@cat = FactoryGirl.create(:category)
+			@club = FactoryGirl.create(:organization, :category_id => @cat.id)
 		end
 		describe "as a non-signed-in user" do
 			it "should deny access" do
-				delete :destroy, :id => @org
-				response.should redirect_to(sign_in_path)
+				delete :destroy, :id => @club
+				response.should redirect_to(root_path)
 			end
 		end
 		describe "as a non-admin" do
-			before do
-				test_sign_in @user
-			end
 			it "should deny access" do
-				delete :destroy, :id => @org
-				response.should redirect_to(sign_in_path)
+				test_sign_in @user
+				delete :destroy, :id => @club
+				response.should redirect_to(root_path)
 			end
 		end
 		describe "as an admin user" do
@@ -130,8 +115,8 @@ describe OrganizationsController do
 			end
 			it "should destroy the club" do
 				lambda do
-					delete :destroy, :id => @org
-				end.should change(Organizations, :count).by(-1)
+					delete :destroy, :id => @club
+				end.should change(Organization, :count).by(-1)
 			end
 		end
 	end

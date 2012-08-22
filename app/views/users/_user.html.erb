@@ -1,14 +1,20 @@
+
+
+
+
+
+
 <tr class='user_partial'>
 	<td><%= link_to avatar_for(user, :thumb), user %></td>
 	<td><%= link_to user[:name], user %></td>
-	<% if signed_in? and current_user.admin? %>
-		<% if defined? show_form %></td>
+	<% if signed_in? %>
+		<% if defined? show_form and (current_user.is_admin_of? club or current_user.admin?) %></td>
 			<td><%= render :partial => 'organizations/accept_remove_form', :locals => {:user => user} %></td>
 		<% elsif defined? user_club %>
 			<% session[:current_club] = user.id %>
 			<td><%= render :partial => 'organizations/quit', :locals => {:user => user} %></td>
 		<% else %>
-			<td><%= link_to "Delete", user, :method => :delete, :confirm => "Are you sure?",
+			<td><%= link_to "Delete", user, :method => :delete, :onclick => "return confirm('Are you sure?')",
 					:title => "Delete #{user.name}" %></td>
 		<% end %>
 	<% end %>

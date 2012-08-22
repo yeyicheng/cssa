@@ -13,7 +13,7 @@
 			<%= will_paginate children, :param_name => children.first.class.to_s.downcase + '_page' %>
 			<table class="users">
 				<% if parent.class.to_s.downcase == 'organization' %>
-					<%= render :partial => 'users/user', :locals => {:show_form => true}, :collection => children %>
+					<%= render :partial => 'users/user', :locals => {:show_form => true, :club => parent}, :collection => children %>
 				<% elsif parent.class.to_s.downcase == 'user' and children.first.class.to_s.downcase == 'organization' %>
 					<%= render :partial => 'users/user', :locals => {:user_club => true}, :collection => children %>
 				<% else %>

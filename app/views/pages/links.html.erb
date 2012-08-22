@@ -1,2 +1,23 @@
-<h1>Pages#links</h1>
-<p>Find me in app/views/pages/links.html.erb</p>
+<table class="fist_row">
+	<td class="row_left round">
+		<% @hash = getUsefulLinksHash 'useful_links.txt' %>
+		<% @hash.each { |k, arr| %>
+			<table class="round shadow" style="table-layout: fixed">
+				<th><%= k %></th>
+				<% arr.each { |h| %>
+					<tr class="round shadow">
+						<td class="round"><%= link_to h.flatten[0], h.flatten[0], target: '_blank' %></td>
+						<td class="round"><%= h.flatten[1] %></td>
+					</tr>
+				<% } %>
+			</table>
+		<% } %>
+	</td>
+	<% if signed_in? %>
+		<td class="side round">
+			<table>
+				<%= render 'shared/user_info_feeds' %>
+			</table>
+		</td>
+	<% end %>
+</table>

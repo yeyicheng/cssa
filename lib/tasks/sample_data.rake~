@@ -17,8 +17,8 @@ namespace :db do
 		:password => "foobar",
 		:password_confirmation => "foobar")
 		admin.toggle!(:admin)
-		99.times do |n|
-			name = Faker::Name.name
+		50.times do |n|
+			name = "User.#{n+1}"
 			email = "example-#{n+1}@railstutorial.org"
 			password = "password"
 			User.create!(:name => name,
@@ -45,7 +45,7 @@ namespace :db do
 	end
 	def make_categories
 		5.times do |n|
-			name = Faker::Company.name
+			name = "Category-#{n+1}"
 			description = 'please add description'
 			Category.create!(:name => name,
 						:description => description,
@@ -53,8 +53,8 @@ namespace :db do
 		end
 	end
 	def make_clubs
-		99.times do |n|
-			name = Faker::Name.name
+		20.times do |n|
+			name = "Club-#{n+1}"
 			email = "example-#{n+1}@railstutorial.org"
 			logo_url = 'logo.png'
 			description = 'please add description'

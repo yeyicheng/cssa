@@ -51,7 +51,7 @@ module SessionsHelper
 	end
 	
 	def admin_auth
-		deny_access unless signed_in? && current_user.admin?
+		redirect_to root_path, :alert => "Sorry, but you don't have the permission." unless signed_in? && current_user.admin?
 	end
 	
 	def correct_user?
@@ -60,9 +60,11 @@ module SessionsHelper
 	end
 	
 	def correct_user
-		if params[:id]
+		if !signed_in?
+			deny_access
+		elsif params[:id]
 			@user = User.find(params[:id])
-			redirect_to @user, :alert => "Sorry, you don\'t have the permission to edit this user's profile." unless current_user?(@user)
+			redirect_to @user, :alert => "Sorry, you don\'t have the permission to edit this user's profile." unless correct_user?
 		else
 			redirect_to(root_path) unless current_user.admin?
 		end

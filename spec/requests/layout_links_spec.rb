@@ -37,7 +37,7 @@ describe "LayoutLinks" do
 		end
 	end
 	describe "when signed in" do
-		before(:each) do
+		before do
 			@user = FactoryGirl.create(:user)
 			visit sign_in_path
 			fill_in :email, :with => @user.email
@@ -51,12 +51,8 @@ describe "LayoutLinks" do
 		end
 		it "should have a profile link" do
 			visit root_path
-			response.should have_selector("a", :href => user_path(@user),
+			response.should have_selector("a", :href => profile_user_path(@user),
 			:content => "Profile")
-		end
-		it "should have a Clubs page at '/club'" do
-			get '/club'
-			response.should have_selector('title', :content => "Clubs")
 		end
 	end
 	describe "sign in/out" do
@@ -80,6 +76,73 @@ describe "LayoutLinks" do
 				visit root_path
 				click_link "Sign out"
 				controller.should_not be_signed_in
+			end
+		end
+	end
+	describe 'club behaviors' do
+		before do
+			@user = FactoryGirl.create(:user)
+			@category = FactoryGirl.create(:category)
+			@club = FactoryGirl.create(:organization, :category_id => @category.id)
+			@other = FactoryGirl.create(:user, :email => 'cxycxy@cxy.com')
+		end
+		let (:sign_in_user){
+			visit sign_in_path
+			fill_in :email, :with => @user.email
+			fill_in :password, :with => @user.password
+			click_button 'Sign in'
+		}
+		let (:sign_in_other){
+			visit sign_in_path
+			fill_in :email, :with => @other.email
+			fill_in :password, :with => @other.password
+			click_button 'Sign in'
+		}
+		let (:other_visit_club){
+			sign_in_other
+			visit organization_path(@club)
+		}
+		let (:user_visit_wl){
+			@club.add_admin! @user
+			sign_in_user
+			visit waitlists_organization_path(@club)
+		}
+		describe 'submit request to join a club' do
+			before do
+				other_visit_club
+			end
+			it 'should create a new org_relationship after applying' do
+				expect {click_button 'Join club'}.to change(OrgRelationship, :count).by(1)
+			end
+			it 'should remove the org_relationship after cancelling request' do
+				click_button 'Join club'
+				expect {click_button 'Cancel request'}.to change(OrgRelationship, :count).by(-1)
+			end
+		end
+		describe 'club accept a member' do
+			before do
+				other_visit_club
+				click_button 'Join club'
+				visit sign_out_path
+				
+				user_visit_wl
+			end
+			it 'should create a member_relationshp after accept' do
+				expect{click_button 'Accept'}.to change(MemberRelationship, :count).by(1)
+			end
+			it 'should remove a org_relationshp after accept' do
+				expect {click_button 'Accept'}.to change(OrgRelationship, :count).by(-1)
+			end
+			it 'should remove a org_relationshp after reject' do
+				expect {click_button 'Reject'}.to change(OrgRelationship, :count).by(-1)
+			end
+		end
+		describe 'user quit a club' do
+			it 'should remove a member_relationship after quit' do
+				@club.add_admin! @other
+
+				other_visit_club
+				expect {click_button 'Quit club'}.to change(MemberRelationship, :count).by(-1)
 			end
 		end
 	end

@@ -1,6 +1,6 @@
 class OrganizationsController < ApplicationController
 	before_filter :authenticate, :only => [:show, :members]
-	before_filter :club_admin_auth, :only => [:new, :edit, :update, :waitlists, :admins]
+	before_filter :club_admin_auth, :only => [:edit, :update, :waitlists, :admins]
 	before_filter :admin_auth, :only => [:new, :create, :destroy]
 
 	def new
@@ -23,10 +23,6 @@ class OrganizationsController < ApplicationController
 	end
 	
 	def edit
-		@user = current_user
-		@micropost = Micropost.new
-		@feed_items = current_user.feed.paginate(:page => params[:feed_page], :per_page => 8)
-
 		@club = Organization.find(params[:id])
 		@title = 'Clubs | ' + @club[:name] + ' | Edit'
 	end
@@ -38,25 +34,27 @@ class OrganizationsController < ApplicationController
 			flash[:success] = "Profile updated."
 			redirect_to @club
 		else
-			@title = "Edit user"
+			@title = "Clubs | " + @club[:name] + " | Edit"
 			render 'edit'
 		end
 	end
 	
 	def show
-		@user = current_user
-		@micropost = Micropost.new
-		@feed_items = current_user.feed.paginate(:page => params[:feed_page], :per_page => 8)
 		session[:current_club] = params[:id]
 		@club = Organization.find(params[:id])
 		@members = @club.members.paginate(:page => params[:user_page], :per_page => 15)
 		@title = 'Clubs | ' + @club[:name]
+		respond_to do |format|
+			format.html # show.html.erb
+			format.json { render json: @club.to_json(:include => [:members]) }
+		end
 	end
 	
 	def destroy
-		org = Organization.find(params[:id])
-		org.destroy
-		redirect_to org.category
+		@user = current_user
+		@club = Organization.find(params[:id])
+		@club.destroy
+		redirect_to category_path(@club.category_id)
 	end
   
 	def members      
@@ -77,6 +75,6 @@ class OrganizationsController < ApplicationController
 		session[:current_club] = params[:id]
 		@club = Organization.find(params[:id])
 		@title = 'Clubs | ' + @club[:name] + ' | Admins'
-		@admins = @club.admins.paginate(:page => params[:admin_page], :per_page => 15)
+		@admins = @club.admins.paginate(:page => params[:user_page], :per_page => 15)
 	end
 end

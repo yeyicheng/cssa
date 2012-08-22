@@ -11,6 +11,6 @@
 
 require 'spec_helper'
 
-describe OrgRelationships do
+describe OrgRelationship do
   pending "add some examples to (or delete) #{__FILE__}"
 end

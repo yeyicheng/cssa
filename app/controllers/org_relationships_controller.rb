@@ -10,11 +10,12 @@ class OrgRelationshipsController < ApplicationController
 	
 	def destroy
 		@club = OrgRelationship.find(params[:id]).club
-		if current_user.joined? @club
-			current_user.quit! @club
+		@member = OrgRelationship.find(params[:id]).member
+		if @member.joined? @club
+			@member.quit! @club
 			respond_with @club
-		elsif current_user.applied? @club
-			current_user.cancel! @club
+		elsif @member.applied? @club
+			@member.cancel! @club
 			respond_with @club
 		end
 	end

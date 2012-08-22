@@ -6,5 +6,6 @@
 		<%= render :partial => 'remove', :locals => {:user => user} %>
 	<% elsif @club.waitlist? user %>
 		<%= render :partial => 'accept', :locals => {:user => user} %>
+		<%= render :partial => 'reject', :locals => {:user => user} %>
 	<% end %>
 </div>

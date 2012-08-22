@@ -56,7 +56,10 @@ class Organization < ActiveRecord::Base
 	
 	def remove!(member)
 		mem_rel = has_member? member
-		mem_rel.destroy unless !mem_rel
+		if mem_rel
+			remove_admin! member
+			mem_rel.destroy
+		end
 	end
 	
 	def has_admin? user

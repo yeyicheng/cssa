@@ -1,5 +1,6 @@
 class MemberRelationshipsController < ApplicationController
-	before_filter :admin_auth
+	before_filter :authenticate
+	before_filter :club_admin_auth, :only => :create
 	respond_to :html, :js
 	
 	def create
