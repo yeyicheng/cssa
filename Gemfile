@@ -16,6 +16,7 @@ gem 'nokogiri'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'paperclip'
+gem 'mysql2'
 
 group :development do
   gem 'rspec-rails'

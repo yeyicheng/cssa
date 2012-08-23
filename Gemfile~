@@ -15,6 +15,7 @@ gem 'rufus-scheduler'
 gem 'nokogiri'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'paperclip'
 
 group :development do
   gem 'rspec-rails'

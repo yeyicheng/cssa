@@ -67,4 +67,13 @@ module PagesHelper
 		end
 		hash
 	end
+	
+	def dbConnect 
+		host = 'db2853.perfora.net'
+		db = 'db360162776'
+		user = 'dbo360162776'
+		pwd = 'umcp@2012'
+		
+		
+	end
 end
