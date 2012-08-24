@@ -1,6 +1,0 @@
-RewriteEngine On  
-RewriteRule ^([^\.]+[^/])$ http://%{HTTP_HOST}/$1/ [R=301,L]  
-RewriteBase /  
-RewriteCond %{REQUEST_URI} !^/-  
-RewriteCond %{DOCUMENT_ROOT}/-%2 -d  
-RewriteRule ^(.*)$ -%2/$1 [QSA,L]  

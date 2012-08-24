@@ -68,12 +68,25 @@ module PagesHelper
 		hash
 	end
 	
-	def dbConnect 
-		host = 'db2853.perfora.net'
-		db = 'db360162776'
-		user = 'dbo360162776'
-		pwd = 'umcp@2012'
-		
-		
+	def removeDebugLines data
+		data.gsub!(/^.*<\/b><br \/>$/, '')
+		data
+	end
+	
+	def fetchPostData 
+		uri = URI('http://www.umcpcssa.org/phpBB_fetch_posts.php')
+		res = Net::HTTP.get_response(uri)
+		if res.is_a?(Net::HTTPSuccess)
+			data = removeDebugLines(res.body) 
+			data
+		else
+			raise "Service unavailable"
+		end
+	end
+	
+	def getTagContent(data, ids)
+		ids.each { |id|
+			regex = /^(<.*id=\""#{id}\">(.*)<\/.*>)$/
+		}                 
 	end
 end

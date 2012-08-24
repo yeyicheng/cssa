@@ -5,6 +5,7 @@
 body {
 	background: #000;
 	margin: 0 auto;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
 }
 header {
 	padding-top: 20px;
@@ -225,7 +226,33 @@ a.sign_in_button {
 
 /* Home forum feeds */
 td.row_left table.forum_feeds{
-	border: 1px solid #000;	
+	border: 1px solid #000;
+}
+
+#announcements, #recent, #housing, #sales{
+	border: 1px solid #000;
+	text-align: right;
+	padding: 5px;
+}
+
+#announcements h4, #recent h4, #housing h4, #sales h4 {
+	text-align: center;
+	background: darkred;
+	color: white;
+	font-weight: bold;
+}
+
+span.first{
+	width: 350px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: left;
+	float: left;
+}
+
+span.second {
+	margin-right: 10px;
 }
 
 /* User show page */

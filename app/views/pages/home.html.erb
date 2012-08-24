@@ -10,13 +10,10 @@
 			<span class="arrow previous"></span>
 			<span class="arrow next"></span>
 		</table>
-		<table class="forum_feeds round">
-			<tr> </tr>
-			<tr></tr>
-			<tr></tr>
-		</table>
+			<% data = fetchPostData %>
+			<%= data.html_safe %>
 	</td>
-	<td class="row_right round">
+	<td class="row_right round" style='vertical-align: top'>
 		<% if signed_in? %> <!-- if not signed in, show sign in -->
 			<table>
 				<div id="calendar">
