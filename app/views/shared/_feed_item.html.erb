@@ -2,5 +2,10 @@
 	<td class="gravatar">
 		<%= link_to avatar_for(feed_item.user, :thumb), feed_item.user %>
 	</td>
-	
+	<td class="micropost">
+		<span class="user">
+			<%= link_to feed_item.user.name, feed_item.user %>
+		</span>
+		
+	</td>
 </tr>
