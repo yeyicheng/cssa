@@ -16,4 +16,11 @@ module ApplicationHelper
 			image_tag user.avatar.url(size), :alt => user[:name], class: 'avatar'
 		end
 	end
+	
+	def html_safe_(text)
+       return text if text.nil?
+       return text.html_safe if defined?(ActiveSupport::SafeBuffer)
+       return text.html_safe! if text.respond_to?(:html_safe!)
+       text
+   end
 end
