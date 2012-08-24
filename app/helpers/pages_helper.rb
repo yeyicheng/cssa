@@ -77,7 +77,7 @@ module PagesHelper
 		uri = URI('http://www.umcpcssa.org/phpBB_fetch_posts.php')
 		res = Net::HTTP.get_response(uri)
 		if res.is_a?(Net::HTTPSuccess)
-			data = removeDebugLines(res.body) 
+			data = removeDebugLines(res.body).force_encoding("UTF-8")
 			data
 		else
 			raise "Service unavailable"
