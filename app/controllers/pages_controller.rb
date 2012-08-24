@@ -8,6 +8,7 @@ class PagesController < ApplicationController
 			@user = current_user
 			@feed_items = current_user.feed.paginate(:page => params[:feed_page], :per_page => 5)
 		end
+		@data = fetchPostData
 	end
   
 	def contact
