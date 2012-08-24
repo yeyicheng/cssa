@@ -1636,20 +1636,17 @@ a.sign_in_button {
 td.row_left table.forum_feeds{
 	border: 1px solid #000;
 }
-
 #announcements, #recent, #housing, #sales{
 	border: 1px solid #000;
 	text-align: right;
 	padding: 5px;
 }
-
 #announcements h4, #recent h4, #housing h4, #sales h4 {
 	text-align: center;
 	background: darkred;
 	color: white;
 	font-weight: bold;
 }
-
 span.first{
 	width: 350px;
 	overflow: hidden;
@@ -1657,9 +1654,9 @@ span.first{
 	text-overflow: ellipsis;
 	text-align: left;
 	float: left;
+	margin-left: 5px;
 }
-
-span.second {
+span.second, span.third {
 	margin-right: 10px;
 }
 
@@ -1849,24 +1846,16 @@ td.image_column {
 td.image_column img {
 	margin-top: 5px;	
 }
-td.art table.art_table {
-	width: 600px;
-}
 td.content_column table.art_message {
-	width: 550px;	                    
 	border: thin solid grey;
 	background-color: white;
 }
 table.art_message tr {
-	width: 550px;	                    
 	border: thin solid grey;
 	background-color: white;
 	word-break: break-all;
 	word-wrap: break-word;
 	display: block;
-}
-table.abstract{
-	width: 550px;
 }
 table.abstract, table.abstract td {
 	border: thin solid grey;
