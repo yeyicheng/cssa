@@ -83,10 +83,4 @@ module PagesHelper
 			raise "Service unavailable"
 		end
 	end
-	
-	def getTagContent(data, ids)
-		ids.each { |id|
-			regex = /^(<.*id=\""#{id}\">(.*)<\/.*>)$/
-		}                 
-	end
 end
