@@ -21,10 +21,18 @@ class UsersController < ApplicationController
 			return
 		end
 		
+		# "authhash"=>{:provider=>"facebook", :uid=>"100000123838277", :info=>{:name=>"Yicheng Ye", :email=>"ye.yicheng123@gmail.com"}}}
+
+	  	auth = session[:authhash]
+		
 		@user = User.new(params[:user])
 		if @user.save
 			sign_in @user
 			flash[:success] = "Welcome to the Sample App!"
+			if auth
+				@user.services.create!(provider: auth[:provider], uid: auth[:uid])
+				flash[:notice] = 'Your ' + auth[:provider].capitalize + ' account has been connected to this site.'
+			end
 			redirect_to @user
 		else
 			@title = "Sign up"

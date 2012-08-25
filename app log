@@ -1,1 +1,517 @@
-# Logfile created on 2012-08-23 23:35:31 -0400 by logger.rb/31641
+# Logfile created on 2012-08-24 21:11:16 -0400 by logger.rb/31641
+Connecting to database specified by database.yml
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 21:23:46 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 21:23:48 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 21:29:45 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 21:29:48 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 21:30:18 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 21:30:22 -0400
+
+
+Started GET "/auth/facebook/callback?state=f86c3856a28e70430dfc6bee0f2aeab631619fba747864a6&code=AQC-PhO7Kri2oHTXLczhOVIaP3KVcCUrQlptOBJQPaS6jPBt_E0GgyAfiiAmFzJS6TF9x8zhw8e8qNrZ5e6ryb_Uh4--CoosRgbNhTShRAjZO5ZcxbT5m879fb4iCj2TBT9gxXqC4lacPRIw4Dbr3DxdmWXCAGBt53B-p69LDoSsnMecVy1ipTJxNR1CshP4XSo" for 127.0.0.1 at 2012-08-24 21:30:40 -0400
+
+NoMethodError (undefined method `[]=' for nil:NilClass):
+  app/controllers/services_controller.rb:35:in `create'
+
+
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 21:34:57 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-24 21:34:57 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-24 21:34:58 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 21:35:54 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 21:35:56 -0400
+
+
+Started GET "/auth/facebook/callback?state=b9e5c7087c4ab160e0daf9457c84691855a46ee70c559c94&code=AQC974RBoxY_BpZpnFEW4LvcztnB49k_LH7-sykbDA3zWxvinAnGTTY62rwV22M1ySWH_8kkOzG-82_B0jBeBDjNYpSG68SdUaquyuFLb6RtiKXxhSdNNB_kLTjn9Gq1euhnHm4TaZAoYTkq8_mU3Da2FLXRWmdmXdUIVMKVua-Y3u2bskEZn7Rn67d6u237aYk" for 127.0.0.1 at 2012-08-24 21:36:02 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 21:37:32 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 21:37:38 -0400
+
+
+Started GET "/auth/facebook/callback?state=1ffa06173340f57e18d74b1b87f745aa0f87246bc8f0d214&code=AQBLTDq2zCjTkVww32AeMWqXrNvt8jsUhs2X0lzRcG74P5AlQK42T9-yKIPf_IYFo1wfwwByWkc-BBRmyz_busoYYimnnK1ZlAxF7fWhdmB8udd9kok3CwKfruAzrFkELoCya7MtXzh5QvzK8Jcz-rGygsJJhWcwmycrwOHBUG_AQhGG64QkHma6zSs9d_FMlvc" for 127.0.0.1 at 2012-08-24 21:37:39 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 21:42:32 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 21:42:39 -0400
+
+
+Started GET "/auth/facebook/callback?state=87f0c55edc2c815d4a8a4653e98b21e8e59fb611a2885787&code=AQAENpm1DjdlmF6PJ819NgVbrxzJcJyB_VH1xdTHtjuogNhe0iyNnfpG_XptBbUTMuCiGZ7GXcWbNLPc3iMhy8vGU7Wt6OWqQG_18JW4-dLYhCqd_Moy-Kj6rAhEzY44BN7g_hOahx92OTE44MaRgSuJrHpb5hbpZsoVitIJ2HTAjUMyP9zdfI3iioaqABFMgp0" for 127.0.0.1 at 2012-08-24 21:42:47 -0400
+
+NoMethodError (undefined method `[]=' for nil:NilClass):
+  app/controllers/services_controller.rb:35:in `create'
+
+
+
+
+Started GET "/auth/facebook/callback?state=87f0c55edc2c815d4a8a4653e98b21e8e59fb611a2885787&code=AQA6f6HXwdcesOauAlMmjMxFXEwXfIy3c80a02pd7cjZauYVOpltcmybyWnmKfiqcFF03r97hFe5AcC2UVko4LFAsj56vqw_hwWRtrli0jcXsWFDpURuXEci8z3nYmVUMfkSey-tP6DG0lewTV_jX0sL12JkXXn97MyprKFm4FIVF55w-XjLcU7HEEQumqL-WiM" for 127.0.0.1 at 2012-08-24 21:45:00 -0400
+
+NoMethodError (undefined method `[]=' for nil:NilClass):
+  app/controllers/services_controller.rb:35:in `create'
+
+
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 21:45:10 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 21:45:14 -0400
+
+
+Started GET "/auth/facebook/callback?state=08c72cdf3a24ac45da744a75154972968f4276c78b2ee5f7&code=AQBIgZ9Bp9AM9tW2oav9_hC0TT1sCtjRqPGdMi5aVTpvoFaGR222HnUFNJ5D7gVUfsfrx0YKd9Rklxcm1YYHCc2mbYOemGWOy0mAG_17vXaKGBGg_YgVTJYPWEfcqQ1fk2vFr4O47LGX3v70PsM7KoasF6ZokfZ_DdXGB4C72EIc1vxJRIEVN9vy0QqlZ8xa5hc" for 127.0.0.1 at 2012-08-24 21:45:14 -0400
+
+NoMethodError (undefined method `[]=' for nil:NilClass):
+  app/controllers/services_controller.rb:35:in `create'
+
+
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 21:51:37 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 21:51:44 -0400
+
+
+Started GET "/auth/facebook/callback?state=446ed351e8fa0d70dc47b434a7851da6e7580a51ff6d84b3&code=AQD6jYelcsNwv8RFqpBblysDKjx-vBtNzUeirVYq90LyUllAn0MbYRSkGGrkSxwNb9G_gth1IlO9ND77Zxb1yKmz1dkGgVMzpS6MUDYYZqFVWcThirjg5dL6vNjKQYfyi2zcZN69DQ0S25rrmLc7xk8_6m6ZMcMqf9o5LXWV7XguAkLPkiyEbDU42xkHDVJjpjA" for 127.0.0.1 at 2012-08-24 21:51:56 -0400
+
+ActionView::MissingTemplate (Missing template /sign_up with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder]}. Searched in:
+  * "/home/yyc/Desktop/rails/cssa/app/views"
+  * "/home/yyc/Desktop/rails/cssa"
+  * "/"
+):
+  app/controllers/services_controller.rb:65:in `create'
+
+
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 21:55:01 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 21:55:04 -0400
+
+
+Started GET "/auth/facebook/callback?state=91bfb3377f002de15c31515253210bc7cc6b48c19ab41df7&code=AQByglgjI_T-i8gk0ZvjhpoShuMv28ZKnSexJWjZ25hBajllTkwyA5_lbE_hxMzNx3yBnRBiqSorM_CZzDO0VuQTjYOoXn4QUJo-F-TgYRr8nG_AXvZZWhM3YAPqvRacPXVPkuO4h_yWk9F0P5glYpk2ZE3n3Yu-KFiN-HOxrAogbF8Ob64fd_nZYDkMhaqclN0" for 127.0.0.1 at 2012-08-24 21:55:10 -0400
+
+ActionView::MissingTemplate (Missing template /sign_up with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder]}. Searched in:
+  * "/home/yyc/Desktop/rails/cssa/app/views"
+  * "/home/yyc/Desktop/rails/cssa"
+  * "/"
+):
+  app/controllers/services_controller.rb:65:in `create'
+
+
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 21:59:48 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 21:59:51 -0400
+
+
+Started GET "/auth/facebook/callback?state=9e8518878e7f458a776ce618ba8d0bdfd614aff3148b1948&code=AQB7cDFznYVicj_6FxYagLK6WthpJda3V8VgVIs3HqoPWR7bOCtxMEd5svmspo0eUuL23EeFgzP5hknj8V3vpX5KjCNozy5m5gUKI_54_-6j4r8lOiYOaIIhHcgytSABVKggxHDGtIn2eE8MqWlHlBGUeWWBdJ4yaxyNlLH0pHMmxqzKxRkVyWZ6W_61yEmpFxU" for 127.0.0.1 at 2012-08-24 21:59:52 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 22:00:34 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 22:00:36 -0400
+
+
+Started GET "/auth/facebook/callback?state=a27e442b82de937d5d1bfd74f42ff9d17ed08a55fab4746d&code=AQBlU5xVGvLHn8tNdJ4y2f6TcTwZk9X7yw1r4AFbxRQirrPI2zjbRApVyKhHGy6GK_PLf2JzZQ89zY3nRQDsOipdvLsr86Edh5W_wB0dEfrFHHweb_vJhqsVc1_2urpX5N7hf_L1wO4921vRNyxRp_uoMO3EbXbJi80F80NJJ3vGx5ARO148-ULt3hkurSiatmc" for 127.0.0.1 at 2012-08-24 22:00:37 -0400
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    1: <h1>Sign up</h1>
+    2: <%= form_for(@user) do |f| %>
+    3: 	<%= render 'fields', :f => f %>
+    4: 	<div class="actions">
+    5: 		<%= f.submit "Sign up" %>
+  app/views/users/new.html.erb:2:in `_app_views_users_new_html_erb___488134649_76637230'
+  app/controllers/services_controller.rb:65:in `create'
+
+
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 22:01:48 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 22:01:51 -0400
+
+
+Started GET "/auth/facebook/callback?state=a81d7f94c9adaadf7fc9f2391159477c627c10b9b776fdac&code=AQCQ-sFusAYTjYYrhMkK_ThlINhcgpxsPu-bu7eyXdNV1g_adTYg27sike_oK8YSx42yml88pm-q1dvEj9pP91TZf9R72Cpf5AdEqTNvctQd53NStsfo_cZ3Xwst9GC1dFidoyIHakmdQCwysJFHZMzEYHTXGSwPgLCUTS5ADQ6ZNeJlJEhpJjDC7KHhSmab-xs" for 127.0.0.1 at 2012-08-24 22:01:52 -0400
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-08-24 22:02:34 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 22:03:13 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 22:03:17 -0400
+
+
+Started GET "/auth/facebook/callback?state=2074bcfb1a49cefc28597d0d2952e1f42062462445ad0b70&code=AQAZ0S-kHU0YlE9mgB0DNA_cySBgmiJB_Adu8XDi2Glr8NeZPvRFCf1L1D1VFpyuKSdQGp8Egm-UwcaLcgyyGddrg4PiSKN8mQ62fD35IdjwKcAxvuznnUqwAcvtsxCjNMCfjo3zZZ8P4DDquqOXgMMOtGOAkMZ_kN4ps-QDGDrrpbqnfHc7xiU5C7E-i9zyqn0" for 127.0.0.1 at 2012-08-24 22:03:18 -0400
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-08-24 22:03:42 -0400
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-08-24 23:01:01 -0400
+
+SyntaxError (/home/yyc/Desktop/rails/cssa/app/controllers/users_controller.rb:24: syntax error, unexpected tASSOC, expecting keyword_end
+		"authhash"=>{:provider=>"facebook", :uid=...
+		            ^
+/home/yyc/Desktop/rails/cssa/app/controllers/users_controller.rb:24: syntax error, unexpected '}', expecting keyword_end):
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.8) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  omniauth (1.1.0) lib/omniauth/strategy.rb:177:in `call!'
+  omniauth (1.1.0) lib/omniauth/strategy.rb:157:in `call'
+  omniauth (1.1.0) lib/omniauth/builder.rb:48:in `call'
+  newrelic_rpm (3.4.1) lib/new_relic/rack/browser_monitoring.rb:12:in `call'
+  newrelic_rpm (3.4.1) lib/new_relic/rack/developer_mode.rb:24:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__924589535__call__340512219__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/debugger.rb:20:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-08-24 23:01:39 -0400
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-08-24 23:06:26 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 23:06:32 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 23:28:28 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 23:28:32 -0400
+
+
+Started GET "/auth/facebook/callback?state=4ee6d71b9794909aacb1d58a87812070e28af226a7d6057c&code=AQCGSZqggAkKG5GCXTsq3l5jo1-MG7PFhjATFRmcMGRpmtGCqwidgkiL7BkDCYBkhap9tu8qDpPc6Y8W9HhmoY1M14LFfoh3PgtgfenVEGExFnS-BLlcghcTThN4Xd2fUh8An5VG67o5UbUhE9vXhGYOot4tWp452PwG4sAmNLsi4ihEZjLkuMqN3lH0azd7fiY" for 127.0.0.1 at 2012-08-24 23:28:33 -0400
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-08-24 23:28:34 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 23:28:43 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 23:28:46 -0400
+
+
+Started GET "/auth/facebook/callback?state=95c19152b56403166cde465182566c6c34af78ef6057f204&code=AQAXIQ0tgGtgFUw7-eR6_tUYzxgUzSHz_fOb3hPkX-0YPynx_gHIql02BV3HXwoOOrw23OXipZ7fKoVbMABmbL4952mezav1B8WxiEM1y1-RzPiKjKDDaKcfEZQfZ5LZgw2_1EJLKTtD_9YRA5AVd8_f-KMJx4F9qY1SQxV_4wo_X1NCq2jbb7CziSKS9cqjVkw" for 127.0.0.1 at 2012-08-24 23:28:46 -0400
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-08-24 23:28:47 -0400
+
+
+Started POST "/users" for 127.0.0.1 at 2012-08-24 23:29:03 -0400
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/users_controller.rb:34:in `create'
+
+
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-08-24 23:29:44 -0400
+
+
+Started POST "/users" for 127.0.0.1 at 2012-08-24 23:30:25 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-24 23:30:47 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 23:30:51 -0400
+
+
+Started POST "/sessions" for 127.0.0.1 at 2012-08-24 23:30:59 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-24 23:30:59 -0400
+Connecting to database specified by database.yml
+[paperclip] Scheduling attachments for deletion.
+[paperclip] Deleting attachments.
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2012-08-24 23:31:32 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-24 23:31:32 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 23:31:35 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 23:31:37 -0400
+
+
+Started GET "/auth/facebook/callback?state=05ad59a77cd538cc9a2dbf1fec8fcee750522a2f4e425f46&code=AQCcva5nZ2whiRFTi0b8MU0abiwgegRfEqrg7sAP9yEOXCtcQdQ5SlgtQizdEXNomg8ozBIuU7I79ciMFWpN7j0nmDKZdCVorCj9eKmuXC2bTd7lyDtsDvE1qRFm5RomL6WBNNWmZFbJsYy_UwboekbK-yodA4iadrwLQiLn0OqYtpVeVdLbr4UmScBi3Ya9z10" for 127.0.0.1 at 2012-08-24 23:31:38 -0400
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-08-24 23:31:42 -0400
+
+
+Started POST "/users" for 127.0.0.1 at 2012-08-24 23:32:02 -0400
+
+
+Started GET "/users/55" for 127.0.0.1 at 2012-08-24 23:32:02 -0400
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2012-08-24 23:32:09 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-24 23:32:09 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 23:32:12 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 23:32:14 -0400
+
+
+Started GET "/auth/facebook/callback?state=86e22d96fcc7bc6073feb84329b62ef26b09eac19a0fdef5&code=AQALgd7OnGBc7qPlwOqTtI7uhNEVU3gOLGbzObAr867vaDHZKAns0hpg9tlv03ASdj4P_8k_MUoPMecSBXduHzooKGUPES69WFU0CzK4cqj_DxQoapvL-3UBc3LQndh0iUSKjeWX6a0tts-5S-oTZfyfWGb3o18zKDAZBo0oGbaehoQoep4t0AZPzG11NoOp6lg" for 127.0.0.1 at 2012-08-24 23:32:15 -0400
+
+ActionView::MissingTemplate (Missing template services/create, application/create with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder]}. Searched in:
+  * "/home/yyc/Desktop/rails/cssa/app/views"
+):
+  actionpack (3.2.8) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.8) lib/action_view/lookup_context.rb:109:in `find'
+  actionpack (3.2.8) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.8) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  newrelic_rpm (3.4.1) lib/new_relic/agent/instrumentation/rails3/action_controller.rb:153:in `render_with_newrelic'
+  actionpack (3.2.8) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.8) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.8) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.8) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.8) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.8) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.8) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.8) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.8) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.8) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.8) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.8) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.8) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.8) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.8) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.8) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.8) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.8) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.8) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.8) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.8) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:403:in `_run__200149549__process_action__684414734__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.8) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.8) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.8) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.8) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.8) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.8) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.8) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.8) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  newrelic_rpm (3.4.1) lib/new_relic/agent/instrumentation/rails3/action_controller.rb:34:in `block in process_action'
+  newrelic_rpm (3.4.1) lib/new_relic/agent/instrumentation/controller_instrumentation.rb:262:in `block in perform_action_with_newrelic_trace'
+  newrelic_rpm (3.4.1) lib/new_relic/agent/method_tracer.rb:242:in `trace_execution_scoped'
+  newrelic_rpm (3.4.1) lib/new_relic/agent/instrumentation/controller_instrumentation.rb:257:in `perform_action_with_newrelic_trace'
+  newrelic_rpm (3.4.1) lib/new_relic/agent/instrumentation/rails3/action_controller.rb:33:in `process_action'
+  actionpack (3.2.8) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.8) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.8) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.8) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.8) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  omniauth (1.1.0) lib/omniauth/strategy.rb:392:in `call_app!'
+  omniauth (1.1.0) lib/omniauth/strategy.rb:354:in `callback_phase'
+  omniauth-oauth2 (1.1.0) lib/omniauth/strategies/oauth2.rb:78:in `callback_phase'
+  omniauth (1.1.0) lib/omniauth/strategy.rb:219:in `callback_call'
+  omniauth (1.1.0) lib/omniauth/strategy.rb:175:in `call!'
+  omniauth (1.1.0) lib/omniauth/strategy.rb:157:in `call'
+  omniauth (1.1.0) lib/omniauth/builder.rb:48:in `call'
+  newrelic_rpm (3.4.1) lib/new_relic/rack/browser_monitoring.rb:12:in `call'
+  newrelic_rpm (3.4.1) lib/new_relic/rack/developer_mode.rb:24:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__469599772__call__953993732__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/debugger.rb:20:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-24 23:34:52 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 23:34:55 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 23:34:56 -0400
+
+
+Started GET "/auth/facebook/callback?state=1058072d7fca247e534042d419b8c531c8eb90dda0175dd8&code=AQBP5Px2SV7vt3RpPY07Ju2PpTu86qgZUujPFXQ9tfgWJendfjjYlFNI0WSyyBFE7J1aoIYTWOB5HaG6cHGEy-39zEEnJcQ_KUOxgpQiuBNFpacmbpXHOak_qaElCUA9UPwVIkFsTRUYInNSWVkYjDahW6bq2hyGQOL-1UQrr2OI537rOQK0JRgyNOA2hTyEM2I" for 127.0.0.1 at 2012-08-24 23:35:05 -0400
+
+NameError (undefined local variable or method `user' for #<ServicesController:0xc766a54>):
+  app/controllers/services_controller.rb:61:in `create'
+
+
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 23:35:43 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 23:35:45 -0400
+
+
+Started GET "/auth/facebook/callback?state=be5741e0d066dc2f41529e742b9ab48dbc25bb02bd4e04f7&code=AQCz8tJ3JxcZ7qTjZsHVitv71ZZkCgoI9HKsc2MCLS4LgvYphJZZtUBg10W0xzkUpekWxYS6nQjT2TxItH9OjjVE8fLHSUuSX_BDBzj0_YQPZ2-e2G6R6OjBJBeEvtCfeq2Pfc-ScpXqe3UtvP6UoykK6vGBEzUmPv0mbhP9BwgcK9vj-6h5vdrjSVEZfolwdSo" for 127.0.0.1 at 2012-08-24 23:35:51 -0400
+
+
+Started GET "/users/55" for 127.0.0.1 at 2012-08-24 23:35:52 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-24 23:35:57 -0400
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2012-08-24 23:36:46 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-24 23:36:46 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-24 23:36:55 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-24 23:36:56 -0400
+
+
+Started GET "/auth/facebook/callback?state=6db10a2b3b46a50ea12985f03bcd7ca3ca0dabf2485aa3f6&code=AQAdjMLRI9-oAHbtCOrPjbeSG6hISmVmkwpNM539ZOxc-G2rjsPyq-yDps2KLq4RIv901gWgMDPitkzhcYYVMRLl1RZsV3wPOraQy4A_Zl0vNWGJasFYmKS6ECwO60PDjPEKsNxcG_qcaRUbbroxn7naPls_JLjcvRWMV733iYUHxzdoMcg_gRuHwPYETLTEL50" for 127.0.0.1 at 2012-08-24 23:37:12 -0400
+
+
+Started GET "/users/55" for 127.0.0.1 at 2012-08-24 23:37:21 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-24 23:37:25 -0400

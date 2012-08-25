@@ -23,18 +23,18 @@ class ServicesController < ApplicationController
 		# get the full hash from omniauth
 		omniauth = request.env['omniauth.auth']
 		
-		debugger
+		# debugger
 		
 		# continue only if hash and parameter exist
 		if omniauth
 			@authhash = Hash.new
     
 			if service_route == 'facebook'
-				@authhash[:provider] = omniauth['provider'].to_s
-				@authhash[:uid] = omniauth['uid'].to_s
-				@authhash['info']['email'] = omniauth['info']['email'].to_s
-				@authhash['info']['name'] = omniauth['info']['name'].to_s
-				@authhash['extra']['raw_info']['id'] = omniauth['extra']['raw_info']['id'].to_s
+				@authhash[:provider] = omniauth[:provider].to_s
+				@authhash[:uid] = omniauth[:uid].to_s
+				@authhash[:info] = Hash.new
+				@authhash[:info][:name] = omniauth[:info][:name].to_s
+				@authhash[:info][:email] = omniauth[:info][:email].to_s
 			else
 				# unrecognized service, output the hash that has been returned
 				render :text => omniauth.to_yaml
@@ -58,11 +58,20 @@ class ServicesController < ApplicationController
           				session[:user_id] = auth.user.id
           				session[:identity_id] = auth.id
 						sign_in auth.user
+						redirect_to auth.user
 						flash[:notice] = 'Signed in successfully via ' + @authhash[:provider].capitalize + '.'
 					else
 						# this is a new user; show signup; @authhash is available to the view and stored in the sesssion for creation of a new user
-						session[:authhash] = @authhash
-						render sign_up_path
+						user = User.find_by_email(omniauth[:email])
+						if user
+							user.services.create!(provider: @authhash[:provider], uid: @authhash[:uid])
+							sign_in user
+							flash[:notice] = 'Your ' + @authhash[:provider].capitalize + ' account has been connected to this site.'
+							redirect_to user
+						else
+							session[:authhash] = @authhash
+							redirect_to sign_up_path
+						end
 					end
 				end
 			else
