@@ -20,6 +20,7 @@ gem 'omniauth-google-oauth2'
 gem 'paperclip'
 gem 'mysql2'
 gem 'mongrel'
+gem 'thin'
 
 group :development do
   gem 'rspec-rails'

@@ -14,12 +14,12 @@ gem 'simple_weather'
 gem 'rufus-scheduler'
 gem 'nokogiri'
 gem 'omniauth'
+gem 'omniauth-qq'
 gem 'omniauth-openid'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'paperclip'
 gem 'mysql2'
-gem 'mongrel'
 gem 'thin'
 
 group :development do
