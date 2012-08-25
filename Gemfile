@@ -19,6 +19,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'paperclip'
 gem 'mysql2'
+gem 'mongrel'
 
 group :development do
   gem 'rspec-rails'
