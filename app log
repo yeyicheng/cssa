@@ -903,3 +903,6 @@ Started GET "/auth/google/callback?_method=post&openid.ns=http%3A%2F%2Fspecs.ope
 
 
 Started GET "/sign_up" for 127.0.0.1 at 2012-08-25 02:08:01 -0400
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-08-25 02:45:42 -0400
