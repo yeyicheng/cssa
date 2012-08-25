@@ -906,3 +906,48 @@ Started GET "/sign_up" for 127.0.0.1 at 2012-08-25 02:08:01 -0400
 
 
 Started GET "/sign_up" for 127.0.0.1 at 2012-08-25 02:45:42 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 03:26:20 -0400
+
+
+Started GET "/auth/qq_connect" for 127.0.0.1 at 2012-08-25 03:26:23 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 04:26:19 -0400
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2012-08-25 04:26:25 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 04:26:44 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 04:27:07 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-25 04:27:10 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 04:27:13 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-25 04:27:16 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 04:27:31 -0400
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2012-08-25 04:27:35 -0400
+
+
+Started GET "/auth/facebook/callback?state=5194b2085ecda7436e873f0d55fb1c5d546963debcfd6bfe&code=AQCKx_vBi-lRjCHoiYL-2832ic575NP2T5A0bX5AjWStxqaVAI0eEB_niUTRwZK39V6tVwVn038pUnbyLkISZpfZzihynCnKytJ7mQkEb-zhhscrLp1X41MwguTLwH2cNXzRS582BnxQSOxzHbkDZ7Wro4CjDOXfx0H8F1u0P-ZPR-A2MO1iAdM1BJpMXkJsFOo" for 127.0.0.1 at 2012-08-25 04:27:36 -0400
+
+
+Started GET "/users/55" for 127.0.0.1 at 2012-08-25 04:27:40 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-25 04:27:44 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-25 04:29:10 -0400

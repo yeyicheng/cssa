@@ -12,13 +12,14 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 	fb_test_id = '276626282442340' 
 	fb_test_secret = '1dc252792ddcd14369b654499d860f36'
 	
-	provider :facebook, fb_id, fb_secret
+	provider :facebook, fb_test_id, fb_test_secret
 	{ scope: 'email, user_groups,friends_groups', display: 'popup' }
 	
 	provider :openid, store: OpenID::Store::Filesystem.new('./tmp'), name: 'openid'
-	
 	provider :openid, store: OpenID::Store::Filesystem.new('./tmp'), name: 'google', identifier: 'https://www.google.com/accounts/o8/id'
 
+	provider :qq_connect, '100299492', '4b7fc709c86cd04306479439a1902c75'
+	
 	provider :google_oauth2, '417403064618.apps.googleusercontent.com', 'CqemGzl3Gk8rzIBuxrCxKG7B', 
 	{ scope: 'userinfo.email,userinfo.profile', access_type: 'online', approval_prompt: '' }
 end                                                                       

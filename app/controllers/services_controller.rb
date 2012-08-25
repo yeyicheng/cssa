@@ -28,18 +28,17 @@ class ServicesController < ApplicationController
 		# continue only if hash and parameter exist
 		if omniauth
 			@authhash = Hash.new
+			@authhash[:provider] = omniauth[:provider].to_s
+			@authhash[:uid] = omniauth[:uid].to_s
 			if service_route == 'facebook'
-				@authhash[:provider] = omniauth[:provider].to_s
-				@authhash[:uid] = omniauth[:uid].to_s
-				@authhash[:info] = Hash.new
-				@authhash[:info][:name] = omniauth[:info][:name].to_s
-				@authhash[:info][:email] = omniauth[:info][:email].to_s
+				@authhash[:name] = omniauth[:info][:name].to_s
+				@authhash[:email] = omniauth[:info][:email].to_s
 			elsif ['google', 'open_id'].index(service_route) != nil
-				@authhash[:provider] = omniauth[:provider].to_s
-				@authhash[:uid] = omniauth[:uid].to_s
-				@authhash[:info] = Hash.new
-				@authhash[:info][:name] = omniauth[:info][:name].to_s
-				@authhash[:info][:email] = omniauth[:info][:email].to_s
+				@authhash[:name] = omniauth[:info][:name].to_s
+				@authhash[:email] = omniauth[:info][:email].to_s
+			elsif service_route == 'qq_connect'
+				@authhash[:name] = omniauth[:info][:nickname].to_s
+				@authhash[:token] = omniauth[:credentials][:token].to_s
 			else
 				# unrecognized service, output the hash that has been returned
 				render :text => omniauth.to_yaml
@@ -67,7 +66,7 @@ class ServicesController < ApplicationController
 						flash[:notice] = 'Signed in successfully via ' + @authhash[:provider].capitalize + '.'
 					else
 						# this is a new user; show signup; @authhash is available to the view and stored in the sesssion for creation of a new user
-						user = User.find_by_email(omniauth[:info][:email])
+						user = User.find_by_email(@omniauth[:email])
 						if user
 							user.services.create!(provider: @authhash[:provider], uid: @authhash[:uid])
 							sign_in user

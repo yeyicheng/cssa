@@ -60,7 +60,7 @@ Cssa::Application.routes.draw do
 	match '/sign_out' => "sessions#destroy"
 	match '/users' => "users#index"
 	match '/auth/:provider/callback' => 'services#create' 
-	match '/auth/google_oath2/callback' => 'services#create' 
+	# match '/auth/google_oath2/callback' => 'services#create' 
 	match '/auth/failure' => 'services#failure'
 	match '/microposts' => 'pages#home'
 	match '/users/:id/profile' => 'users#profile', :as => :profile_user
