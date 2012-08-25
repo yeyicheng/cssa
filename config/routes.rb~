@@ -10,6 +10,7 @@ Cssa::Application.routes.draw do
 	resources :sessions, :only => [:new, :create, :destroy]
 	resources :microposts, :only => [:create, :destroy]
 	resources :relationships, :only => [:create, :destroy]
+	resources :club_admins, :only => [:create, :destroy]
 	resources :users do
 		member do
 			get :following, :followers, :services, :clubs
@@ -22,7 +23,7 @@ Cssa::Application.routes.draw do
 	end
 	resources :organizations do
 		member do
-			get :members, :waitlists
+			get :members, :waitlists, :admins
 		end
 	end
 	# get "organizations/index"
@@ -46,9 +47,10 @@ Cssa::Application.routes.draw do
 	match '/contact' => 'pages#contact'
 	match '/about' => "pages#about"
 	# match '/clubs' => "categories#index"
-	match '/links' => 'pages#link'
+	match '/links' => 'pages#links'
 	# match '/home' => "pages#home"
 	match '/welcome' => "pages#welcome"
+	match '/welcome/ch' => "pages#welcome_ch"
 	match '/handbook' => "pages#handbook"
 	match '/art' => "pages#art"
 	match '/news' => "pages#news"
@@ -57,10 +59,10 @@ Cssa::Application.routes.draw do
 	match '/sign_in' => "sessions#new"
 	match '/sign_out' => "sessions#destroy"
 	match '/users' => "users#index"
-	# match '/organizations'=> 'organizations#index'
 	match '/auth/:provider/callback' => 'services#create' 
 	match '/auth/failure' => 'services#failure'
 	match '/microposts' => 'pages#home'
+	match '/users/:id/profile' => 'users#profile', :as => :profile_user
 	
 	# match 'http://hollow-waterfall-1839.herokuapp.com/auth/:provider/callback' => 'services#create' 
 	# The priority is based upon order of creation:

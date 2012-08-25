@@ -23,13 +23,18 @@ class ServicesController < ApplicationController
 		# get the full hash from omniauth
 		omniauth = request.env['omniauth.auth']
 		
-		# debugger
+		debugger
 		
 		# continue only if hash and parameter exist
 		if omniauth
 			@authhash = Hash.new
-    
 			if service_route == 'facebook'
+				@authhash[:provider] = omniauth[:provider].to_s
+				@authhash[:uid] = omniauth[:uid].to_s
+				@authhash[:info] = Hash.new
+				@authhash[:info][:name] = omniauth[:info][:name].to_s
+				@authhash[:info][:email] = omniauth[:info][:email].to_s
+			elsif ['google', 'open_id'].index(service_route) != nil
 				@authhash[:provider] = omniauth[:provider].to_s
 				@authhash[:uid] = omniauth[:uid].to_s
 				@authhash[:info] = Hash.new

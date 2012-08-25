@@ -515,3 +515,391 @@ Started GET "/users/55" for 127.0.0.1 at 2012-08-24 23:37:21 -0400
 
 
 Started GET "/" for 127.0.0.1 at 2012-08-24 23:37:25 -0400
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-08-25 00:01:14 -0400
+
+
+Started GET "/users/55" for 127.0.0.1 at 2012-08-25 00:01:14 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-25 00:04:21 -0400
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2012-08-25 00:04:26 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-25 00:04:26 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 00:04:28 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 00:13:08 -0400
+
+
+Started GET "/assets/google.png" for 127.0.0.1 at 2012-08-25 00:13:08 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 00:13:58 -0400
+
+
+Started GET "/assets/google.png" for 127.0.0.1 at 2012-08-25 00:13:59 -0400
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2012-08-25 00:14:32 -0400
+
+ActionController::RoutingError (No route matches [GET] "/auth/google_oauth2"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/debugger.rb:20:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 00:21:51 -0400
+
+
+Started GET "/assets/google.png" for 127.0.0.1 at 2012-08-25 00:21:52 -0400
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2012-08-25 00:21:53 -0400
+
+ActionController::RoutingError (No route matches [GET] "/auth/google_oauth2"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/debugger.rb:20:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 00:22:06 -0400
+
+
+Started GET "/assets/google.png" for 127.0.0.1 at 2012-08-25 00:22:08 -0400
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2012-08-25 00:22:10 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 00:32:41 -0400
+
+
+Started GET "/assets/google.png" for 127.0.0.1 at 2012-08-25 00:32:41 -0400
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2012-08-25 00:32:43 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 00:40:23 -0400
+
+
+Started GET "/assets/google.png" for 127.0.0.1 at 2012-08-25 00:40:23 -0400
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2012-08-25 00:40:25 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 00:40:58 -0400
+
+
+Started GET "/assets/google.png" for 127.0.0.1 at 2012-08-25 00:40:58 -0400
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2012-08-25 00:40:59 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 00:41:09 -0400
+
+
+Started GET "/assets/google.png" for 127.0.0.1 at 2012-08-25 00:41:09 -0400
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2012-08-25 00:41:11 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 00:42:01 -0400
+
+
+Started GET "/assets/google.png" for 127.0.0.1 at 2012-08-25 00:42:03 -0400
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2012-08-25 00:42:05 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 00:42:16 -0400
+
+
+Started GET "/assets/google.png" for 127.0.0.1 at 2012-08-25 00:42:16 -0400
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2012-08-25 00:50:07 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 00:50:24 -0400
+
+
+Started GET "/assets/google.png" for 127.0.0.1 at 2012-08-25 00:50:25 -0400
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2012-08-25 00:50:27 -0400
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2012-08-25 01:02:49 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 01:06:53 -0400
+
+
+Started GET "/assets/google.png" for 127.0.0.1 at 2012-08-25 01:06:53 -0400
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2012-08-25 01:06:57 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 01:07:34 -0400
+
+
+Started GET "/assets/google.png" for 127.0.0.1 at 2012-08-25 01:07:34 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 01:08:00 -0400
+
+
+Started GET "/assets/google.png" for 127.0.0.1 at 2012-08-25 01:08:00 -0400
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2012-08-25 01:08:03 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 01:12:46 -0400
+
+
+Started GET "/assets/google.png" for 127.0.0.1 at 2012-08-25 01:12:47 -0400
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2012-08-25 01:12:49 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 01:20:18 -0400
+
+
+Started GET "/assets/google.png" for 127.0.0.1 at 2012-08-25 01:20:20 -0400
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2012-08-25 01:20:23 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 01:57:29 -0400
+
+ArgumentError (Received wrong number of arguments. [#<OpenID::Store::Filesystem:0xa764aa8 @nonce_dir="./tmp/nonces", @association_dir="./tmp/associations", @temp_dir="./tmp/temp">]):
+  omniauth (1.1.0) lib/omniauth/strategy.rb:136:in `initialize'
+  rack (1.4.1) lib/rack/builder.rb:82:in `new'
+  rack (1.4.1) lib/rack/builder.rb:82:in `block in use'
+  rack (1.4.1) lib/rack/builder.rb:130:in `[]'
+  rack (1.4.1) lib/rack/builder.rb:130:in `block in to_app'
+  rack (1.4.1) lib/rack/builder.rb:130:in `each'
+  rack (1.4.1) lib/rack/builder.rb:130:in `inject'
+  rack (1.4.1) lib/rack/builder.rb:130:in `to_app'
+  omniauth (1.1.0) lib/omniauth/builder.rb:48:in `call'
+  newrelic_rpm (3.4.1) lib/new_relic/rack/browser_monitoring.rb:12:in `call'
+  newrelic_rpm (3.4.1) lib/new_relic/rack/developer_mode.rb:24:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__33564486__call__172565521__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/debugger.rb:20:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 02:04:08 -0400
+
+ArgumentError (Received wrong number of arguments. [#<OpenID::Store::Filesystem:0xa764aa8 @nonce_dir="./tmp/nonces", @association_dir="./tmp/associations", @temp_dir="./tmp/temp">]):
+  omniauth (1.1.0) lib/omniauth/strategy.rb:136:in `initialize'
+  rack (1.4.1) lib/rack/builder.rb:82:in `new'
+  rack (1.4.1) lib/rack/builder.rb:82:in `block in use'
+  rack (1.4.1) lib/rack/builder.rb:130:in `[]'
+  rack (1.4.1) lib/rack/builder.rb:130:in `block in to_app'
+  rack (1.4.1) lib/rack/builder.rb:130:in `each'
+  rack (1.4.1) lib/rack/builder.rb:130:in `inject'
+  rack (1.4.1) lib/rack/builder.rb:130:in `to_app'
+  omniauth (1.1.0) lib/omniauth/builder.rb:48:in `call'
+  newrelic_rpm (3.4.1) lib/new_relic/rack/browser_monitoring.rb:12:in `call'
+  newrelic_rpm (3.4.1) lib/new_relic/rack/developer_mode.rb:24:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__33564486__call__172565521__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/debugger.rb:20:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 02:04:09 -0400
+
+ArgumentError (Received wrong number of arguments. [#<OpenID::Store::Filesystem:0xa764aa8 @nonce_dir="./tmp/nonces", @association_dir="./tmp/associations", @temp_dir="./tmp/temp">]):
+  omniauth (1.1.0) lib/omniauth/strategy.rb:136:in `initialize'
+  rack (1.4.1) lib/rack/builder.rb:82:in `new'
+  rack (1.4.1) lib/rack/builder.rb:82:in `block in use'
+  rack (1.4.1) lib/rack/builder.rb:130:in `[]'
+  rack (1.4.1) lib/rack/builder.rb:130:in `block in to_app'
+  rack (1.4.1) lib/rack/builder.rb:130:in `each'
+  rack (1.4.1) lib/rack/builder.rb:130:in `inject'
+  rack (1.4.1) lib/rack/builder.rb:130:in `to_app'
+  omniauth (1.1.0) lib/omniauth/builder.rb:48:in `call'
+  newrelic_rpm (3.4.1) lib/new_relic/rack/browser_monitoring.rb:12:in `call'
+  newrelic_rpm (3.4.1) lib/new_relic/rack/developer_mode.rb:24:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__33564486__call__172565521__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/debugger.rb:20:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 02:04:22 -0400
+
+
+Started GET "/assets/google.png" for 127.0.0.1 at 2012-08-25 02:04:23 -0400
+
+
+Started GET "/auth/google" for 127.0.0.1 at 2012-08-25 02:04:27 -0400
+
+
+Started GET "/auth/google/callback?_method=post&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.mode=id_res&openid.op_endpoint=https%3A%2F%2Fwww.google.com%2Faccounts%2Fo8%2Fud&openid.response_nonce=2012-08-25T06%3A04%3A30Zg8UZyjml6UmOCg&openid.return_to=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fgoogle%2Fcallback%3F_method%3Dpost&openid.assoc_handle=AMlYA9XSkwgNhVQxRuH7ZRupVUachgyUe8Ka-oNrKie3wSgkTq-dDO7D&openid.signed=op_endpoint%2Cclaimed_id%2Cidentity%2Creturn_to%2Cresponse_nonce%2Cassoc_handle%2Cns.ext1%2Cext1.mode%2Cext1.type.ext2%2Cext1.value.ext2%2Cext1.type.ext0%2Cext1.value.ext0%2Cext1.type.ext3%2Cext1.value.ext3&openid.sig=TZAJbB4Mac5kc9yPVYiGMUNcuS4%3D&openid.identity=https%3A%2F%2Fwww.google.com%2Faccounts%2Fo8%2Fid%3Fid%3DAItOawnUMICUdF9tH-yDy0Yw-B3jol46P9SMYY8&openid.claimed_id=https%3A%2F%2Fwww.google.com%2Faccounts%2Fo8%2Fid%3Fid%3DAItOawnUMICUdF9tH-yDy0Yw-B3jol46P9SMYY8&openid.ns.ext1=http%3A%2F%2Fopenid.net%2Fsrv%2Fax%2F1.0&openid.ext1.mode=fetch_response&openid.ext1.type.ext2=http%3A%2F%2Faxschema.org%2FnamePerson%2Ffirst&openid.ext1.value.ext2=cssa&openid.ext1.type.ext0=http%3A%2F%2Faxschema.org%2Fcontact%2Femail&openid.ext1.value.ext0=umcpcssa000%40gmail.com&openid.ext1.type.ext3=http%3A%2F%2Faxschema.org%2FnamePerson%2Flast&openid.ext1.value.ext3=umcp" for 127.0.0.1 at 2012-08-25 02:04:30 -0400
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-08-25 02:08:01 -0400
