@@ -67,7 +67,7 @@ class ServicesController < ApplicationController
 						flash[:notice] = 'Signed in successfully via ' + @authhash[:provider].capitalize + '.'
 					else
 						# this is a new user; show signup; @authhash is available to the view and stored in the sesssion for creation of a new user
-						user = User.find_by_email(omniauth[:email])
+						user = User.find_by_email(omniauth[:info][:email])
 						if user
 							user.services.create!(provider: @authhash[:provider], uid: @authhash[:uid])
 							sign_in user
