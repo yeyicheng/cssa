@@ -30,10 +30,10 @@ class UsersController < ApplicationController
 		@micropost = Micropost.new
 		@feed_items = current_user.feed.paginate(:page => params[:feed_page], :per_page => 8)
 		if session[:authhash]
-			user.services.create!(provider: session[:authhash][:provider], uid: session[:authhash][:uid])
+			@user.services.create!(provider: session[:authhash][:provider], uid: session[:authhash][:uid])
 			flash[:success] = 'Your ' + @authhash[:provider].capitalize + ' account has been connected to this site.'
 			session[:authhash] = nil
-			redirect_to user
+			redirect_to @user
 		end
 	end
 	

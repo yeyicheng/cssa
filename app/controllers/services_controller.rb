@@ -64,14 +64,14 @@ class ServicesController < ApplicationController
           			if auth
 						sign_in auth.user
 						redirect_to auth.user
-						flash[:notice] = 'Signed in successfully via your' + @authhash[:provider].capitalize + 'account.'
+						flash[:notice] = 'Signed in successfully via your ' + @authhash[:provider].capitalize + ' account.'
 					elsif service_route != 'qq_connect' and service_route != 'xiaonei'
 						user = User.find_by_email(@authhash[:email])
 						if !user
 							user = create_new_omniauth_user(@authhash)
 						end
 						user.services.create!(provider: @authhash[:provider], uid: @authhash[:uid])
-						flash[:notice] = 'Sign up successfully via your' + @authhash[:provider].capitalize + 'account.'
+						flash[:notice] = 'Sign up successfully via your ' + @authhash[:provider].capitalize + ' account.'
 						sign_in user
 						redirect_to user
 					else
