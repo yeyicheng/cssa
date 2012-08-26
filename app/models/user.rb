@@ -28,16 +28,13 @@ class User < ActiveRecord::Base
 	# Include default devise modules. Others available are:
 	# :token_authenticatable, :confirmable,
 	# :lockable, :timeoutable and :omniauthable
-	# devise :database_authenticatable, :registerable,
-	# :recoverable, :rememberable, :trackable, :validatable
+	devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
     # Setup accessible (or protected) attributes for your model
-    # attr_accessible :remember_me
-	# devise :database_authenticatable, :omniauthable, :registerable,
-	# :recoverable, :rememberable, :trackable, :validatable,
-	# :confirmable, :lockable
+	attr_accessible :email, :password, :password_confirmation, :remember_me
     
-	#### Connect service ### 
+	### Connect service ### 
 	has_many :services, dependent: :destroy
 	
 	### Micropost ###
@@ -78,7 +75,6 @@ class User < ActiveRecord::Base
 	has_attached_file :avatar, :styles => { :medium => "100x100>", :thumb => "50x50>" }
 	
 	### Getters and setters ###
-	attr_accessor :password
 	attr_accessible :email, :name, :password, :password_confirmation, :avatar
 
 	### Fields validation ###
@@ -91,35 +87,23 @@ class User < ActiveRecord::Base
 	validates :password, :confirmation => true,
 						 :length => { :within => 6..40 }
 	
-	### Filters ###
-	before_save :encrypt_password
-
-	### Class methods ###
-	# incomplete
-	def self.create_with_omniauth(info)
-		create(name: info['name'], email: info['email'])
+	def apply_omniauth(authhash, confirmation)
+		self.email = authhash[:email] if email.blank?
+		# Check if email is already into the database => user exists
+		apply_trusted_services(authhash, confirmation) if self.new_record?
 	end
 	
-	def self.find_from_auth_hash(uid, auth_hash)
-		User.find(auth_hash[uid])
+	# Create a new user
+	def apply_trusted_services(authhash, confirmation)  
+		self.name = authhash[:name] if self.name.blank?
+		# Set a random password for omniauthenticated users
+		self.password, self.password_confirmation = Devise.friendly_token
+		
+		if (confirmation) 
+			self.confirmed_at, self.confirmation_sent_at = Time.now  
+		end 
 	end
-	
-	def self.authenticate(email, submitted_password)
-		user = find_by_email(email)
-		return nil if user.nil?
-		return user if user.password_matched?(submitted_password)
-	end
-	
-	def self.authenticate_with_salt(id, cookie_salt)
-		user = find_by_id(id)
-		(user && user.salt == cookie_salt) ? user : nil	
-	end
-	
-	### Instance methods ###
-	def password_matched? password
-		encrypt(password) == encrypted_password
-	end
-	
+						 
 	### Follow ###
 	def following?(followed)
 		relationships.find_by_followed_id(followed)
@@ -171,23 +155,23 @@ class User < ActiveRecord::Base
 	def feed
 		Micropost.from_users_followed_by(self)
 	end
-	
-	private
-		def make_salt
-			secure_hash("#{Time.now.utc}--#{password}")
-		end
-		
-		def encrypt_password
-			return if password.nil?
-			self.salt = make_salt if new_record?
-			self.encrypted_password = encrypt(password)
-		end
-		
-		def encrypt(pwd)
-			secure_hash("#{salt}--#{pwd}")
-		end
-		
-		def secure_hash(string)
-			Digest::SHA2.hexdigest(string)
-		end
+	# 
+	# private
+		# def make_salt
+			# secure_hash("#{Time.now.utc}--#{password}")
+		# end
+		# 
+		# def encrypt_password
+			# return if password.nil?
+			# self.salt = make_salt if new_record?
+			# self.encrypted_password = encrypt(password)
+		# end
+		# 
+		# def encrypt(pwd)
+			# secure_hash("#{salt}--#{pwd}")
+		# end
+		# 
+		# def secure_hash(string)
+			# Digest::SHA2.hexdigest(string)
+		# end
 end

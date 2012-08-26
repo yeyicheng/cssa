@@ -1,13 +1,14 @@
 Cssa::Application.routes.draw do
-	# devise_for :users
+	devise_for :users
+	
 	resources :categories
 	resources :services, :only => [:index, :create, :destroy]
 	resources :organizations, :except => [:index] 
 	resources :org_relationships, :only => [:create, :destroy]
 	resources :member_relationships, :only => [:create, :destroy]
 	resources :weathers, :only => [:index]
-	resources :users
-	resources :sessions, :only => [:new, :create, :destroy]
+	resources :users, :only=>[:index, :show]
+	# resources :sessions, :only => [:new, :create, :destroy]
 	resources :microposts, :only => [:create, :destroy]
 	resources :relationships, :only => [:create, :destroy]
 	resources :club_admins, :only => [:create, :destroy]
@@ -21,15 +22,15 @@ Cssa::Application.routes.draw do
 			get :clubs
 		end
 	end
-	resources :organizations do
-		member do
-			get :members, :waitlists, :admins
-		end
-	end
+	# resources :organizations do
+		# member do
+			# get :members, :waitlists, :admins
+		# end
+	# end
 	# get "organizations/index"
-	get "organizations/new"
-	get "organizations/edit"
-	get "organizations/show"
+	# get "organizations/new"
+	# get "organizations/edit"
+	# get "organizations/show"
 	get "weathers/index"
 	# get "sessions/new"
 	# get "users/index"
@@ -46,22 +47,27 @@ Cssa::Application.routes.draw do
 	
 	match '/contact' => 'pages#contact'
 	match '/about' => "pages#about"
-	# match '/clubs' => "categories#index"
+	match '/clubs' => "categories#index"
 	match '/links' => 'pages#links'
-	# match '/home' => "pages#home"
+	match '/home' => "pages#home"
 	match '/welcome' => "pages#welcome"
 	match '/welcome/ch' => "pages#welcome_ch"
 	match '/handbook' => "pages#handbook"
 	match '/art' => "pages#art"
 	match '/news' => "pages#news"
 	match '/cssa_services' => "pages#service"
-	match '/sign_up' => "users#new"
-	match '/sign_in' => "sessions#new"
-	match '/sign_out' => "sessions#destroy"
+	# match '/sign_up' => "users#new"
+	# match '/sign_in' => "sessions#new"
+	devise_scope :user do
+		get 'sign_in', :to => "devise/sessions#new"
+		post 'sign_in',:to => "devise/sessions#create"
+		get 'sign_out', :to => "devise/sessions#destroy"
+		get 'sign_up', :to => "devise/registrations#new"
+	end	
 	match '/users' => "users#index"
-	match '/auth/:provider/callback' => 'services#create' 
+	match '/users/auth/:provider/callback' => 'services#create' 
 	# match '/auth/google_oath2/callback' => 'services#create' 
-	match '/auth/failure' => 'services#failure'
+	match '/users/auth/failure' => 'services#failure'
 	match '/microposts' => 'pages#home'
 	match '/users/:id/profile' => 'users#profile', :as => :profile_user
 	

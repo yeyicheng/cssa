@@ -14,13 +14,14 @@ gem 'simple_weather'
 gem 'rufus-scheduler'
 gem 'nokogiri'
 gem 'omniauth'
-
+gem 'omniauth-qq-connect'
 gem 'omniauth-openid'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'paperclip'
 gem 'mysql2'
 gem 'thin'
+gem 'devise'
 
 group :development do
   gem 'rspec-rails'

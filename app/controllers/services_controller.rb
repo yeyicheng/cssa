@@ -23,7 +23,7 @@ class ServicesController < ApplicationController
 		# get the full hash from omniauth
 		omniauth = request.env['omniauth.auth']
 		
-		debugger
+		# debugger
 		
 		# continue only if hash and parameter exist
 		if omniauth
@@ -37,7 +37,7 @@ class ServicesController < ApplicationController
 				@authhash[:name] = omniauth[:info][:name].to_s
 				@authhash[:email] = omniauth[:info][:email].to_s
 			elsif service_route == 'qq_connect'
-				@authhash[:name] = omniauth[:info][:nickname].to_s
+				@authhash[:name] = omniauth[:info][:name].to_s
 				@authhash[:token] = omniauth[:credentials][:token].to_s
 			else
 				# unrecognized service, output the hash that has been returned
@@ -51,31 +51,27 @@ class ServicesController < ApplicationController
 					if auth
 						flash[:notice] = 'Your account at ' + @authhash[:provider].capitalize + ' is already connected with this site.'
 					else
-						@new_auth = current_user.services.build(:provider => @authhash[:provider], :uid => @authhash[:uid])
+						# add new auth service to the current user
+						@new_auth = current_user.services.create!(:provider => @authhash[:provider], :uid => @authhash[:uid])
 						if @new_auth.save
 							flash[:success] = 'Your ' + @authhash[:provider].capitalize + ' account has been connected to this site.'
 						end
 					end
-					redirect_to root_path
+					redirect_to current_user
 				else
           			if auth
-          				session[:user_id] = auth.user.id
-          				session[:identity_id] = auth.id
 						sign_in auth.user
 						redirect_to auth.user
-						flash[:notice] = 'Signed in successfully via ' + @authhash[:provider].capitalize + '.'
+						flash[:notice] = 'Signed in successfully via your' + @authhash[:provider].capitalize + 'account.'
+					elsif service_route != 'qq_connect' and service_route != 'renren'
+						user = create_new_omniauth_user(@authhash)
+						user.services.create!(provider: @authhash[:provider], uid: @authhash[:uid])
+						flash[:notice] = 'Sign up successfully via your' + @authhash[:provider].capitalize + 'account.'
+						sign_in user
+						redirect_to user
 					else
-						# this is a new user; show signup; @authhash is available to the view and stored in the sesssion for creation of a new user
-						user = User.find_by_email(@omniauth[:email])
-						if user
-							user.services.create!(provider: @authhash[:provider], uid: @authhash[:uid])
-							sign_in user
-							flash[:notice] = 'Your ' + @authhash[:provider].capitalize + ' account has been connected to this site.'
-							redirect_to user
-						else
-							session[:authhash] = @authhash
-							redirect_to sign_up_path
-						end
+						session[:authhash] = @authhash
+						redirect_to sign_up_path
 					end
 				end
 			else
@@ -91,5 +87,15 @@ class ServicesController < ApplicationController
 	def failure
 		flash[:error] = 'There was an error at the remote authentication service. You have not been signed in.'
 		redirect_to sign_in_path
+	end
+	
+	def create_new_omniauth_user(authhash)
+		user = User.new
+		user.apply_omniauth(authhash, true)
+		if user.save
+			user
+		else
+			nil
+		end
 	end
 end

@@ -3,34 +3,35 @@ module SessionsHelper
 		Organization.find(session[:current_club])
 	end
 	
-	def sign_in(user)
-		cookies.signed[:remember_token] = {:value => [user.id, user.salt], :expires => 1.hour.from_now}
-		current_user = user
-	end
+	# def sign_in(user)
+		# cookies.signed[:remember_token] = {:value => [user.id, user.salt], :expires => 1.hour.from_now}
+		# current_user = user
+	# end
 	
 	def alias_sign_in(user)
 		cookies.signed[:remember_token] = {:value => [user.id, user.salt], :expires => 1.hour.from_now}
 		current_user = user
 	end
 	
-	def current_user=(user)
-		@current_user = user
-	end
+	# def current_user=(user)
+		# @current_user = user
+	# end
 	
-	def current_user
-		@current_user ||= user_from_remember_token
-	end
+	# def current_user
+		# @current_user ||= user_from_remember_token
+	# end
 	
 	def signed_in?
-		!current_user.nil?
+		# !current_user.nil?
+		user_signed_in?
 	end
 			
-	def sign_out
-		session[:user_id] = ''
-		session[:identity_id] = ''
-		cookies.delete(:remember_token)
-		current_user = nil
-	end
+	# def sign_out
+		# session[:user_id] = ''
+		# session[:identity_id] = ''
+		# cookies.delete(:remember_token)
+		# current_user = nil
+	# end
 	
 	def current_user?(user)
 		current_user == user
@@ -47,7 +48,8 @@ module SessionsHelper
 	end
 	
 	def authenticate
-		deny_access unless signed_in?
+		# deny_access unless signed_in?
+		authenticate_user!
 	end
 	
 	def admin_auth
