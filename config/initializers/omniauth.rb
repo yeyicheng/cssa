@@ -12,7 +12,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 	fb_test_id = '276626282442340' 
 	fb_test_secret = '1dc252792ddcd14369b654499d860f36'
 	
-	provider :facebook, fb_id, fb_secret
+	provider :facebook, fb_test_id, fb_test_secret
 	{ scope: 'email, user_groups,friends_groups', display: 'popup' }
 	
 	provider :openid, store: OpenID::Store::Filesystem.new('./tmp'), name: 'openid'

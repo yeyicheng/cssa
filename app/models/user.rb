@@ -28,9 +28,8 @@ class User < ActiveRecord::Base
 	# Include default devise modules. Others available are:
 	# :token_authenticatable, :confirmable,
 	# :lockable, :timeoutable and :omniauthable
-	devise :database_authenticatable, :registerable,
+	devise :database_authenticatable, :registerable, :confirmable, 
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
-
     # Setup accessible (or protected) attributes for your model
 	attr_accessible :email, :password, :password_confirmation, :remember_me
     
@@ -75,7 +74,8 @@ class User < ActiveRecord::Base
 	has_attached_file :avatar, :styles => { :medium => "100x100>", :thumb => "50x50>" }
 	
 	### Getters and setters ###
-	attr_accessible :email, :name, :password, :password_confirmation, :avatar
+	attr_accessible :email, :name, :password, :password_confirmation, :avatar, 
+	:confirmed_at, :confirmation_sent_at
 
 	### Fields validation ###
 	email_regex = /^[\w+\-._]+@[a-z\d\-._]+\.[a-z]+$/i
@@ -88,13 +88,15 @@ class User < ActiveRecord::Base
 						 :length => { :within => 6..40 }
 	
 	def apply_omniauth(authhash, confirmation)
+		debugger
 		self.email = authhash[:email] if email.blank?
 		# Check if email is already into the database => user exists
-		apply_trusted_services(authhash, confirmation) if self.new_record?
+		apply_trusted_services(authhash, confirmation)
 	end
 	
 	# Create a new user
 	def apply_trusted_services(authhash, confirmation)  
+		debugger
 		self.name = authhash[:name] if self.name.blank?
 		# Set a random password for omniauthenticated users
 		self.password, self.password_confirmation = Devise.friendly_token

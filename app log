@@ -5065,3 +5065,206 @@ Started GET "/sign_up" for 127.0.0.1 at 2012-08-25 18:57:05 -0400
 Started GET "/users/auth/qq_connect" for 127.0.0.1 at 2012-08-25 18:57:09 -0400
 Connected to NewRelic Service at collector-9.newrelic.com
 Connected to NewRelic Service at collector-9.newrelic.com
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2012-08-25 20:18:05 -0400
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2012-08-25 20:18:11 -0400
+
+
+Started GET "/users/auth/xiaonei" for 127.0.0.1 at 2012-08-25 20:18:21 -0400
+
+ActionController::RoutingError (No route matches [GET] "/users/auth/xiaonei"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/debugger.rb:20:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.4.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.4.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.4.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.4.1) lib/thin/connection.rb:53:in `process'
+  thin (1.4.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.4.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.4.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.8) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.8) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.8) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.8) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+
+
+Started GET "/users/1" for 127.0.0.1 at 2012-08-25 20:22:40 -0400
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-08-25 20:22:40 -0400
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-08-25 20:23:04 -0400
+
+
+Started POST "/users" for 127.0.0.1 at 2012-08-25 20:23:16 -0400
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-08-25 20:23:21 -0400
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-08-25 20:23:35 -0400
+
+
+Started GET "/users/1" for 127.0.0.1 at 2012-08-25 20:23:59 -0400
+
+
+Started GET "/users/1" for 127.0.0.1 at 2012-08-25 20:24:10 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-25 21:55:00 -0400
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2012-08-25 21:55:58 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-25 21:55:58 -0400
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-08-25 21:56:01 -0400
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2012-08-25 21:56:03 -0400
+
+
+Started GET "/users/auth/facebook/callback?state=2997122918199aa029b8fd4260d6d8d8a3ad3d01ddd53118&code=AQBZhcx6vEMZZUl7rIivUWtLtti4Tn7p0-JBq2UW2VdW3gWQ5tl2qGYIJdT7Lnbv9iIqOf3Q1PEMw4sCu87wlfdjg-vv5BF-nybOldXYEKnvvEaJAP-8T6sdb4AcFecozV6HG6RPzIYr42hmQCydyzOpTQncG4U9FzhhIpIQeB_gcTuyYfUDcLwi2Wylb237wr4" for 127.0.0.1 at 2012-08-25 21:56:04 -0400
+
+
+Started GET "/users/auth/facebook/callback?state=2997122918199aa029b8fd4260d6d8d8a3ad3d01ddd53118&code=AQBZhcx6vEMZZUl7rIivUWtLtti4Tn7p0-JBq2UW2VdW3gWQ5tl2qGYIJdT7Lnbv9iIqOf3Q1PEMw4sCu87wlfdjg-vv5BF-nybOldXYEKnvvEaJAP-8T6sdb4AcFecozV6HG6RPzIYr42hmQCydyzOpTQncG4U9FzhhIpIQeB_gcTuyYfUDcLwi2Wylb237wr4" for 127.0.0.1 at 2012-08-25 21:56:53 -0400
+
+NoMethodError (undefined method `confirmed_at=' for #<User:0xb6bf4a8>):
+  app/models/user.rb:103:in `apply_trusted_services'
+  app/models/user.rb:93:in `apply_omniauth'
+  app/controllers/services_controller.rb:97:in `create_new_omniauth_user'
+  app/controllers/services_controller.rb:70:in `create'
+
+
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2012-08-25 22:19:25 -0400
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-08-25 22:19:47 -0400
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2012-08-25 22:19:50 -0400
+
+
+Started GET "/users/auth/facebook/callback?state=27ee95ac3459dab47d6d7743c99990e7bab2625a1eaae143&code=AQAXbfHZBjw3fP00mzSzjwLj-t2uEGrAkbD3QUUW98VmXc4tHmmwp-IlNG6VWW6b2FLijumo5Nb64_WZSYaCRPKarHy_8QY3IkP1wsAQ4gDHGCNcICE5GLaWDm9oXtfClYTUn7yRGUU1d6Uiju5MWQR77xzpY8nOpyL-zYMYb7F9S1fatYi-UQ6a1Q1OxyYPOyg" for 127.0.0.1 at 2012-08-25 22:20:07 -0400
+
+NoMethodError (undefined method `services' for nil:NilClass):
+  app/controllers/services_controller.rb:71:in `create'
+
+
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-08-25 22:28:13 -0400
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2012-08-25 22:28:19 -0400
+
+
+Started GET "/users/auth/facebook/callback?state=1cf5cf2c307d27e862b521753705daa90c1b6fb3e8c1d04d&code=AQCSEc-2EoxisvuMsmlkv1JLsO7GMpO4Yf1fAqNV41wiKs29nekDbFirL1daaDzAG690h-ZUeB2R_jb8PkFZ2gz8qMypJor56189Dabkrx2o04VuIkiI_ylCQQ9kiEkuk6SZJEwLE0EVopkS8jqof-05YhN7b6Dorp4FgrjtJwdAwU8IXYRbHK_MdmWHShU8d5M" for 127.0.0.1 at 2012-08-25 22:28:20 -0400
+
+NoMethodError (undefined method `services' for nil:NilClass):
+  app/controllers/services_controller.rb:70:in `create'
+
+
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-08-25 22:29:40 -0400
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2012-08-25 22:29:42 -0400
+
+
+Started GET "/users/auth/facebook/callback?state=9961d6d5b388dbfd0f3232ff5ae5c3aef5263b71d2ce4349&code=AQDiEQMNLsncjrDxpDB7dy0fjl7E4uQelpoH55u8Ix8fz7VtGe8i_tGYNYcRhVtfG9Ug1sQpFcfWjm46Q1U-BKsqeTJLxU5Adoq-9OjPBLp1pzmoLXSC8duM3FnOsiL-v5hCkiPrWB2ZrLMRHFdUn312aiQeBDA2IJa0hZGTUPbD_Pqkcr7OkE4dAq5sVBqAkkM" for 127.0.0.1 at 2012-08-25 22:29:43 -0400
+
+NoMethodError (undefined method `services' for nil:NilClass):
+  app/controllers/services_controller.rb:70:in `create'
+
+
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-08-25 22:30:27 -0400
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2012-08-25 22:30:30 -0400
+
+
+Started GET "/users/auth/facebook/callback?state=6d1b90baaeeaca18ad88f421f5b3c9c82f7eada288243e42&code=AQD3nIgpwVUBh-6sE4_Ir-O04827y4wJdzcLbi9hBk5A2E_awYouqHNQMWSnjbtDSvqCjkyOigZwOwltZCtXTpYjpzA_cSx8OKxfOGtD4UqV52p9xYKtE07JdOzwMSPZfDm96-LHqWE8XtsT0fFd8hPelHTGsOsUQJSGDtdEgzYgC2PNoIOOx6ajxakMQAvwIaQ" for 127.0.0.1 at 2012-08-25 22:30:30 -0400
+
+NoMethodError (undefined method `services' for nil:NilClass):
+  app/controllers/services_controller.rb:70:in `create'
+
+
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-08-25 22:31:37 -0400
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2012-08-25 22:31:40 -0400
+
+
+Started GET "/users/auth/facebook/callback?state=9d9092427c47b1b2087ff7e22a541a87dcd2e7ca9f80265a&code=AQACmw1o9g5vGRM9dPOvJGy0Vndca_G8mGTpHPoauZUIljgKKWHpqOHUz5FQrfkFHQRQpjMgU5ui1xbHGnqssg1ed8GtJDjHuYUZ1U29r6hvyEsMuVvO3tJU-iTnqAe3VPQzwMLAZ69Nf0_EdX9KsS5vrRGmGzMBwey64eX2iwIKe72SFxAVC5WEJh5NLlFdAFU" for 127.0.0.1 at 2012-08-25 22:31:40 -0400
+
+NoMethodError (undefined method `services' for nil:NilClass):
+  app/controllers/services_controller.rb:70:in `create'
+
+
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-08-25 22:36:10 -0400
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2012-08-25 22:36:14 -0400
+
+
+Started GET "/users/auth/facebook/callback?state=aae73f0c24e003566081b552e69801ebcdc62532fcb90667&code=AQBIh3bhwZpr0IF5sEE__4tthWG2FUpaHad5NPHJTUTVkMCnTWU5u1KWSf1WIIT3s-66W1lxf-WFjL9UapnWhTXS3MML6ji7ljPuXAc7y3D3l0Ze4RS_JbY-CMCHFfkDBV5nEeUAT50EQRmbGZgVCTQkNm_9M7Jf0Sg129DehMWhw_U0ZK_Bv4XEWbF4dvQhxic" for 127.0.0.1 at 2012-08-25 22:36:15 -0400
+
+NoMethodError (undefined method `services' for nil:NilClass):
+  app/controllers/services_controller.rb:70:in `create'
+
+
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-08-25 22:40:28 -0400
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2012-08-25 22:40:31 -0400
+
+
+Started GET "/users/auth/facebook/callback?state=0723ae4564d7d4fb1ca828bb0193e2e3495d81a8eefb6bb9&code=AQBPioMKbOUwmExsrdjHPFGL24lwF6tTy0KtmapoRxbCY6qU6SLjTRv19fXaJeGKqFyJyW5qXegTkeOYViIk6XWwfsgLA5tpKSNDoBVXbFAHtrS5mxNFuvbyf1o6ERcuV-upquSoorEyO8FQbWykK6xSejGyAC33sRltOm2zwSJMyveAi0FM3HhuaNJosEkPkUM" for 127.0.0.1 at 2012-08-25 22:40:32 -0400
+
+
+Started GET "/users/1" for 127.0.0.1 at 2012-08-25 22:40:34 -0400
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2012-08-25 22:40:47 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-25 22:40:47 -0400

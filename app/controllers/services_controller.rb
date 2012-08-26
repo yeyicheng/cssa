@@ -39,6 +39,8 @@ class ServicesController < ApplicationController
 			elsif service_route == 'qq_connect'
 				@authhash[:name] = omniauth[:info][:name].to_s
 				@authhash[:token] = omniauth[:credentials][:token].to_s
+			elsif service_route = 'xiaonei'
+				@authhash[:name] = omniauth[:info][:name].to_s
 			else
 				# unrecognized service, output the hash that has been returned
 				render :text => omniauth.to_yaml
@@ -63,8 +65,11 @@ class ServicesController < ApplicationController
 						sign_in auth.user
 						redirect_to auth.user
 						flash[:notice] = 'Signed in successfully via your' + @authhash[:provider].capitalize + 'account.'
-					elsif service_route != 'qq_connect' and service_route != 'renren'
-						user = create_new_omniauth_user(@authhash)
+					elsif service_route != 'qq_connect' and service_route != 'xiaonei'
+						user = User.find_by_email(@authhash[:email])
+						if !user
+							user = create_new_omniauth_user(@authhash)
+						end
 						user.services.create!(provider: @authhash[:provider], uid: @authhash[:uid])
 						flash[:notice] = 'Sign up successfully via your' + @authhash[:provider].capitalize + 'account.'
 						sign_in user
@@ -92,6 +97,7 @@ class ServicesController < ApplicationController
 	def create_new_omniauth_user(authhash)
 		user = User.new
 		user.apply_omniauth(authhash, true)
+		debugger
 		if user.save
 			user
 		else
