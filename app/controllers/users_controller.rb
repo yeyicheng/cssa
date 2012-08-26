@@ -26,12 +26,11 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@microposts = @user.microposts.paginate(:page => params[:micropost_page], :per_page => 10)
 		@title = @user[:name]
-		store_location
 		@micropost = Micropost.new
 		@feed_items = current_user.feed.paginate(:page => params[:feed_page], :per_page => 8)
-		if session[:authhash]
-			@user.services.create!(provider: session[:authhash][:provider], uid: session[:authhash][:uid])
-			flash[:success] = 'Your ' + @authhash[:provider].capitalize + ' account has been connected to this site.'
+		if session[:authhash] and correct_user?
+			current_user.services.create!(provider: session[:authhash][:provider], uid: session[:authhash][:uid])
+			flash[:success] = 'Your ' + session[:authhash][:provider].capitalize + ' account has been connected to this site.'
 			session[:authhash] = nil
 			redirect_to @user
 		end
